@@ -13,14 +13,13 @@ namespace NUnitTestingDriver
             driver = new SeleniumDriver();
         }
 
-        //These all fail on github actions
-        //[Test]
-        //public void Test1()
-        //{
-        //    driver.NavigateToURL("http://the-internet.herokuapp.com/");
-        //    driver.ClickElement("//a[contains(text(),'Form Authentication')]");
-        //    Thread.Sleep(5000);
-        //}
+        [Test]
+        public void Test1()
+        {
+            driver.NavigateToURL("http://the-internet.herokuapp.com/");
+            driver.ClickElement("//a[contains(text(),'Form Authentication')]");
+            Thread.Sleep(5000);
+        }
 
         [TearDown]
         public void TearDown()
