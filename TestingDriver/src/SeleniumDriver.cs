@@ -19,12 +19,12 @@ namespace TestingDriver
     using OpenQA.Selenium.IE;
     using OpenQA.Selenium.Support.Extensions;
     using OpenQA.Selenium.Support.UI;
-    using static TestingDriver.ITestAutomationDriver;
+    using static TestingDriver.ITestingDriver;
 
     /// <summary>
     /// Driver class for Selenium WebDriver.
     /// </summary>
-    public class SeleniumDriver : ITestAutomationDriver
+    public class SeleniumDriver : ITestingDriver
     {
         /// <summary>
         /// Location of the Selenium drivers on the current machine.
@@ -408,19 +408,19 @@ namespace TestingDriver
             Browser browser;
             if (browserName.ToLower().Contains("chrome"))
             {
-                browser = ITestAutomationDriver.Browser.Chrome;
+                browser = ITestingDriver.Browser.Chrome;
             }
             else if (browserName.ToLower().Contains("ie"))
             {
-                browser = ITestAutomationDriver.Browser.IE;
+                browser = ITestingDriver.Browser.IE;
             }
             else if (browserName.ToLower().Contains("firefox"))
             {
-                browser = ITestAutomationDriver.Browser.Firefox;
+                browser = ITestingDriver.Browser.Firefox;
             }
             else if (browserName.ToLower().Contains("edge"))
             {
-                browser = ITestAutomationDriver.Browser.Edge;
+                browser = ITestingDriver.Browser.Edge;
             }
             else
             {

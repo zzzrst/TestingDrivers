@@ -5,13 +5,10 @@
         {
           "files": [
             "**.csproj"
-          ],
-          "src": "C:\\Users\\DuongCh\\Projects\\TestingDrivers\\TestingDriver"
+          ]
         }
       ],
-      "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "dest": "api"
     }
   ],
   "build": {
@@ -49,7 +46,7 @@
         ]
       }
     ],
-    "dest": "_site",
+    "dest": "../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
@@ -57,9 +54,6 @@
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
-    "noLangKeyword": false,
-    "keepFileLink": false,
-    "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "noLangKeyword": false
   }
 }
