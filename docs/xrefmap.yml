@@ -436,12 +436,12 @@ references:
   commentId: T:TestingDriver.SeleniumDriver
   fullName: TestingDriver.SeleniumDriver
   nameWithType: SeleniumDriver
-- uid: TestingDriver.SeleniumDriver.#ctor
-  name: SeleniumDriver()
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor
-  commentId: M:TestingDriver.SeleniumDriver.#ctor
-  fullName: TestingDriver.SeleniumDriver.SeleniumDriver()
-  nameWithType: SeleniumDriver.SeleniumDriver()
+- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String)
+  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String)
+  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String)
 - uid: TestingDriver.SeleniumDriver.#ctor*
   name: SeleniumDriver
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_
