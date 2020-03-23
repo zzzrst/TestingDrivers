@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Threading;
 using TestingDriver;
 namespace NUnitTestingDriver
 {
@@ -15,7 +16,9 @@ namespace NUnitTestingDriver
         [Test]
         public void Test1()
         {
-            driver.NavigateToURL("https://www.google.com");
+            driver.NavigateToURL("http://the-internet.herokuapp.com/");
+            driver.ClickElement("//a[contains(text(),'Form Authentication')]");
+            Thread.Sleep(5000);
         }
 
         [TearDown]

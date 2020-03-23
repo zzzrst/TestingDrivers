@@ -187,10 +187,5 @@ namespace TestingDriver
         /// Checks if there are any errors in the error container.
         /// </summary>
         public void CheckErrorContainer();
-
-        /// <summary>
-        /// Runs when created.
-        /// </summary>
-        public void SetUp();
     }
 }

@@ -281,19 +281,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.SelectValueInElement
   nameWithType: ITestingDriver.SelectValueInElement
-- uid: TestingDriver.ITestingDriver.SetUp
-  name: SetUp()
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SetUp
-  commentId: M:TestingDriver.ITestingDriver.SetUp
-  fullName: TestingDriver.ITestingDriver.SetUp()
-  nameWithType: ITestingDriver.SetUp()
-- uid: TestingDriver.ITestingDriver.SetUp*
-  name: SetUp
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SetUp_
-  commentId: Overload:TestingDriver.ITestingDriver.SetUp
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.SetUp
-  nameWithType: ITestingDriver.SetUp
 - uid: TestingDriver.ITestingDriver.SwitchToIFrame(System.String)
   name: SwitchToIFrame(String)
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SwitchToIFrame_System_String_
@@ -449,6 +436,19 @@ references:
   commentId: T:TestingDriver.SeleniumDriver
   fullName: TestingDriver.SeleniumDriver
   nameWithType: SeleniumDriver
+- uid: TestingDriver.SeleniumDriver.#ctor
+  name: SeleniumDriver()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor
+  commentId: M:TestingDriver.SeleniumDriver.#ctor
+  fullName: TestingDriver.SeleniumDriver.SeleniumDriver()
+  nameWithType: SeleniumDriver.SeleniumDriver()
+- uid: TestingDriver.SeleniumDriver.#ctor*
+  name: SeleniumDriver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_
+  commentId: Overload:TestingDriver.SeleniumDriver.#ctor
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.SeleniumDriver
+  nameWithType: SeleniumDriver.SeleniumDriver
 - uid: TestingDriver.SeleniumDriver.CheckErrorContainer
   name: CheckErrorContainer()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CheckErrorContainer
@@ -657,19 +657,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.SelectValueInElement
   nameWithType: SeleniumDriver.SelectValueInElement
-- uid: TestingDriver.SeleniumDriver.SetUp
-  name: SetUp()
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SetUp
-  commentId: M:TestingDriver.SeleniumDriver.SetUp
-  fullName: TestingDriver.SeleniumDriver.SetUp()
-  nameWithType: SeleniumDriver.SetUp()
-- uid: TestingDriver.SeleniumDriver.SetUp*
-  name: SetUp
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SetUp_
-  commentId: Overload:TestingDriver.SeleniumDriver.SetUp
-  isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.SetUp
-  nameWithType: SeleniumDriver.SetUp
 - uid: TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)
   name: SwitchToIFrame(String)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_

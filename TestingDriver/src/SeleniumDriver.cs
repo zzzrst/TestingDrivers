@@ -45,6 +45,37 @@ namespace TestingDriver
         private TimeSpan timeOutThreshold;
         private TimeSpan actualTimeOut;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SeleniumDriver"/> class.
+        /// </summary>
+        /// <param name="browser">The browser to use.</param>
+        /// <param name="timeOut">The time out in seconds.</param>
+        /// <param name="environment">The environment of the test.</param>
+        /// <param name="url">Default url to naivgate to.</param>
+        /// <param name="screenshotSaveLocation">Location to save screenshots.</param>
+        /// <param name="actualTimeout">Time out limit in minutes.</param>
+        /// <param name="loadingSpinner">The xpath for any loading spinners.</param>
+        /// <param name="errorContainer">The xpath for any error containers.</param>
+        public SeleniumDriver(
+            string browser = "chrome",
+            int timeOut = 5,
+            string environment = "",
+            string url = "",
+            string screenshotSaveLocation = "./",
+            int actualTimeout = 60,
+            string loadingSpinner = "",
+            string errorContainer = "")
+        {
+            this.browserType = this.GetBrowserType(browser);
+            this.timeOutThreshold = TimeSpan.FromSeconds(timeOut);
+            this.environment = environment;
+            this.url = url;
+            this.screenshotSaveLocation = screenshotSaveLocation;
+            this.actualTimeOut = TimeSpan.FromMinutes(actualTimeout);
+            this.LoadingSpinner = loadingSpinner;
+            this.ErrorContainer = errorContainer;
+        }
+
         /// <inheritdoc/>
         public string Name { get; } = "selenium";
 
@@ -65,19 +96,6 @@ namespace TestingDriver
         private string IFrameXPath { get; set; } = string.Empty;
 
         private int CurrentWindow { get; set; } = -1;
-
-        /// <inheritdoc/>
-        public void SetUp()
-        {
-            this.browserType = this.GetBrowserType(Environment.GetEnvironmentVariable("browser"));
-            this.timeOutThreshold = TimeSpan.FromSeconds(int.Parse(Environment.GetEnvironmentVariable("timeOutThreshold")));
-            this.environment = Environment.GetEnvironmentVariable("environment");
-            this.url = Environment.GetEnvironmentVariable("url");
-            this.screenshotSaveLocation = Environment.GetEnvironmentVariable("screenshotSaveLocation");
-            this.actualTimeOut = TimeSpan.FromMinutes(60); // int.Parse(ConfigurationManager.AppSettings["ActualTimeOut"]));
-            this.LoadingSpinner = Environment.GetEnvironmentVariable("loadingSpinner");
-            this.ErrorContainer = Environment.GetEnvironmentVariable("errorContainer");
-        }
 
         /// <summary>
         /// Checks for an element state.
