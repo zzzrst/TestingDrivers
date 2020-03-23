@@ -10,7 +10,7 @@ namespace NUnitTestingDriver
         [SetUp]
         public void Setup()
         {
-            driver = new SeleniumDriver();
+            driver = new SeleniumDriver(browser:"remoteChrome", remoteHost:"http://localhost:4444/wd/hub");
         }
 
         [Test]

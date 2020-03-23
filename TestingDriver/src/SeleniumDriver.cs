@@ -17,6 +17,7 @@ namespace TestingDriver
     using OpenQA.Selenium.Edge;
     using OpenQA.Selenium.Firefox;
     using OpenQA.Selenium.IE;
+    using OpenQA.Selenium.Remote;
     using OpenQA.Selenium.Support.Extensions;
     using OpenQA.Selenium.Support.UI;
     using static TestingDriver.ITestingDriver;
@@ -45,6 +46,8 @@ namespace TestingDriver
         private TimeSpan timeOutThreshold;
         private TimeSpan actualTimeOut;
 
+        private string remoteHost;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SeleniumDriver"/> class.
         /// </summary>
@@ -56,6 +59,7 @@ namespace TestingDriver
         /// <param name="actualTimeout">Time out limit in minutes.</param>
         /// <param name="loadingSpinner">The xpath for any loading spinners.</param>
         /// <param name="errorContainer">The xpath for any error containers.</param>
+        /// <param name="remoteHost">The address of the remote host.</param>
         public SeleniumDriver(
             string browser = "chrome",
             int timeOut = 5,
@@ -64,7 +68,8 @@ namespace TestingDriver
             string screenshotSaveLocation = "./",
             int actualTimeout = 60,
             string loadingSpinner = "",
-            string errorContainer = "")
+            string errorContainer = "",
+            string remoteHost = "")
         {
             this.browserType = this.GetBrowserType(browser);
             this.timeOutThreshold = TimeSpan.FromSeconds(timeOut);
@@ -74,6 +79,7 @@ namespace TestingDriver
             this.actualTimeOut = TimeSpan.FromMinutes(actualTimeout);
             this.LoadingSpinner = loadingSpinner;
             this.ErrorContainer = errorContainer;
+            this.remoteHost = remoteHost;
         }
 
         /// <inheritdoc/>
@@ -426,19 +432,26 @@ namespace TestingDriver
             Browser browser;
             if (browserName.ToLower().Contains("chrome"))
             {
-                browser = ITestingDriver.Browser.Chrome;
+                if (browserName.ToLower().Contains("remote"))
+                {
+                    browser = Browser.RemoteChrome;
+                }
+                else
+                {
+                    browser = Browser.Chrome;
+                }
             }
             else if (browserName.ToLower().Contains("ie"))
             {
-                browser = ITestingDriver.Browser.IE;
+                browser = Browser.IE;
             }
             else if (browserName.ToLower().Contains("firefox"))
             {
-                browser = ITestingDriver.Browser.Firefox;
+                browser = Browser.Firefox;
             }
             else if (browserName.ToLower().Contains("edge"))
             {
-                browser = ITestingDriver.Browser.Edge;
+                browser = Browser.Edge;
             }
             else
             {
@@ -493,11 +506,14 @@ namespace TestingDriver
 
                 this.webDriver = null;
 
+                ChromeOptions chromeOptions;
+                ChromeDriverService service;
+
                 switch (this.browserType)
                 {
-                    case Browser.Chrome:
+                    case Browser.RemoteChrome:
 
-                        ChromeOptions chromeOptions = new ChromeOptions
+                        chromeOptions = new ChromeOptions
                         {
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                         };
@@ -507,11 +523,30 @@ namespace TestingDriver
                         chromeOptions.AddArgument("--silent");
                         chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
 
-                        ChromeDriverService service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
+                        service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
+                        service.SuppressInitialDiagnosticInformation = true;
+
+                        this.webDriver = new RemoteWebDriver(new Uri(this.remoteHost), chromeOptions.ToCapabilities(), this.actualTimeOut);
+                        this.driverServicePID = service.ProcessId;
+                        Logger.Info($"Chrome Driver service PID is: {this.driverServicePID}");
+
+                        break;
+                    case Browser.Chrome:
+
+                        chromeOptions = new ChromeOptions
+                        {
+                            UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
+                        };
+
+                        chromeOptions.AddArgument("no-sandbox");
+                        chromeOptions.AddArgument("--log-level=3");
+                        chromeOptions.AddArgument("--silent");
+                        chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
+
+                        service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         service.SuppressInitialDiagnosticInformation = true;
 
                         this.webDriver = new ChromeDriver(this.seleniumDriverLocation, chromeOptions, this.actualTimeOut);
-
                         this.driverServicePID = service.ProcessId;
                         Logger.Info($"Chrome Driver service PID is: {this.driverServicePID}");
 

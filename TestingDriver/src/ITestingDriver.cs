@@ -1,4 +1,4 @@
-﻿// <copyright file="ITestAutomationDriver.cs" company="PlaceholderCompany">
+﻿// <copyright file="ITestingDriver.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -42,6 +42,11 @@ namespace TestingDriver
             /// Represents the Safari Browser.
             /// </summary>
             Safari,
+
+            /// <summary>
+            /// Representation of the Chrome in a remote server.
+            /// </summary>
+            RemoteChrome,
         }
 
         /// <summary>
