@@ -36,7 +36,7 @@ jobs:
     - name: Run Unit Tests
       run: |
         docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome 
-        dotnet test --verbosity normal
+        dotnet test --verbosity normal --configuration Release
       
   publish:
     needs: [build, test]
