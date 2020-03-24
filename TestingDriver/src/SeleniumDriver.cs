@@ -523,12 +523,12 @@ namespace TestingDriver
                         chromeOptions.AddArgument("--silent");
                         chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
 
-                        service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
-                        service.SuppressInitialDiagnosticInformation = true;
+                        //service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
+                        //service.SuppressInitialDiagnosticInformation = true;
 
                         this.webDriver = new RemoteWebDriver(new Uri(this.remoteHost), chromeOptions.ToCapabilities(), this.actualTimeOut);
-                        this.driverServicePID = service.ProcessId;
-                        Logger.Info($"Chrome Driver service PID is: {this.driverServicePID}");
+                        //this.driverServicePID = service.ProcessId;
+                        //Logger.Info($"Chrome Driver service PID is: {this.driverServicePID}");
 
                         break;
                     case Browser.Chrome:
