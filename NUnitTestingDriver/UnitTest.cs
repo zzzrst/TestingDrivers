@@ -22,7 +22,14 @@ namespace NUnitTestingDriver
         {
             driver.NavigateToURL("http://the-internet.herokuapp.com/");
             driver.ClickElement("//a[contains(text(),'Form Authentication')]");
+
             Assert.AreEqual("http://the-internet.herokuapp.com/login", driver.CurrentURL, "URL is incorrect");
+
+            driver.PopulateElement("//input[@id='username']", "tomsmith");
+            driver.PopulateElement("//input[@id='password']", "SuperSecretPassword!");
+            driver.ClickElement("//button[@class='radius']");
+
+            Assert.AreEqual("http://the-internet.herokuapp.com/secure", driver.CurrentURL, "URL is incorrect");
         }
 
         [TearDown]
