@@ -8,28 +8,28 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.2.108
+        dotnet-version: 3.1.100
     - name: Build with dotnet
       run: dotnet build --configuration Release
       
   test:
     needs: build
     
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     steps:  
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.2.108
+        dotnet-version: 3.1.100
     - name: Run Unit Tests
       run: |
         docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome 
