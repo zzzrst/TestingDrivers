@@ -76,9 +76,9 @@ namespace TestingDriver
         public string Name { get; }
 
         /// <summary>
-        /// Gets or sets the url of the page the webdriver is focued on.
+        /// Gets the url of the page the webdriver is focued on.
         /// </summary>
-        public string CurrentURL { get; set; }
+        public string CurrentURL { get; }
 
         /// <summary>
         /// Gets or sets the loadiong spinner that appears on the website.

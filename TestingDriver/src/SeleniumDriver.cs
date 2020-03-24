@@ -86,7 +86,7 @@ namespace TestingDriver
         public string Name { get; } = "selenium";
 
         /// <inheritdoc/>
-        public string CurrentURL { get; set; }
+        public string CurrentURL { get => this.webDriver.Url; }
 
         /// <inheritdoc/>
         public string LoadingSpinner { get; set; }
@@ -521,14 +521,8 @@ namespace TestingDriver
                         chromeOptions.AddArgument("no-sandbox");
                         chromeOptions.AddArgument("--log-level=3");
                         chromeOptions.AddArgument("--silent");
-                        //chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
-
-                        //service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
-                        //service.SuppressInitialDiagnosticInformation = true;
 
                         this.webDriver = new RemoteWebDriver(new Uri(this.remoteHost), chromeOptions.ToCapabilities(), this.actualTimeOut);
-                        //this.driverServicePID = service.ProcessId;
-                        //Logger.Info($"Chrome Driver service PID is: {this.driverServicePID}");
 
                         break;
                     case Browser.Chrome:
