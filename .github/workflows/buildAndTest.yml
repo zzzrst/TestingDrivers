@@ -31,7 +31,9 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Run Unit Tests
-      run: dotnet test --verbosity normal
+      run: |
+        docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome 
+        dotnet test --verbosity normal --configuration Release
       
   automerge:
     needs: [build,test]
