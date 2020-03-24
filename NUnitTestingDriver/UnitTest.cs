@@ -10,7 +10,11 @@ namespace NUnitTestingDriver
         [SetUp]
         public void Setup()
         {
+#if DEBUG
+            driver = new SeleniumDriver(browser: "Chrome");
+#else
             driver = new SeleniumDriver(browser:"remoteChrome", remoteHost:"http://localhost:4444/wd/hub");
+#endif
         }
 
         [Test]
@@ -18,7 +22,7 @@ namespace NUnitTestingDriver
         {
             driver.NavigateToURL("http://the-internet.herokuapp.com/");
             driver.ClickElement("//a[contains(text(),'Form Authentication')]");
-            Thread.Sleep(5000);
+            Assert.AreEqual(driver.CurrentURL, "http://the-internet.herokuapp.com/login", "URL is incorrect");
         }
 
         [TearDown]
