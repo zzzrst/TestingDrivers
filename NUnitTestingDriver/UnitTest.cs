@@ -18,7 +18,7 @@ namespace NUnitTestingDriver
         }
 
         [Test]
-        public void Test1()
+        public void TestLogIn()
         {
             driver.NavigateToURL("http://the-internet.herokuapp.com/");
             driver.ClickElement("//a[contains(text(),'Form Authentication')]");
