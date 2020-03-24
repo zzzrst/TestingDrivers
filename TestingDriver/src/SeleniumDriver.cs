@@ -521,7 +521,7 @@ namespace TestingDriver
                         chromeOptions.AddArgument("no-sandbox");
                         chromeOptions.AddArgument("--log-level=3");
                         chromeOptions.AddArgument("--silent");
-                        chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
+                        //chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
 
                         //service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         //service.SuppressInitialDiagnosticInformation = true;
