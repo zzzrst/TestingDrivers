@@ -43,6 +43,12 @@ references:
   commentId: F:TestingDriver.ITestingDriver.Browser.IE
   fullName: TestingDriver.ITestingDriver.Browser.IE
   nameWithType: ITestingDriver.Browser.IE
+- uid: TestingDriver.ITestingDriver.Browser.RemoteChrome
+  name: RemoteChrome
+  href: api/TestingDriver.ITestingDriver.Browser.html#TestingDriver_ITestingDriver_Browser_RemoteChrome
+  commentId: F:TestingDriver.ITestingDriver.Browser.RemoteChrome
+  fullName: TestingDriver.ITestingDriver.Browser.RemoteChrome
+  nameWithType: ITestingDriver.Browser.RemoteChrome
 - uid: TestingDriver.ITestingDriver.Browser.Safari
   name: Safari
   href: api/TestingDriver.ITestingDriver.Browser.html#TestingDriver_ITestingDriver_Browser_Safari
@@ -320,6 +326,18 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.TakeScreenShot
   nameWithType: ITestingDriver.TakeScreenShot
+- uid: TestingDriver.ITestingDriver.TestingDriverType
+  name: ITestingDriver.TestingDriverType
+  href: api/TestingDriver.ITestingDriver.TestingDriverType.html
+  commentId: T:TestingDriver.ITestingDriver.TestingDriverType
+  fullName: TestingDriver.ITestingDriver.TestingDriverType
+  nameWithType: ITestingDriver.TestingDriverType
+- uid: TestingDriver.ITestingDriver.TestingDriverType.Selenium
+  name: Selenium
+  href: api/TestingDriver.ITestingDriver.TestingDriverType.html#TestingDriver_ITestingDriver_TestingDriverType_Selenium
+  commentId: F:TestingDriver.ITestingDriver.TestingDriverType.Selenium
+  fullName: TestingDriver.ITestingDriver.TestingDriverType.Selenium
+  nameWithType: ITestingDriver.TestingDriverType.Selenium
 - uid: TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
   name: WaitForElementState(String, ITestingDriver.ElementState)
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_
@@ -430,18 +448,56 @@ references:
   isSpec: "True"
   fullName: TestingDriver.Logger.Warn
   nameWithType: Logger.Warn
+- uid: TestingDriver.ReflectiveGetter
+  name: ReflectiveGetter
+  href: api/TestingDriver.ReflectiveGetter.html
+  commentId: T:TestingDriver.ReflectiveGetter
+  fullName: TestingDriver.ReflectiveGetter
+  nameWithType: ReflectiveGetter
+- uid: TestingDriver.ReflectiveGetter.GetEnumerableOfType*
+  name: GetEnumerableOfType
+  href: api/TestingDriver.ReflectiveGetter.html#TestingDriver_ReflectiveGetter_GetEnumerableOfType_
+  commentId: Overload:TestingDriver.ReflectiveGetter.GetEnumerableOfType
+  isSpec: "True"
+  fullName: TestingDriver.ReflectiveGetter.GetEnumerableOfType
+  nameWithType: ReflectiveGetter.GetEnumerableOfType
+- uid: TestingDriver.ReflectiveGetter.GetEnumerableOfType``1(System.Object[])
+  name: GetEnumerableOfType<T>(Object[])
+  href: api/TestingDriver.ReflectiveGetter.html#TestingDriver_ReflectiveGetter_GetEnumerableOfType__1_System_Object___
+  commentId: M:TestingDriver.ReflectiveGetter.GetEnumerableOfType``1(System.Object[])
+  name.vb: GetEnumerableOfType(Of T)(Object())
+  fullName: TestingDriver.ReflectiveGetter.GetEnumerableOfType<T>(System.Object[])
+  fullName.vb: TestingDriver.ReflectiveGetter.GetEnumerableOfType(Of T)(System.Object())
+  nameWithType: ReflectiveGetter.GetEnumerableOfType<T>(Object[])
+  nameWithType.vb: ReflectiveGetter.GetEnumerableOfType(Of T)(Object())
+- uid: TestingDriver.ReflectiveGetter.GetImplementationOfType*
+  name: GetImplementationOfType
+  href: api/TestingDriver.ReflectiveGetter.html#TestingDriver_ReflectiveGetter_GetImplementationOfType_
+  commentId: Overload:TestingDriver.ReflectiveGetter.GetImplementationOfType
+  isSpec: "True"
+  fullName: TestingDriver.ReflectiveGetter.GetImplementationOfType
+  nameWithType: ReflectiveGetter.GetImplementationOfType
+- uid: TestingDriver.ReflectiveGetter.GetImplementationOfType``1(System.Object[])
+  name: GetImplementationOfType<T>(Object[])
+  href: api/TestingDriver.ReflectiveGetter.html#TestingDriver_ReflectiveGetter_GetImplementationOfType__1_System_Object___
+  commentId: M:TestingDriver.ReflectiveGetter.GetImplementationOfType``1(System.Object[])
+  name.vb: GetImplementationOfType(Of T)(Object())
+  fullName: TestingDriver.ReflectiveGetter.GetImplementationOfType<T>(System.Object[])
+  fullName.vb: TestingDriver.ReflectiveGetter.GetImplementationOfType(Of T)(System.Object())
+  nameWithType: ReflectiveGetter.GetImplementationOfType<T>(Object[])
+  nameWithType.vb: ReflectiveGetter.GetImplementationOfType(Of T)(Object())
 - uid: TestingDriver.SeleniumDriver
   name: SeleniumDriver
   href: api/TestingDriver.SeleniumDriver.html
   commentId: T:TestingDriver.SeleniumDriver
   fullName: TestingDriver.SeleniumDriver
   nameWithType: SeleniumDriver
-- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String)
-  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String)
-  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String)
-  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String)
+- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)
+  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String)
 - uid: TestingDriver.SeleniumDriver.#ctor*
   name: SeleniumDriver
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_
@@ -722,3 +778,38 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.WaitForLoadingSpinner
   nameWithType: SeleniumDriver.WaitForLoadingSpinner
+- uid: TestingDriver.TestingDriverBuilder
+  name: TestingDriverBuilder
+  href: api/TestingDriver.TestingDriverBuilder.html
+  commentId: T:TestingDriver.TestingDriverBuilder
+  fullName: TestingDriver.TestingDriverBuilder
+  nameWithType: TestingDriverBuilder
+- uid: TestingDriver.TestingDriverBuilder.#ctor(TestingDriver.ITestingDriver.TestingDriverType,System.Object[])
+  name: TestingDriverBuilder(ITestingDriver.TestingDriverType, Object[])
+  href: api/TestingDriver.TestingDriverBuilder.html#TestingDriver_TestingDriverBuilder__ctor_TestingDriver_ITestingDriver_TestingDriverType_System_Object___
+  commentId: M:TestingDriver.TestingDriverBuilder.#ctor(TestingDriver.ITestingDriver.TestingDriverType,System.Object[])
+  name.vb: TestingDriverBuilder(ITestingDriver.TestingDriverType, Object())
+  fullName: TestingDriver.TestingDriverBuilder.TestingDriverBuilder(TestingDriver.ITestingDriver.TestingDriverType, System.Object[])
+  fullName.vb: TestingDriver.TestingDriverBuilder.TestingDriverBuilder(TestingDriver.ITestingDriver.TestingDriverType, System.Object())
+  nameWithType: TestingDriverBuilder.TestingDriverBuilder(ITestingDriver.TestingDriverType, Object[])
+  nameWithType.vb: TestingDriverBuilder.TestingDriverBuilder(ITestingDriver.TestingDriverType, Object())
+- uid: TestingDriver.TestingDriverBuilder.#ctor*
+  name: TestingDriverBuilder
+  href: api/TestingDriver.TestingDriverBuilder.html#TestingDriver_TestingDriverBuilder__ctor_
+  commentId: Overload:TestingDriver.TestingDriverBuilder.#ctor
+  isSpec: "True"
+  fullName: TestingDriver.TestingDriverBuilder.TestingDriverBuilder
+  nameWithType: TestingDriverBuilder.TestingDriverBuilder
+- uid: TestingDriver.TestingDriverBuilder.Build
+  name: Build()
+  href: api/TestingDriver.TestingDriverBuilder.html#TestingDriver_TestingDriverBuilder_Build
+  commentId: M:TestingDriver.TestingDriverBuilder.Build
+  fullName: TestingDriver.TestingDriverBuilder.Build()
+  nameWithType: TestingDriverBuilder.Build()
+- uid: TestingDriver.TestingDriverBuilder.Build*
+  name: Build
+  href: api/TestingDriver.TestingDriverBuilder.html#TestingDriver_TestingDriverBuilder_Build_
+  commentId: Overload:TestingDriver.TestingDriverBuilder.Build
+  isSpec: "True"
+  fullName: TestingDriver.TestingDriverBuilder.Build
+  nameWithType: TestingDriverBuilder.Build

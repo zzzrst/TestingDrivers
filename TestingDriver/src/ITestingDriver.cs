@@ -71,9 +71,20 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// The usable testing applications.
+        /// </summary>
+        public enum TestingDriverType
+        {
+            /// <summary>
+            /// Selenium program.
+            /// </summary>
+            Selenium,
+        }
+
+        /// <summary>
         /// Gets the name of the testing driver.
         /// </summary>
-        public string Name { get; }
+        public TestingDriverType Name { get; }
 
         /// <summary>
         /// Gets the url of the page the webdriver is focued on.

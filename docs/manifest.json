@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.Browser.html",
-          "hash": "lxfhHLvknUvJB7JVK8caRg=="
+          "hash": "JvTDM4UTjydEnZfkooZwow=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,22 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.ElementState.html",
-          "hash": "Gsc8e0Cj/2ClXJzzRE81hA=="
+          "hash": "c6LkRczd0Y2cuSaWf9e2lw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TestingDriver.ITestingDriver.TestingDriverType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TestingDriver.ITestingDriver.TestingDriverType.html",
+          "hash": "2yLTQRj+YMb8lDHWVagK+A=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.html",
-          "hash": "ROTOkiO1T+fjW/ivRNe44w=="
+          "hash": "c8/P51Rpt/m91jqNyEBktw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +57,22 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.Logger.html",
-          "hash": "+W0Huepq3i+wVdr5QObwfw=="
+          "hash": "/imCjIkysr4X+2Uuyc7BWw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TestingDriver.ReflectiveGetter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TestingDriver.ReflectiveGetter.html",
+          "hash": "PCCgN1HWZxnjjRHvInx5qw=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,7 +81,19 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.SeleniumDriver.html",
-          "hash": "VCKO4gg7HZMtlorSGNzMMQ=="
+          "hash": "p/hkKgj/EwMUQ4D2gsiung=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TestingDriver.TestingDriverBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TestingDriver.TestingDriverBuilder.html",
+          "hash": "sn9k4Ua4IhQIC1Y1DfZgdw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.html",
-          "hash": "CVUj8ZlAwEom3ER9COpf7g=="
+          "hash": "J4xWUz4OmB5Egmuk/NRFWA=="
         }
       },
       "is_incremental": false,
@@ -81,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "A36hj33+6mg2wdkhU7zf0g=="
+          "hash": "myWZLG75NWi4XuvEnHAWkw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,7 +129,43 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Xjt0kWo/LBGgfrWkOw74RA=="
+          "hash": "mYlYhV2Rj2TM0K6pP8fZVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ITestingDriver.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ITestingDriver.html",
+          "hash": "EGSyz93qehtkM6xAOLyXdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/SeleniumDriver.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/SeleniumDriver.html",
+          "hash": "VZyP8sf2amYpXqUjeJhLcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/TestingDriverBuilder.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/TestingDriverBuilder.html",
+          "hash": "ZdWVtlWZ4wn6axUUmfI0ZQ=="
         }
       },
       "is_incremental": false,
@@ -105,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "vyzcd8hkOscEbeNG7vqwbA=="
+          "hash": "7lSH04/f3kKs7hmX9aN3pw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "gB8AESyvNru97tzIZofEEg=="
+          "hash": "JKo0UCH3Px05Q+I8lBZjvw=="
         }
       },
       "is_incremental": false,
@@ -129,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "YUslCiZdc0O1iHIVRTjs/w=="
+          "hash": "whUB1CVQEgYpfaDw6MlAkg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -151,23 +223,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because docfx version changed from 2.51.0.0 to 2.50.0.0.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "DocfxVersionChanged"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 3
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 5
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 9,
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

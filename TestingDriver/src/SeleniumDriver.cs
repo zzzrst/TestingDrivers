@@ -83,7 +83,7 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public string Name { get; } = "selenium";
+        public TestingDriverType Name { get; } = TestingDriverType.Selenium;
 
         /// <inheritdoc/>
         public string CurrentURL { get => this.webDriver.Url; }
