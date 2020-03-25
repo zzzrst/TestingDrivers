@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestingDriver</name>
+    </assembly>
+    <members>
+        <member name="T:TestingDriver.ITestingDriver">
+            <summary>
+            The Interface for the Testing Driver software.
+            </summary>
+        </member>
+        <member name="T:TestingDriver.ITestingDriver.Browser">
+            <summary>
+            Different browsers that are supported.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.Browser.Chrome">
+            <summary>
+            Represents the Chrome browser.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.Browser.Edge">
+            <summary>
+            Represents the Microsoft Edge Browser.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.Browser.Firefox">
+            <summary>
+            Represents the Firefox Browser.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.Browser.IE">
+            <summary>
+            Represents the Internet Explorer browser.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.Browser.Safari">
+            <summary>
+            Represents the Safari Browser.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.Browser.RemoteChrome">
+            <summary>
+            Representation of the Chrome in a remote server.
+            </summary>
+        </member>
+        <member name="T:TestingDriver.ITestingDriver.ElementState">
+            <summary>
+            Different states of the element.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.ElementState.Invisible">
+            <summary>
+            Element cannot be found / seen.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.ElementState.Visible">
+            <summary>
+            Element can be seen.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.ElementState.Clickable">
+            <summary>
+            Element can be clicked.
+            </summary>
+        </member>
+        <member name="T:TestingDriver.ITestingDriver.TestingDriverType">
+            <summary>
+            The usable testing applications.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.ITestingDriver.TestingDriverType.Selenium">
+            <summary>
+            Selenium program.
+            </summary>
+        </member>
+        <member name="P:TestingDriver.ITestingDriver.Name">
+            <summary>
+            Gets the name of the testing driver.
+            </summary>
+        </member>
+        <member name="P:TestingDriver.ITestingDriver.CurrentURL">
+            <summary>
+            Gets the url of the page the webdriver is focued on.
+            </summary>
+        </member>
+        <member name="P:TestingDriver.ITestingDriver.LoadingSpinner">
+            <summary>
+            Gets or sets the loadiong spinner that appears on the website.
+            </summary>
+        </member>
+        <member name="P:TestingDriver.ITestingDriver.ErrorContainer">
+            <summary>
+            Gets or sets the error container to check if any errors are shown on the UI.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+            <summary>
+            Checks for an element state.
+            </summary>
+            <param name="xPath"> The xpath to find the web element. </param>
+            <param name="state"> The state of the web element to wait for. </param>
+            <returns> If the element state is as wanted.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean)">
+            <summary>
+            Performs the actions of clicking the specified element. Uses Selenium binding by default.
+            </summary>
+            <param name="xPath">The xpath to find the specified element.</param>
+            <param name="byJS"> Whether to use JS to perform the click / not. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.CloseBrowser">
+            <summary>
+            Closes the current window. It will quit the browser if it is the last window opened.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.Quit">
+            <summary>
+            Quits the webdriver. Call this when you want the driver to be closed.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.Maximize">
+            <summary>
+            Maximizes the browser.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GenerateAODAResults(System.String)">
+            <summary>
+            Generates the AODA results.
+            </summary>
+            <param name="folderLocation"> The folder to generate AODA results in. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.NavigateToURL(System.String,System.Boolean)">
+            <summary>
+            Tells the browser to navigate to the provided url.
+            </summary>
+            <param name="url">URL for the browser to navigate to.</param>
+            <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
+            <returns> <code>true</code> if the navigation was successful. </returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.PopulateElement(System.String,System.String)">
+            <summary>
+            Performs the action of populating a value.
+            </summary>
+            <param name="xPath"> The xpath to use to identify the element. </param>
+            <param name="value"> The value to populate.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.RefreshWebPage">
+            <summary>
+            Refreshes the webpage.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.RunAODA(System.String)">
+            <summary>
+            Method to run aoda on the current web page.
+            </summary>
+            <param name="providedPageTitle"> Title of the web page the user provides. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String)">
+            <summary>
+            Performs the action of selecting a value in an element.
+            </summary>
+            <param name="xPath"> The xpath to use to identify the element. </param>
+            <param name="value"> The value to select in the element.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.SwitchToIFrame(System.String)">
+            <summary>
+            Switches to appropriate IFrame.
+            </summary>
+            <param name="xPath"> xPath to find the iFrame.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.SwitchToTab(System.Int32)">
+            <summary>
+            The SwitchToTab.
+            </summary>
+            <param name="tab">The tab<see cref="T:System.Int32"/>.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.TakeScreenShot">
+            <summary>
+            Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+            <summary>
+            Waits for an element state.
+            </summary>
+            <param name="xPath"> The xpath to find the web element. </param>
+            <param name="state"> The state of the web element to wait for. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.WaitForLoadingSpinner">
+            <summary>
+            Waits until the loading spinner disappears.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.CheckErrorContainer">
+            <summary>
+            Checks if there are any errors in the error container.
+            </summary>
+        </member>
+        <member name="T:TestingDriver.Logger">
+            <summary>
+            Logger class to be used. \n
+            Reference 1: https://stackify.com/log4net-guide-dotnet-logging/ \n
+            Reference 2: https://www.dotnetdepth.in/2018/06/how-to-use-log4net-in-net-core-20.html.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.Logger.Debug(System.Object)">
+            <summary>
+            Allows the user to log a debug message.
+            </summary>
+            <param name="message">The debug message to be logged.</param>
+        </member>
+        <member name="M:TestingDriver.Logger.Error(System.Object)">
+            <summary>
+            Allows the user to log an error message.
+            </summary>
+            <param name="message">The error message to be logged.</param>
+        </member>
+        <member name="M:TestingDriver.Logger.Fatal(System.Object)">
+            <summary>
+            Allows the user to log a fatal message.
+            </summary>
+            <param name="message">The fatal message to be logged.</param>
+        </member>
+        <member name="M:TestingDriver.Logger.Info(System.Object)">
+            <summary>
+            Allows the user to log an info message.
+            </summary>
+            <param name="message">The info message to be logged.</param>
+        </member>
+        <member name="M:TestingDriver.Logger.Warn(System.Object)">
+            <summary>
+            Allows the user to log a warning message.
+            </summary>
+            <param name="message">The warning message to be logged.</param>
+        </member>
+        <member name="M:TestingDriver.Logger.GetLog4NetLogger">
+            <summary>
+            Get Log4Net Logger.
+            </summary>
+            <returns>An ILogger.</returns>
+        </member>
+        <member name="M:TestingDriver.Logger.GetLogger(System.Type)">
+            <summary>
+            Returns the type for the logger.
+            </summary>
+            <param name="type">Class this logger is under.</param>
+            <returns>ILog instance to interact with.</returns>
+        </member>
+        <member name="M:TestingDriver.Logger.SetLog4NetConfiguration">
+            <summary>
+            Sets up the Log4Net Configuration.
+            </summary>
+        </member>
+        <member name="T:TestingDriver.ReflectiveGetter">
+            <summary>
+            Class to get test action using reflection.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ReflectiveGetter.GetEnumerableOfType``1(System.Object[])">
+            <summary>
+            Gets a list of all subclasses of base class T using reflection.
+            </summary>
+            <typeparam name="T">The generic type T to be used.</typeparam>
+            <param name="constructorArgs">The constructorArgs<see cref="T:object[]"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.List`1"/> found.</returns>
+        </member>
+        <member name="M:TestingDriver.ReflectiveGetter.GetImplementationOfType``1(System.Object[])">
+            <summary>
+            Gets a list of all implentation of base class T using reflection.
+            </summary>
+            <typeparam name="T">The generic type T to be used.</typeparam>
+            <param name="constructorArgs">The constructorArgs<see cref="T:object[]"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.List`1"/> found.</returns>
+        </member>
+        <member name="T:TestingDriver.SeleniumDriver">
+            <summary>
+            Driver class for Selenium WebDriver.
+            </summary>
+        </member>
+        <member name="F:TestingDriver.SeleniumDriver.seleniumDriverLocation">
+            <summary>
+            Location of the Selenium drivers on the current machine.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TestingDriver.SeleniumDriver"/> class.
+            </summary>
+            <param name="browser">The browser to use.</param>
+            <param name="timeOut">The time out in seconds.</param>
+            <param name="environment">The environment of the test.</param>
+            <param name="url">Default url to naivgate to.</param>
+            <param name="screenshotSaveLocation">Location to save screenshots.</param>
+            <param name="actualTimeout">Time out limit in minutes.</param>
+            <param name="loadingSpinner">The xpath for any loading spinners.</param>
+            <param name="errorContainer">The xpath for any error containers.</param>
+            <param name="remoteHost">The address of the remote host.</param>
+        </member>
+        <member name="P:TestingDriver.SeleniumDriver.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:TestingDriver.SeleniumDriver.CurrentURL">
+            <inheritdoc/>
+        </member>
+        <member name="P:TestingDriver.SeleniumDriver.LoadingSpinner">
+            <inheritdoc/>
+        </member>
+        <member name="P:TestingDriver.SeleniumDriver.ErrorContainer">
+            <inheritdoc/>
+        </member>
+        <member name="P:TestingDriver.SeleniumDriver.InIFrame">
+            <summary>
+            Gets or sets a value indicating whether the web driver is in an IFrame or not.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+            <summary>
+            Checks for an element state.
+            </summary>
+            <param name="xPath"> The xpath to find the web element. </param>
+            <param name="state"> The state of the web element to wait for. </param>
+            <returns> If the element state is as wanted.</returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)">
+            <summary>
+            Performs the actions of clicking the specified element. Uses Selenium binding by default.
+            </summary>
+            <param name="xPath">The xpath to find the specified element.</param>
+            <param name="byJS"> Whether to use JS to perform the click / not. </param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.CloseBrowser">
+            <summary>
+            Closes the current window. It will quit the browser if it is the last window opened.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.Quit">
+            <summary>
+            Quits the webdriver. Call this when you want the driver to be closed.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.Maximize">
+            <summary>
+            Maximizes the browser.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GenerateAODAResults(System.String)">
+            <summary>
+            Generates the AODA results.
+            </summary>
+            <param name="folderLocation"> The folder to generate AODA results in. </param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.NavigateToURL(System.String,System.Boolean)">
+            <summary>
+            Tells the browser to navigate to the provided url.
+            </summary>
+            <param name="url">URL for the browser to navigate to.</param>
+            <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
+            <returns> <code>true</code> if the navigation was successful. </returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String)">
+            <summary>
+            Performs the action of populating a value.
+            </summary>
+            <param name="xPath"> The xpath to use to identify the element. </param>
+            <param name="value"> The value to populate.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.RefreshWebPage">
+            <summary>
+            Refreshes the webpage.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.RunAODA(System.String)">
+            <summary>
+            Method to run aoda on the current web page.
+            </summary>
+            <param name="providedPageTitle"> Title of the web page the user provides. </param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)">
+            <summary>
+            Performs the action of selecting a value in an element.
+            </summary>
+            <param name="xPath"> The xpath to use to identify the element. </param>
+            <param name="value"> The value to select in the element.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)">
+            <summary>
+            Switches to appropriate IFrame.
+            </summary>
+            <param name="xPath"> xPath to find the iFrame.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.SwitchToTab(System.Int32)">
+            <summary>
+            The SwitchToTab.
+            </summary>
+            <param name="tab">The tab<see cref="T:System.Int32"/>.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.TakeScreenShot">
+            <summary>
+            Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+            <summary>
+            Waits for an element state.
+            </summary>
+            <param name="xPath"> The xpath to find the web element. </param>
+            <param name="state"> The state of the web element to wait for. </param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.WaitForLoadingSpinner">
+            <summary>
+            Waits until the loading spinner disappears.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.CheckErrorContainer">
+            <summary>
+            Checks if there are any errors in the error container.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)">
+            <summary>
+            Finds the first IWebElement By XPath.
+            </summary>
+            <param name="xPath">The xpath to find the web element.</param>
+            <returns> The first IWebElement whose xpath matches. </returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)">
+            <summary>
+            Finds the first IWebElement By XPath.
+            </summary>
+            <param name="xPath">The xpath to find the web element.</param>
+            <param name="tries"> The amount in seconds to wait for.</param>
+            <returns> The first IWebElement whose xpath matches. </returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.SetActiveTab">
+            <summary>
+            Sets the tab to be the active one.
+            </summary>
+        </member>
+        <member name="T:TestingDriver.TestingDriverBuilder">
+            <summary>
+            Builds a new selenium Driver based on the given variables.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.TestingDriverBuilder.#ctor(TestingDriver.ITestingDriver.TestingDriverType,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:TestingDriver.TestingDriverBuilder"/> class.
+            Testing Driver builder object.
+            </summary>
+            <param name="type">What type of driver to use.</param>
+            <param name="args">arguments to be passed in.</param>
+        </member>
+        <member name="P:TestingDriver.TestingDriverBuilder.DriverType">
+            <summary>
+            Gets or sets the type of testing driver to use.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.TestingDriverBuilder.Build">
+            <summary>
+            Builds a new test automation driver.
+            </summary>
+            <returns>A New Testing Driver with the given parameters.</returns>
+        </member>
+    </members>
+</doc>

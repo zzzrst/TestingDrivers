@@ -13,6 +13,10 @@
     <RepositoryUrl>https://github.com/zzzrst/TestingDrivers</RepositoryUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\DuongCh\Projects\TestingDrivers\TestingDriver\TestingDriver.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AxeAccessibilityDriver" Version="2.0.7381.26109" />
     <PackageReference Include="docfx.console" Version="2.51.0">

@@ -7,7 +7,6 @@ namespace TestingDriver
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using static TestingDriverBuilder;
 
     /// <summary>
     /// The Interface for the Testing Driver software.
@@ -72,9 +71,20 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// The usable testing applications.
+        /// </summary>
+        public enum TestingDriverType
+        {
+            /// <summary>
+            /// Selenium program.
+            /// </summary>
+            Selenium,
+        }
+
+        /// <summary>
         /// Gets the name of the testing driver.
         /// </summary>
-        public IT Name { get; }
+        public TestingDriverType Name { get; }
 
         /// <summary>
         /// Gets the url of the page the webdriver is focued on.

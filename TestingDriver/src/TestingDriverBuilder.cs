@@ -6,6 +6,7 @@ namespace TestingDriver
 {
     using System;
     using System.Configuration;
+    using static TestingDriver.ITestingDriver;
 
     /// <summary>
     /// Builds a new selenium Driver based on the given variables.
@@ -25,17 +26,6 @@ namespace TestingDriver
         }
 
         /// <summary>
-        /// The usable testing applications.
-        /// </summary>
-        public enum TestingDriverType
-        {
-            /// <summary>
-            /// Selenium program.
-            /// </summary>
-            Selenium,
-        }
-
-        /// <summary>
         /// Gets or sets the type of testing driver to use.
         /// </summary>
         private TestingDriverType DriverType { get; set; }
@@ -49,7 +39,7 @@ namespace TestingDriver
         public ITestingDriver Build()
         {
             SeleniumDriver driver = new SeleniumDriver();
-            ITestingDriver automationDriver = ReflectiveGetter.GetImplementationOfType<ITestingDriver>()
+            ITestingDriver automationDriver = ReflectiveGetter.GetImplementationOfType<ITestingDriver>(this.Args)
                                 .Find(x => x.Name.Equals(this.DriverType));
             if (automationDriver == null)
             {

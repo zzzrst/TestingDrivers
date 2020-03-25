@@ -14,8 +14,8 @@ namespace TestingDriver
     using Microsoft.Extensions.Logging;
 
     /// <summary>
-    /// Logger class to be used. \n
-    /// Reference 1: https://stackify.com/log4net-guide-dotnet-logging/ \n
+    /// Logger class to be used.
+    /// Reference 1: https://stackify.com/log4net-guide-dotnet-logging/
     /// Reference 2: https://www.dotnetdepth.in/2018/06/how-to-use-log4net-in-net-core-20.html.
     /// </summary>
     public static class Logger
