@@ -21,6 +21,7 @@ namespace TestingDriver
     using OpenQA.Selenium.Support.Extensions;
     using OpenQA.Selenium.Support.UI;
     using static TestingDriver.ITestingDriver;
+    using static TestingDriver.TestingDriverBuilder;
 
     /// <summary>
     /// Driver class for Selenium WebDriver.
@@ -83,7 +84,7 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public string Name { get; } = "selenium";
+        public TestingDriverType Name { get; } = TestingDriverType.Selenium;
 
         /// <inheritdoc/>
         public string CurrentURL { get => this.webDriver.Url; }
