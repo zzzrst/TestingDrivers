@@ -7,6 +7,7 @@ namespace TestingDriver
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using OpenQA.Selenium;
 
     /// <summary>
     /// The Interface for the Testing Driver software.
@@ -122,6 +123,35 @@ namespace TestingDriver
         public void CloseBrowser();
 
         /// <summary>
+        /// Accepts the alert provided that there is an alert.
+        /// </summary>
+        public void AcceptAlert();
+
+        /// <summary>
+        /// Dismisses the alert provided taht there is an alert.
+        /// </summary>
+        public void DismissAlert();
+
+        /// <summary>
+        /// Gets the text inside the alert.
+        /// </summary>
+        /// <returns>Alert Text.</returns>
+        public string GetAlertText();
+
+        /// <summary>
+        /// Executes JS command on this element.
+        /// </summary>
+        /// <param name="jsCommand">command.</param>
+        /// <param name="webElement">Elemnt to interact with.</param>
+        public void ExecuteJS(string jsCommand, IWebElement webElement);
+
+        /// <summary>
+        /// Executes JS command on this element.
+        /// </summary>
+        /// <param name="jsCommand">command.</param>
+        public void ExecuteJS(string jsCommand);
+
+        /// <summary>
         /// Quits the webdriver. Call this when you want the driver to be closed.
         /// </summary>
         public void Quit();
@@ -132,10 +162,27 @@ namespace TestingDriver
         public void Maximize();
 
         /// <summary>
+        /// Force kill web driver.
+        /// </summary>
+        public void ForceKillWebDriver();
+
+        /// <summary>
         /// Generates the AODA results.
         /// </summary>
         /// <param name="folderLocation"> The folder to generate AODA results in. </param>
         public void GenerateAODAResults(string folderLocation);
+
+        /// <summary>
+        /// The GetAllLinksURL.
+        /// </summary>
+        /// <returns>The <see cref="T:List{string}"/>.</returns>
+        public List<string> GetAllLinksURL();
+
+        /// <summary>
+        /// Moves the mouse to the given element.
+        /// </summary>
+        /// <param name="element">Web element to mouse over.</param>
+        public void MouseOver(IWebElement element);
 
         /// <summary>
         /// Tells the browser to navigate to the provided url.
@@ -164,11 +211,23 @@ namespace TestingDriver
         public void RunAODA(string providedPageTitle);
 
         /// <summary>
+        /// The SendKeys.
+        /// </summary>
+        /// <param name="keystroke">The keystroke<see cref="string"/>.</param>
+        public void SendKeys(string keystroke);
+
+        /// <summary>
         /// Performs the action of selecting a value in an element.
         /// </summary>
         /// <param name="xPath"> The xpath to use to identify the element. </param>
         /// <param name="value"> The value to select in the element.</param>
         public void SelectValueInElement(string xPath, string value);
+
+        /// <summary>
+        /// Sets the global timeout in seconds.
+        /// </summary>
+        /// <param name="seconds">maximum duration of timeout.</param>
+        public void SetTimeOutThreshold(string seconds);
 
         /// <summary>
         /// Switches to appropriate IFrame.
@@ -193,6 +252,12 @@ namespace TestingDriver
         /// <param name="xPath"> The xpath to find the web element. </param>
         /// <param name="state"> The state of the web element to wait for. </param>
         public void WaitForElementState(string xPath, ElementState state);
+
+        /// <summary>
+        /// Sets implicit wait timeout in seconds.
+        /// </summary>
+        /// <param name="seconds">Maximum timeout duration in seconds.</param>
+        public void Wait(int seconds);
 
         /// <summary>
         /// Waits until the loading spinner disappears.

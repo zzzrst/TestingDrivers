@@ -17,6 +17,10 @@
     <DocumentationFile>C:\Users\DuongCh\Projects\TestingDrivers\TestingDriver\TestingDriver.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\DuongCh\Projects\TestingDrivers\TestingDriver\TestingDriver.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AxeAccessibilityDriver" Version="2.1.7394.39046" />
     <PackageReference Include="docfx.console" Version="2.51.0">
