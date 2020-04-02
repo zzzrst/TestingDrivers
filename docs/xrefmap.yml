@@ -505,6 +505,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.SeleniumDriver
   nameWithType: SeleniumDriver.SeleniumDriver
+- uid: TestingDriver.SeleniumDriver.AcceptAlert
+  name: AcceptAlert()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_AcceptAlert
+  commentId: M:TestingDriver.SeleniumDriver.AcceptAlert
+  fullName: TestingDriver.SeleniumDriver.AcceptAlert()
+  nameWithType: SeleniumDriver.AcceptAlert()
+- uid: TestingDriver.SeleniumDriver.AcceptAlert*
+  name: AcceptAlert
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_AcceptAlert_
+  commentId: Overload:TestingDriver.SeleniumDriver.AcceptAlert
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.AcceptAlert
+  nameWithType: SeleniumDriver.AcceptAlert
 - uid: TestingDriver.SeleniumDriver.CheckErrorContainer
   name: CheckErrorContainer()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CheckErrorContainer
@@ -570,6 +583,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.CurrentURL
   nameWithType: SeleniumDriver.CurrentURL
+- uid: TestingDriver.SeleniumDriver.DismissAlert
+  name: DismissAlert()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_DismissAlert
+  commentId: M:TestingDriver.SeleniumDriver.DismissAlert
+  fullName: TestingDriver.SeleniumDriver.DismissAlert()
+  nameWithType: SeleniumDriver.DismissAlert()
+- uid: TestingDriver.SeleniumDriver.DismissAlert*
+  name: DismissAlert
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_DismissAlert_
+  commentId: Overload:TestingDriver.SeleniumDriver.DismissAlert
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.DismissAlert
+  nameWithType: SeleniumDriver.DismissAlert
 - uid: TestingDriver.SeleniumDriver.ErrorContainer
   name: ErrorContainer
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ErrorContainer
@@ -583,6 +609,38 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.ErrorContainer
   nameWithType: SeleniumDriver.ErrorContainer
+- uid: TestingDriver.SeleniumDriver.ExecuteJS(System.String)
+  name: ExecuteJS(String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)
+  fullName: TestingDriver.SeleniumDriver.ExecuteJS(System.String)
+  nameWithType: SeleniumDriver.ExecuteJS(String)
+- uid: TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)
+  name: ExecuteJS(String, IWebElement)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_System_String_OpenQA_Selenium_IWebElement_
+  commentId: M:TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)
+  fullName: TestingDriver.SeleniumDriver.ExecuteJS(System.String, OpenQA.Selenium.IWebElement)
+  nameWithType: SeleniumDriver.ExecuteJS(String, IWebElement)
+- uid: TestingDriver.SeleniumDriver.ExecuteJS*
+  name: ExecuteJS
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_
+  commentId: Overload:TestingDriver.SeleniumDriver.ExecuteJS
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.ExecuteJS
+  nameWithType: SeleniumDriver.ExecuteJS
+- uid: TestingDriver.SeleniumDriver.ForceKillWebDriver
+  name: ForceKillWebDriver()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ForceKillWebDriver
+  commentId: M:TestingDriver.SeleniumDriver.ForceKillWebDriver
+  fullName: TestingDriver.SeleniumDriver.ForceKillWebDriver()
+  nameWithType: SeleniumDriver.ForceKillWebDriver()
+- uid: TestingDriver.SeleniumDriver.ForceKillWebDriver*
+  name: ForceKillWebDriver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ForceKillWebDriver_
+  commentId: Overload:TestingDriver.SeleniumDriver.ForceKillWebDriver
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.ForceKillWebDriver
+  nameWithType: SeleniumDriver.ForceKillWebDriver
 - uid: TestingDriver.SeleniumDriver.GenerateAODAResults(System.String)
   name: GenerateAODAResults(String)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GenerateAODAResults_System_String_
@@ -596,6 +654,32 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.GenerateAODAResults
   nameWithType: SeleniumDriver.GenerateAODAResults
+- uid: TestingDriver.SeleniumDriver.GetAlertText
+  name: GetAlertText()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAlertText
+  commentId: M:TestingDriver.SeleniumDriver.GetAlertText
+  fullName: TestingDriver.SeleniumDriver.GetAlertText()
+  nameWithType: SeleniumDriver.GetAlertText()
+- uid: TestingDriver.SeleniumDriver.GetAlertText*
+  name: GetAlertText
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAlertText_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetAlertText
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.GetAlertText
+  nameWithType: SeleniumDriver.GetAlertText
+- uid: TestingDriver.SeleniumDriver.GetAllLinksURL
+  name: GetAllLinksURL()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAllLinksURL
+  commentId: M:TestingDriver.SeleniumDriver.GetAllLinksURL
+  fullName: TestingDriver.SeleniumDriver.GetAllLinksURL()
+  nameWithType: SeleniumDriver.GetAllLinksURL()
+- uid: TestingDriver.SeleniumDriver.GetAllLinksURL*
+  name: GetAllLinksURL
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAllLinksURL_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetAllLinksURL
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.GetAllLinksURL
+  nameWithType: SeleniumDriver.GetAllLinksURL
 - uid: TestingDriver.SeleniumDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LoadingSpinner
@@ -622,6 +706,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.Maximize
   nameWithType: SeleniumDriver.Maximize
+- uid: TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)
+  name: MouseOver(IWebElement)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_MouseOver_OpenQA_Selenium_IWebElement_
+  commentId: M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)
+  fullName: TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)
+  nameWithType: SeleniumDriver.MouseOver(IWebElement)
+- uid: TestingDriver.SeleniumDriver.MouseOver*
+  name: MouseOver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_MouseOver_
+  commentId: Overload:TestingDriver.SeleniumDriver.MouseOver
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.MouseOver
+  nameWithType: SeleniumDriver.MouseOver
 - uid: TestingDriver.SeleniumDriver.Name
   name: Name
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Name
@@ -713,6 +810,32 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.SelectValueInElement
   nameWithType: SeleniumDriver.SelectValueInElement
+- uid: TestingDriver.SeleniumDriver.SendKeys(System.String)
+  name: SendKeys(String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SendKeys_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.SendKeys(System.String)
+  fullName: TestingDriver.SeleniumDriver.SendKeys(System.String)
+  nameWithType: SeleniumDriver.SendKeys(String)
+- uid: TestingDriver.SeleniumDriver.SendKeys*
+  name: SendKeys
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SendKeys_
+  commentId: Overload:TestingDriver.SeleniumDriver.SendKeys
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.SendKeys
+  nameWithType: SeleniumDriver.SendKeys
+- uid: TestingDriver.SeleniumDriver.SetTimeOutThreshold(System.String)
+  name: SetTimeOutThreshold(String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SetTimeOutThreshold_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.SetTimeOutThreshold(System.String)
+  fullName: TestingDriver.SeleniumDriver.SetTimeOutThreshold(System.String)
+  nameWithType: SeleniumDriver.SetTimeOutThreshold(String)
+- uid: TestingDriver.SeleniumDriver.SetTimeOutThreshold*
+  name: SetTimeOutThreshold
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SetTimeOutThreshold_
+  commentId: Overload:TestingDriver.SeleniumDriver.SetTimeOutThreshold
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.SetTimeOutThreshold
+  nameWithType: SeleniumDriver.SetTimeOutThreshold
 - uid: TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)
   name: SwitchToIFrame(String)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_
@@ -752,6 +875,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.TakeScreenShot
   nameWithType: SeleniumDriver.TakeScreenShot
+- uid: TestingDriver.SeleniumDriver.Wait(System.Int32)
+  name: Wait(Int32)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Wait_System_Int32_
+  commentId: M:TestingDriver.SeleniumDriver.Wait(System.Int32)
+  fullName: TestingDriver.SeleniumDriver.Wait(System.Int32)
+  nameWithType: SeleniumDriver.Wait(Int32)
+- uid: TestingDriver.SeleniumDriver.Wait*
+  name: Wait
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Wait_
+  commentId: Overload:TestingDriver.SeleniumDriver.Wait
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.Wait
+  nameWithType: SeleniumDriver.Wait
 - uid: TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
   name: WaitForElementState(String, ITestingDriver.ElementState)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_

@@ -199,8 +199,8 @@
         </member>
         <member name="T:TestingDriver.Logger">
             <summary>
-            Logger class to be used. \n
-            Reference 1: https://stackify.com/log4net-guide-dotnet-logging/ \n
+            Logger class to be used.
+            Reference 1: https://stackify.com/log4net-guide-dotnet-logging/
             Reference 2: https://www.dotnetdepth.in/2018/06/how-to-use-log4net-in-net-core-20.html.
             </summary>
         </member>
@@ -334,6 +334,35 @@
             Closes the current window. It will quit the browser if it is the last window opened.
             </summary>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
+            <summary>
+            Accepts the alert provided that there is an alert.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.DismissAlert">
+            <summary>
+            Dismisses the alert provided taht there is an alert.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetAlertText">
+            <summary>
+            Gets the text inside the alert.
+            </summary>
+            <returns>Alert Text.</returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Executes JS command on this element.
+            </summary>
+            <param name="jsCommand">command.</param>
+            <param name="webElement">Elemnt to interact with.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)">
+            <summary>
+            Executes JS command on this element.
+            </summary>
+            <param name="jsCommand">command.</param>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.Quit">
             <summary>
             Quits the webdriver. Call this when you want the driver to be closed.
@@ -344,11 +373,28 @@
             Maximizes the browser.
             </summary>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.ForceKillWebDriver">
+            <summary>
+            Force kill web driver.
+            </summary>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.GenerateAODAResults(System.String)">
             <summary>
             Generates the AODA results.
             </summary>
             <param name="folderLocation"> The folder to generate AODA results in. </param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetAllLinksURL">
+            <summary>
+            The GetAllLinksURL.
+            </summary>
+            <returns>The <see cref="T:List{string}"/>.</returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Moves the mouse to the given element.
+            </summary>
+            <param name="element">Web element to mouse over.</param>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.NavigateToURL(System.String,System.Boolean)">
             <summary>
@@ -376,12 +422,24 @@
             </summary>
             <param name="providedPageTitle"> Title of the web page the user provides. </param>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.SendKeys(System.String)">
+            <summary>
+            The SendKeys.
+            </summary>
+            <param name="keystroke">The keystroke<see cref="T:System.String"/>.</param>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)">
             <summary>
             Performs the action of selecting a value in an element.
             </summary>
             <param name="xPath"> The xpath to use to identify the element. </param>
             <param name="value"> The value to select in the element.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.SetTimeOutThreshold(System.String)">
+            <summary>
+            Sets the global timeout in seconds.
+            </summary>
+            <param name="seconds">maximum duration of timeout.</param>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)">
             <summary>
@@ -412,6 +470,12 @@
             Waits until the loading spinner disappears.
             </summary>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.Wait(System.Int32)">
+            <summary>
+            Sets implicit wait timeout in seconds.
+            </summary>
+            <param name="seconds">Maximum timeout duration in seconds.</param>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.CheckErrorContainer">
             <summary>
             Checks if there are any errors in the error container.
@@ -431,6 +495,14 @@
             <param name="xPath">The xpath to find the web element.</param>
             <param name="tries"> The amount in seconds to wait for.</param>
             <returns> The first IWebElement whose xpath matches. </returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
+            <summary>
+            The FindElementByJs.
+            </summary>
+            <param name="jsCommand">The jsCommand<see cref="T:System.String"/>.</param>
+            <param name="webElements">The webElements<see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <returns>The <see cref="T:OpenQA.Selenium.IWebElement"/>.</returns>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SetActiveTab">
             <summary>
