@@ -327,6 +327,36 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// The GetAllLinksURL.
+        /// </summary>
+        /// <returns>The <see cref="T:List{string}"/>.</returns>
+        public List<string> GetAllLinksURL()
+        {
+            this.WaitForLoadingSpinner();
+            var allElements = this.webDriver.FindElements(By.TagName("a"));
+            List<string> result = new List<string>();
+            foreach (IWebElement link in allElements)
+            {
+                string url = link.GetAttribute("href");
+                if (!url.Contains("javascript"))
+                {
+                    result.Add(url);
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Moves the mouse to the given element.
+        /// </summary>
+        /// <param name="element">Web element to mouse over.</param>
+        public void MouseOver(IWebElement element)
+        {
+            this.Action.MoveToElement(element).Build().Perform();
+        }
+
+        /// <summary>
         /// Tells the browser to navigate to the provided url.
         /// </summary>
         /// <param name="url">URL for the browser to navigate to.</param>
