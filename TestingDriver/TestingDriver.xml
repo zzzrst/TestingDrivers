@@ -114,6 +114,35 @@
             Closes the current window. It will quit the browser if it is the last window opened.
             </summary>
         </member>
+        <member name="M:TestingDriver.ITestingDriver.AcceptAlert">
+            <summary>
+            Accepts the alert provided that there is an alert.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.DismissAlert">
+            <summary>
+            Dismisses the alert provided taht there is an alert.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GetAlertText">
+            <summary>
+            Gets the text inside the alert.
+            </summary>
+            <returns>Alert Text.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Executes JS command on this element.
+            </summary>
+            <param name="jsCommand">command.</param>
+            <param name="webElement">Elemnt to interact with.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.ExecuteJS(System.String)">
+            <summary>
+            Executes JS command on this element.
+            </summary>
+            <param name="jsCommand">command.</param>
+        </member>
         <member name="M:TestingDriver.ITestingDriver.Quit">
             <summary>
             Quits the webdriver. Call this when you want the driver to be closed.
@@ -124,11 +153,28 @@
             Maximizes the browser.
             </summary>
         </member>
+        <member name="M:TestingDriver.ITestingDriver.ForceKillWebDriver">
+            <summary>
+            Force kill web driver.
+            </summary>
+        </member>
         <member name="M:TestingDriver.ITestingDriver.GenerateAODAResults(System.String)">
             <summary>
             Generates the AODA results.
             </summary>
             <param name="folderLocation"> The folder to generate AODA results in. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GetAllLinksURL">
+            <summary>
+            The GetAllLinksURL.
+            </summary>
+            <returns>The <see cref="T:List{string}"/>.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.MouseOver(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Moves the mouse to the given element.
+            </summary>
+            <param name="element">Web element to mouse over.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.NavigateToURL(System.String,System.Boolean)">
             <summary>
@@ -156,12 +202,24 @@
             </summary>
             <param name="providedPageTitle"> Title of the web page the user provides. </param>
         </member>
+        <member name="M:TestingDriver.ITestingDriver.SendKeys(System.String)">
+            <summary>
+            The SendKeys.
+            </summary>
+            <param name="keystroke">The keystroke<see cref="T:System.String"/>.</param>
+        </member>
         <member name="M:TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String)">
             <summary>
             Performs the action of selecting a value in an element.
             </summary>
             <param name="xPath"> The xpath to use to identify the element. </param>
             <param name="value"> The value to select in the element.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.SetTimeOutThreshold(System.String)">
+            <summary>
+            Sets the global timeout in seconds.
+            </summary>
+            <param name="seconds">maximum duration of timeout.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.SwitchToIFrame(System.String)">
             <summary>
@@ -186,6 +244,12 @@
             </summary>
             <param name="xPath"> The xpath to find the web element. </param>
             <param name="state"> The state of the web element to wait for. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.Wait(System.Int32)">
+            <summary>
+            Sets implicit wait timeout in seconds.
+            </summary>
+            <param name="seconds">Maximum timeout duration in seconds.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.WaitForLoadingSpinner">
             <summary>
@@ -315,171 +379,88 @@
             </summary>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
-            <summary>
-            Checks for an element state.
-            </summary>
-            <param name="xPath"> The xpath to find the web element. </param>
-            <param name="state"> The state of the web element to wait for. </param>
-            <returns> If the element state is as wanted.</returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)">
-            <summary>
-            Performs the actions of clicking the specified element. Uses Selenium binding by default.
-            </summary>
-            <param name="xPath">The xpath to find the specified element.</param>
-            <param name="byJS"> Whether to use JS to perform the click / not. </param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.CloseBrowser">
-            <summary>
-            Closes the current window. It will quit the browser if it is the last window opened.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
-            <summary>
-            Accepts the alert provided that there is an alert.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.DismissAlert">
-            <summary>
-            Dismisses the alert provided taht there is an alert.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetAlertText">
-            <summary>
-            Gets the text inside the alert.
-            </summary>
-            <returns>Alert Text.</returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)">
-            <summary>
-            Executes JS command on this element.
-            </summary>
-            <param name="jsCommand">command.</param>
-            <param name="webElement">Elemnt to interact with.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)">
-            <summary>
-            Executes JS command on this element.
-            </summary>
-            <param name="jsCommand">command.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.Quit">
-            <summary>
-            Quits the webdriver. Call this when you want the driver to be closed.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.Maximize">
-            <summary>
-            Maximizes the browser.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.ForceKillWebDriver">
-            <summary>
-            Force kill web driver.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GenerateAODAResults(System.String)">
-            <summary>
-            Generates the AODA results.
-            </summary>
-            <param name="folderLocation"> The folder to generate AODA results in. </param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetAllLinksURL">
-            <summary>
-            The GetAllLinksURL.
-            </summary>
-            <returns>The <see cref="T:List{string}"/>.</returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Moves the mouse to the given element.
-            </summary>
-            <param name="element">Web element to mouse over.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.NavigateToURL(System.String,System.Boolean)">
-            <summary>
-            Tells the browser to navigate to the provided url.
-            </summary>
-            <param name="url">URL for the browser to navigate to.</param>
-            <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
-            <returns> <code>true</code> if the navigation was successful. </returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String)">
-            <summary>
-            Performs the action of populating a value.
-            </summary>
-            <param name="xPath"> The xpath to use to identify the element. </param>
-            <param name="value"> The value to populate.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.RefreshWebPage">
-            <summary>
-            Refreshes the webpage.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.RunAODA(System.String)">
-            <summary>
-            Method to run aoda on the current web page.
-            </summary>
-            <param name="providedPageTitle"> Title of the web page the user provides. </param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SendKeys(System.String)">
-            <summary>
-            The SendKeys.
-            </summary>
-            <param name="keystroke">The keystroke<see cref="T:System.String"/>.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)">
-            <summary>
-            Performs the action of selecting a value in an element.
-            </summary>
-            <param name="xPath"> The xpath to use to identify the element. </param>
-            <param name="value"> The value to select in the element.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SetTimeOutThreshold(System.String)">
-            <summary>
-            Sets the global timeout in seconds.
-            </summary>
-            <param name="seconds">maximum duration of timeout.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)">
-            <summary>
-            Switches to appropriate IFrame.
-            </summary>
-            <param name="xPath"> xPath to find the iFrame.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SwitchToTab(System.Int32)">
-            <summary>
-            The SwitchToTab.
-            </summary>
-            <param name="tab">The tab<see cref="T:System.Int32"/>.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.TakeScreenShot">
-            <summary>
-            Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
-            <summary>
-            Waits for an element state.
-            </summary>
-            <param name="xPath"> The xpath to find the web element. </param>
-            <param name="state"> The state of the web element to wait for. </param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.WaitForLoadingSpinner">
-            <summary>
-            Waits until the loading spinner disappears.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.Wait(System.Int32)">
-            <summary>
-            Sets implicit wait timeout in seconds.
-            </summary>
-            <param name="seconds">Maximum timeout duration in seconds.</param>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.CheckErrorContainer">
-            <summary>
-            Checks if there are any errors in the error container.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)">
             <summary>

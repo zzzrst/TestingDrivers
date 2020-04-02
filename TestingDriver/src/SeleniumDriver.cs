@@ -106,12 +106,7 @@ namespace TestingDriver
 
         private int CurrentWindow { get; set; } = -1;
 
-        /// <summary>
-        /// Checks for an element state.
-        /// </summary>
-        /// <param name="xPath"> The xpath to find the web element. </param>
-        /// <param name="state"> The state of the web element to wait for. </param>
-        /// <returns> If the element state is as wanted.</returns>
+        /// <inheritdoc/>
         public bool CheckForElementState(string xPath, ElementState state)
         {
             IWebElement element = null;
@@ -149,11 +144,7 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Performs the actions of clicking the specified element. Uses Selenium binding by default.
-        /// </summary>
-        /// <param name="xPath">The xpath to find the specified element.</param>
-        /// <param name="byJS"> Whether to use JS to perform the click / not. </param>
+        /// <inheritdoc/>
         public void ClickElement(string xPath, bool byJS = false)
         {
             IWebElement element = this.GetElementByXPath(xPath);
@@ -169,63 +160,45 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Closes the current window. It will quit the browser if it is the last window opened.
-        /// </summary>
+        /// <inheritdoc/>
         public void CloseBrowser()
         {
             this.webDriver.Close();
         }
 
-        /// <summary>
-        /// Accepts the alert provided that there is an alert.
-        /// </summary>
+        /// <inheritdoc/>
         public void AcceptAlert()
         {
             this.webDriver.SwitchTo().Alert().Accept();
             this.SetActiveTab();
         }
 
-        /// <summary>
-        /// Dismisses the alert provided taht there is an alert.
-        /// </summary>
+        /// <inheritdoc/>
         public void DismissAlert()
         {
             this.webDriver.SwitchTo().Alert().Dismiss();
             this.SetActiveTab();
         }
 
-        /// <summary>
-        /// Gets the text inside the alert.
-        /// </summary>
-        /// <returns>Alert Text.</returns>
+        /// <inheritdoc/>
         public string GetAlertText()
         {
             return this.webDriver.SwitchTo().Alert().Text;
         }
 
-        /// <summary>
-        /// Executes JS command on this element.
-        /// </summary>
-        /// <param name="jsCommand">command.</param>
-        /// <param name="webElement">Elemnt to interact with.</param>
+        /// <inheritdoc/>
         public void ExecuteJS(string jsCommand, IWebElement webElement)
         {
             ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElement);
         }
 
-        /// <summary>
-        /// Executes JS command on this element.
-        /// </summary>
-        /// <param name="jsCommand">command.</param>
+        /// <inheritdoc/>
         public void ExecuteJS(string jsCommand)
         {
             ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand);
         }
 
-        /// <summary>
-        /// Quits the webdriver. Call this when you want the driver to be closed.
-        /// </summary>
+        /// <inheritdoc/>
         public void Quit()
         {
             try
@@ -242,17 +215,13 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Maximizes the browser.
-        /// </summary>
+        /// <inheritdoc/>
         public void Maximize()
         {
             this.webDriver.Manage().Window.Maximize();
         }
 
-        /// <summary>
-        /// Force kill web driver.
-        /// </summary>
+        /// <inheritdoc/>
         public void ForceKillWebDriver()
         {
             try
@@ -287,19 +256,13 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Generates the AODA results.
-        /// </summary>
-        /// <param name="folderLocation"> The folder to generate AODA results in. </param>
+        /// <inheritdoc/>
         public void GenerateAODAResults(string folderLocation)
         {
             this.axeDriver.LogResults(folderLocation);
         }
 
-        /// <summary>
-        /// The GetAllLinksURL.
-        /// </summary>
-        /// <returns>The <see cref="T:List{string}"/>.</returns>
+        /// <inheritdoc/>
         public List<string> GetAllLinksURL()
         {
             this.WaitForLoadingSpinner();
@@ -317,51 +280,13 @@ namespace TestingDriver
             return result;
         }
 
-        /// <summary>
-        /// Moves the mouse to the given element.
-        /// </summary>
-        /// <param name="element">Web element to mouse over.</param>
+        /// <inheritdoc/>
         public void MouseOver(IWebElement element)
         {
             this.Action.MoveToElement(element).Build().Perform();
         }
 
-        /// <summary>
-        /// The GetAllLinksURL.
-        /// </summary>
-        /// <returns>The <see cref="T:List{string}"/>.</returns>
-        public List<string> GetAllLinksURL()
-        {
-            this.WaitForLoadingSpinner();
-            var allElements = this.webDriver.FindElements(By.TagName("a"));
-            List<string> result = new List<string>();
-            foreach (IWebElement link in allElements)
-            {
-                string url = link.GetAttribute("href");
-                if (!url.Contains("javascript"))
-                {
-                    result.Add(url);
-                }
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Moves the mouse to the given element.
-        /// </summary>
-        /// <param name="element">Web element to mouse over.</param>
-        public void MouseOver(IWebElement element)
-        {
-            this.Action.MoveToElement(element).Build().Perform();
-        }
-
-        /// <summary>
-        /// Tells the browser to navigate to the provided url.
-        /// </summary>
-        /// <param name="url">URL for the browser to navigate to.</param>
-        /// <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
-        /// <returns> <code>true</code> if the navigation was successful. </returns>
+        /// <inheritdoc/>
         public bool NavigateToURL(string url = "", bool instantiateNewDriver = true)
         {
             try
@@ -386,11 +311,7 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Performs the action of populating a value.
-        /// </summary>
-        /// <param name="xPath"> The xpath to use to identify the element. </param>
-        /// <param name="value"> The value to populate.</param>
+        /// <inheritdoc/>
         public void PopulateElement(string xPath, string value)
         {
             IWebElement element = this.GetElementByXPath(xPath);
@@ -400,18 +321,13 @@ namespace TestingDriver
             element.SendKeys(value);
         }
 
-        /// <summary>
-        /// Refreshes the webpage.
-        /// </summary>
+        /// <inheritdoc/>
         public void RefreshWebPage()
         {
             this.webDriver.Navigate().Refresh();
         }
 
-        /// <summary>
-        /// Method to run aoda on the current web page.
-        /// </summary>
-        /// <param name="providedPageTitle"> Title of the web page the user provides. </param>
+        /// <inheritdoc/>
         public void RunAODA(string providedPageTitle)
         {
             try
@@ -424,10 +340,7 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// The SendKeys.
-        /// </summary>
-        /// <param name="keystroke">The keystroke<see cref="string"/>.</param>
+        /// <inheritdoc/>
         public void SendKeys(string keystroke)
         {
             Actions action = new Actions(this.webDriver);
@@ -445,11 +358,7 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Performs the action of selecting a value in an element.
-        /// </summary>
-        /// <param name="xPath"> The xpath to use to identify the element. </param>
-        /// <param name="value"> The value to select in the element.</param>
+        /// <inheritdoc/>
         public void SelectValueInElement(string xPath, string value)
         {
             IWebElement ddlElement = this.GetElementByXPath(xPath);
@@ -458,19 +367,13 @@ namespace TestingDriver
             ddl.SelectByText(value);
         }
 
-        /// <summary>
-        /// Sets the global timeout in seconds.
-        /// </summary>
-        /// <param name="seconds">maximum duration of timeout.</param>
+        /// <inheritdoc/>
         public void SetTimeOutThreshold(string seconds)
         {
             this.wdWait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(Convert.ToDouble(seconds)));
         }
 
-        /// <summary>
-        /// Switches to appropriate IFrame.
-        /// </summary>
-        /// <param name="xPath"> xPath to find the iFrame.</param>
+        /// <inheritdoc/>
         public void SwitchToIFrame(string xPath)
         {
             this.SetActiveTab();
@@ -488,19 +391,14 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// The SwitchToTab.
-        /// </summary>
-        /// <param name="tab">The tab<see cref="int"/>.</param>
+        /// <inheritdoc/>
         public void SwitchToTab(int tab)
         {
             var tabs = this.webDriver.WindowHandles;
             this.webDriver.SwitchTo().Window(tabs[tab]);
         }
 
-        /// <summary>
-        /// Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
-        /// </summary>
+        /// <inheritdoc/>
         public void TakeScreenShot()
         {
             try
@@ -513,11 +411,7 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Waits for an element state.
-        /// </summary>
-        /// <param name="xPath"> The xpath to find the web element. </param>
-        /// <param name="state"> The state of the web element to wait for. </param>
+        /// <inheritdoc/>
         public void WaitForElementState(string xPath, ElementState state)
         {
             switch (state)
@@ -537,9 +431,7 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Waits until the loading spinner disappears.
-        /// </summary>
+        /// <inheritdoc/>
         public void WaitForLoadingSpinner()
         {
             try
@@ -559,18 +451,13 @@ namespace TestingDriver
             }
         }
 
-        /// <summary>
-        /// Sets implicit wait timeout in seconds.
-        /// </summary>
-        /// <param name="seconds">Maximum timeout duration in seconds.</param>
+        /// <inheritdoc/>
         public void Wait(int seconds)
         {
             this.webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
         }
 
-        /// <summary>
-        /// Checks if there are any errors in the error container.
-        /// </summary>
+        /// <inheritdoc/>
         public void CheckErrorContainer()
         {
             if (this.ErrorContainer != string.Empty)

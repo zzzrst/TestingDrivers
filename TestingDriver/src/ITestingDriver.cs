@@ -4,10 +4,10 @@
 
 namespace TestingDriver
 {
-    using OpenQA.Selenium;
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using OpenQA.Selenium;
 
     /// <summary>
     /// The Interface for the Testing Driver software.
@@ -252,6 +252,12 @@ namespace TestingDriver
         /// <param name="xPath"> The xpath to find the web element. </param>
         /// <param name="state"> The state of the web element to wait for. </param>
         public void WaitForElementState(string xPath, ElementState state);
+
+        /// <summary>
+        /// Sets implicit wait timeout in seconds.
+        /// </summary>
+        /// <param name="seconds">Maximum timeout duration in seconds.</param>
+        public void Wait(int seconds);
 
         /// <summary>
         /// Waits until the loading spinner disappears.
