@@ -17,6 +17,7 @@ namespace TestingDriver
     using OpenQA.Selenium.Edge;
     using OpenQA.Selenium.Firefox;
     using OpenQA.Selenium.IE;
+    using OpenQA.Selenium.Interactions;
     using OpenQA.Selenium.Remote;
     using OpenQA.Selenium.Support.Extensions;
     using OpenQA.Selenium.Support.UI;
@@ -35,7 +36,9 @@ namespace TestingDriver
         private IAccessibilityChecker axeDriver = null;
         private IWebDriver webDriver;
         private WebDriverWait wdWait;
-        private int driverServicePID = -1;
+        private Actions Action;
+
+        private int PID = -1;
 
         private string environment;
         private string url;
@@ -175,6 +178,52 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// Accepts the alert provided that there is an alert.
+        /// </summary>
+        public void AcceptAlert()
+        {
+            this.webDriver.SwitchTo().Alert().Accept();
+            this.SetActiveTab();
+        }
+
+        /// <summary>
+        /// Dismisses the alert provided taht there is an alert.
+        /// </summary>
+        public void DismissAlert()
+        {
+            this.webDriver.SwitchTo().Alert().Dismiss();
+            this.SetActiveTab();
+        }
+
+        /// <summary>
+        /// Gets the text inside the alert.
+        /// </summary>
+        /// <returns>Alert Text.</returns>
+        public string GetAlertText()
+        {
+            return this.webDriver.SwitchTo().Alert().Text;
+        }
+
+        /// <summary>
+        /// Executes JS command on this element.
+        /// </summary>
+        /// <param name="jsCommand">command.</param>
+        /// <param name="webElement">Elemnt to interact with.</param>
+        public void ExecuteJS(string jsCommand, IWebElement webElement)
+        {
+            ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElement);
+        }
+
+        /// <summary>
+        /// Executes JS command on this element.
+        /// </summary>
+        /// <param name="jsCommand">command.</param>
+        public void ExecuteJS(string jsCommand)
+        {
+            ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand);
+        }
+
+        /// <summary>
         /// Quits the webdriver. Call this when you want the driver to be closed.
         /// </summary>
         public void Quit()
@@ -189,32 +238,7 @@ namespace TestingDriver
             }
             finally
             {
-                try
-                {
-                    if (this.driverServicePID != -1)
-                    {
-                        var driverProcessIds = new List<int> { this.driverServicePID };
-
-                        var mos = new ManagementObjectSearcher($"Select * From Win32_Process Where ParentProcessID={this.driverServicePID}");
-                        foreach (var mo in mos.Get())
-                        {
-                            var pid = Convert.ToInt32(mo["ProcessID"]);
-                            driverProcessIds.Add(pid);
-                        }
-
-                        // Kill all
-                        foreach (var id in driverProcessIds)
-                        {
-                            Process.GetProcessById(id).Kill();
-                            Logger.Info($"We just tried killing process {id}");
-                        }
-
-                        this.driverServicePID = -1;
-                    }
-                }
-                catch
-                {
-                }
+                this.ForceKillWebDriver();
             }
         }
 
@@ -227,12 +251,79 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// Force kill web driver.
+        /// </summary>
+        public void ForceKillWebDriver()
+        {
+            try
+            {
+                if (this.PID != -1)
+                {
+                    var driverProcessIds = new List<int> { this.PID };
+
+                    var mos = new ManagementObjectSearcher($"Select * From Win32_Process Where ParentProcessID={this.PID}");
+                    foreach (var mo in mos.Get())
+                    {
+                        var pid = Convert.ToInt32(mo["ProcessID"]);
+                        driverProcessIds.Add(pid);
+                    }
+
+                    // Kill all
+                    foreach (var id in driverProcessIds)
+                    {
+                        Process.GetProcessById(id).Kill();
+                        Console.WriteLine($"We just tried killing process {id}");
+                    }
+
+                    this.PID = -1;
+                }
+            }
+            catch
+            {
+            }
+            finally
+            {
+                this.PID = -1;
+            }
+        }
+
+        /// <summary>
         /// Generates the AODA results.
         /// </summary>
         /// <param name="folderLocation"> The folder to generate AODA results in. </param>
         public void GenerateAODAResults(string folderLocation)
         {
             this.axeDriver.LogResults(folderLocation);
+        }
+
+        /// <summary>
+        /// The GetAllLinksURL.
+        /// </summary>
+        /// <returns>The <see cref="T:List{string}"/>.</returns>
+        public List<string> GetAllLinksURL()
+        {
+            this.WaitForLoadingSpinner();
+            var allElements = this.webDriver.FindElements(By.TagName("a"));
+            List<string> result = new List<string>();
+            foreach (IWebElement link in allElements)
+            {
+                string url = link.GetAttribute("href");
+                if (!url.Contains("javascript"))
+                {
+                    result.Add(url);
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Moves the mouse to the given element.
+        /// </summary>
+        /// <param name="element">Web element to mouse over.</param>
+        public void MouseOver(IWebElement element)
+        {
+            this.Action.MoveToElement(element).Build().Perform();
         }
 
         /// <summary>
@@ -304,6 +395,27 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// The SendKeys.
+        /// </summary>
+        /// <param name="keystroke">The keystroke<see cref="string"/>.</param>
+        public void SendKeys(string keystroke)
+        {
+            Actions action = new Actions(this.webDriver);
+            if (keystroke == "{ENTER}")
+            {
+                action.SendKeys(Keys.Enter);
+            }
+            else if (keystroke == "{TAB}")
+            {
+                action.SendKeys(Keys.Tab);
+            }
+            else
+            {
+                action.SendKeys(keystroke);
+            }
+        }
+
+        /// <summary>
         /// Performs the action of selecting a value in an element.
         /// </summary>
         /// <param name="xPath"> The xpath to use to identify the element. </param>
@@ -314,6 +426,15 @@ namespace TestingDriver
             SelectElement ddl = new SelectElement(ddlElement);
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(ddlElement));
             ddl.SelectByText(value);
+        }
+
+        /// <summary>
+        /// Sets the global timeout in seconds.
+        /// </summary>
+        /// <param name="seconds">maximum duration of timeout.</param>
+        public void SetTimeOutThreshold(string seconds)
+        {
+            this.wdWait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(Convert.ToDouble(seconds)));
         }
 
         /// <summary>
@@ -409,6 +530,15 @@ namespace TestingDriver
         }
 
         /// <summary>
+        /// Sets implicit wait timeout in seconds.
+        /// </summary>
+        /// <param name="seconds">Maximum timeout duration in seconds.</param>
+        public void Wait(int seconds)
+        {
+            this.webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
+        }
+
+        /// <summary>
         /// Checks if there are any errors in the error container.
         /// </summary>
         public void CheckErrorContainer()
@@ -498,6 +628,19 @@ namespace TestingDriver
             return element;
         }
 
+        /// <summary>
+        /// The FindElementByJs.
+        /// </summary>
+        /// <param name="jsCommand">The jsCommand<see cref="string"/>.</param>
+        /// <param name="webElements">The webElements<see cref="List{IWebElement}"/>.</param>
+        /// <returns>The <see cref="IWebElement"/>.</returns>
+        private IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements)
+        {
+            this.SetActiveTab();
+            var element = ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElements);
+            return (IWebElement)element;
+        }
+
         private void InstantiateSeleniumDriver()
         {
             try
@@ -527,6 +670,8 @@ namespace TestingDriver
                         break;
                     case Browser.Chrome:
 
+                        string chromiumFolderLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium";
+
                         chromeOptions = new ChromeOptions
                         {
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
@@ -535,28 +680,95 @@ namespace TestingDriver
                         chromeOptions.AddArgument("no-sandbox");
                         chromeOptions.AddArgument("--log-level=3");
                         chromeOptions.AddArgument("--silent");
-                        chromeOptions.BinaryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\chromium\\chrome.exe";
+                        chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
+                        chromeOptions.AddUserProfilePreference("download.default_directory", @"C:\Temp");
+                        chromeOptions.AddUserProfilePreference("disable-popup-blocking", true);
+                        chromeOptions.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
+                        chromeOptions.BinaryLocation = $"{chromiumFolderLocation}\\chrome.exe";
+
+                        // we want to find all the files under the location of chromium\Extensions and add them in.
+                        if (Directory.Exists(chromiumFolderLocation + "\\Extensions"))
+                        {
+                            foreach (string extension in Directory.GetFiles(chromiumFolderLocation + "\\Extensions"))
+                            {
+                                chromeOptions.AddExtension(extension);
+                            }
+                        }
 
                         service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         service.SuppressInitialDiagnosticInformation = true;
 
                         this.webDriver = new ChromeDriver(this.seleniumDriverLocation, chromeOptions, this.actualTimeOut);
-                        this.driverServicePID = service.ProcessId;
-                        Logger.Info($"Chrome Driver service PID is: {this.driverServicePID}");
+                        this.PID = service.ProcessId;
+                        Logger.Info($"Chrome Driver service PID is: {this.PID}");
 
                         break;
                     case Browser.Edge:
 
-                        this.webDriver = new EdgeDriver(this.seleniumDriverLocation, null, this.actualTimeOut);
+                        // this.webDriver = new EdgeDriver(this.seleniumDriverLocation, null, this.actualTimeOut);
+                        // This is to test Micrsoft Edge (Chromium Based)
+                        ChromeOptions options = new ChromeOptions
+                        {
+                            UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
+                        };
+                        options.AddArgument("no-sandbox");
+                        options.AddArgument("--log-level=3");
+                        options.AddArgument("--silent");
+                        options.AddUserProfilePreference("download.prompt_for_download", false);
+                        options.AddUserProfilePreference("download.default_directory", @"C:\Temp");
+                        options.AddUserProfilePreference("disable-popup-blocking", true);
+                        options.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
+                        string edgeFolderLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\edge";
+                        options.BinaryLocation = edgeFolderLocation + "\\msedge.exe";
+
+                        // we want to find all the files under the location of edge\Extensions and add them in.
+                        if (Directory.Exists(edgeFolderLocation + "\\Extensions"))
+                        {
+                            foreach (string extension in Directory.GetFiles(edgeFolderLocation + "\\Extensions"))
+                            {
+                                options.AddExtension(extension);
+                            }
+                        }
+
+                        ChromeDriverService edgeService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "msedgedriver.exe");
+
+                        edgeService.SuppressInitialDiagnosticInformation = true;
+                        this.webDriver = new ChromeDriver(edgeService, options, this.actualTimeOut);
+                        this.PID = edgeService.ProcessId;
 
                         break;
                     case Browser.Firefox:
 
-                        this.webDriver = new FirefoxDriver(this.seleniumDriverLocation, null, this.actualTimeOut);
+                        FirefoxOptions fireFoxOptions = new FirefoxOptions();
+                        fireFoxOptions.SetPreference("browser.download.folderList", 2);
+                        fireFoxOptions.SetPreference("browser.download.dir", @"C:\Temp");
+                        fireFoxOptions.SetPreference("browser.download.manager.alertOnEXEOpen", false);
+                        fireFoxOptions.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/csv, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
+                        fireFoxOptions.SetPreference("browser.download.manager.showWhenStarting", false);
+                        fireFoxOptions.SetPreference("browser.download.manager.focusWhenStarting", false);
+                        fireFoxOptions.SetPreference("browser.download.useDownloadDir", true);
+                        fireFoxOptions.SetPreference("browser.helperApps.alwaysAsk.force", false);
+                        fireFoxOptions.SetPreference("browser.download.manager.alertOnEXEOpen", false);
+                        fireFoxOptions.SetPreference("browser.download.manager.closeWhenDone", true);
+                        fireFoxOptions.SetPreference("browser.download.manager.showAlertOnComplete", false);
+                        fireFoxOptions.SetPreference("browser.download.manager.useWindow", false);
+                        fireFoxOptions.SetPreference("services.sync.prefs.sync.browser.download.manager.showWhenStarting", false);
+                        fireFoxOptions.SetPreference("pdfjs.disabled", true);
 
+                        string firefoxFolderLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\firefox";
+                        fireFoxOptions.BrowserExecutableLocation = firefoxFolderLocation + "\\firefox_.exe";
+
+                        FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(this.seleniumDriverLocation);
+                        fireFoxService.SuppressInitialDiagnosticInformation = true;
+
+                        this.webDriver = new FirefoxDriver(fireFoxService, fireFoxOptions, this.actualTimeOut);
+                        this.PID = fireFoxService.ProcessId;
                         break;
                     case Browser.IE:
 
+                        // clean session => clear cache and cookies
+                        // native events set to true => allow clicking buttons and links when JS is disabled.
+                        // Ignore zoom level to be true since having it as the default per resolution has a better result. (ALM #24960)
                         InternetExplorerOptions ieOptions = new InternetExplorerOptions
                         {
                             IntroduceInstabilityByIgnoringProtectedModeSettings = true,
@@ -565,14 +777,29 @@ namespace TestingDriver
                             EnableNativeEvents = bool.Parse(ConfigurationManager.AppSettings["IEEnableNativeEvents"].ToString()),
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                             RequireWindowFocus = true,
+
+                            // for the old framwork.
+                            EnablePersistentHover = true,
+                            PageLoadStrategy = PageLoadStrategy.Normal,
                         };
                         InternetExplorerDriverService ieService = InternetExplorerDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         ieService.SuppressInitialDiagnosticInformation = true;
-                        this.webDriver = new InternetExplorerDriver(ieService, ieOptions, this.actualTimeOut);
 
-                        this.driverServicePID = ieService.ProcessId;
-                        Logger.Info($"Internet Driver service PID is: {this.driverServicePID}");
+                        try
+                        {
+                            this.webDriver = new InternetExplorerDriver(ieService, ieOptions, this.actualTimeOut);
+                            this.PID = ieService.ProcessId;
+                            Logger.Info($"Internet Driver service PID is: {this.PID}");
+                        }
+                        catch (InvalidOperationException ioe)
+                        {
+                            Logger.Error("Please ensure that protected mode is either all on / off on all zones inside internet options. Exception found was: ");
+                            Logger.Error($"{ioe.Message}");
+                        }
 
+                        // (ALM #24960) Shortkey to set zoom level to default in IE.
+                        IWebElement element = this.webDriver.FindElement(By.TagName("body"));
+                        element.SendKeys(Keys.Control + "0");
                         break;
                     case Browser.Safari:
 
@@ -582,6 +809,7 @@ namespace TestingDriver
                 }
 
                 this.wdWait = new WebDriverWait(this.webDriver, this.timeOutThreshold);
+                this.Action = new Actions(this.webDriver);
 
                 if (this.axeDriver == null)
                 {
