@@ -47,7 +47,7 @@ jobs:
         if: github.actor == 'dependabot-preview[bot]'
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "dependencies"
+          MERGE_LABELS: ""
  
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1.0.0
