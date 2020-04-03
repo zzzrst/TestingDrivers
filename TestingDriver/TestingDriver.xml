@@ -225,7 +225,7 @@
             <summary>
             Switches to appropriate IFrame.
             </summary>
-            <param name="xPath"> xPath to find the iFrame.</param>
+            <param name="xPath"> xPath to find the iFrame. use "root" to leave iframe.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.SwitchToTab(System.Int32)">
             <summary>
@@ -260,6 +260,29 @@
             <summary>
             Checks if there are any errors in the error container.
             </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GetElementByXPath(System.String)">
+            <summary>
+            Finds the first IWebElement By XPath.
+            </summary>
+            <param name="xPath">The xpath to find the web element.</param>
+            <returns> The first IWebElement whose xpath matches. </returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GetElementByXPath(System.String,System.Int32)">
+            <summary>
+            Finds the first IWebElement By XPath.
+            </summary>
+            <param name="xPath">The xpath to find the web element.</param>
+            <param name="tries"> The amount in seconds to wait for.</param>
+            <returns> The first IWebElement whose xpath matches. </returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
+            <summary>
+            The FindElementByJs.
+            </summary>
+            <param name="jsCommand">The jsCommand<see cref="T:System.String"/>.</param>
+            <param name="webElements">The webElements<see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <returns>The <see cref="T:OpenQA.Selenium.IWebElement"/>.</returns>
         </member>
         <member name="T:TestingDriver.Logger">
             <summary>
@@ -463,27 +486,13 @@
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)">
-            <summary>
-            Finds the first IWebElement By XPath.
-            </summary>
-            <param name="xPath">The xpath to find the web element.</param>
-            <returns> The first IWebElement whose xpath matches. </returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)">
-            <summary>
-            Finds the first IWebElement By XPath.
-            </summary>
-            <param name="xPath">The xpath to find the web element.</param>
-            <param name="tries"> The amount in seconds to wait for.</param>
-            <returns> The first IWebElement whose xpath matches. </returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
-            <summary>
-            The FindElementByJs.
-            </summary>
-            <param name="jsCommand">The jsCommand<see cref="T:System.String"/>.</param>
-            <param name="webElements">The webElements<see cref="T:System.Collections.Generic.List`1"/>.</param>
-            <returns>The <see cref="T:OpenQA.Selenium.IWebElement"/>.</returns>
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SetActiveTab">
             <summary>

@@ -202,6 +202,22 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.ExecuteJS
   nameWithType: ITestingDriver.ExecuteJS
+- uid: TestingDriver.ITestingDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
+  name: FindElementByJs(String, List<IWebElement>)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_FindElementByJs_System_String_System_Collections_Generic_List_OpenQA_Selenium_IWebElement__
+  commentId: M:TestingDriver.ITestingDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
+  name.vb: FindElementByJs(String, List(Of IWebElement))
+  fullName: TestingDriver.ITestingDriver.FindElementByJs(System.String, System.Collections.Generic.List<OpenQA.Selenium.IWebElement>)
+  fullName.vb: TestingDriver.ITestingDriver.FindElementByJs(System.String, System.Collections.Generic.List(Of OpenQA.Selenium.IWebElement))
+  nameWithType: ITestingDriver.FindElementByJs(String, List<IWebElement>)
+  nameWithType.vb: ITestingDriver.FindElementByJs(String, List(Of IWebElement))
+- uid: TestingDriver.ITestingDriver.FindElementByJs*
+  name: FindElementByJs
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_FindElementByJs_
+  commentId: Overload:TestingDriver.ITestingDriver.FindElementByJs
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.FindElementByJs
+  nameWithType: ITestingDriver.FindElementByJs
 - uid: TestingDriver.ITestingDriver.ForceKillWebDriver
   name: ForceKillWebDriver()
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ForceKillWebDriver
@@ -254,6 +270,25 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.GetAllLinksURL
   nameWithType: ITestingDriver.GetAllLinksURL
+- uid: TestingDriver.ITestingDriver.GetElementByXPath(System.String)
+  name: GetElementByXPath(String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementByXPath_System_String_
+  commentId: M:TestingDriver.ITestingDriver.GetElementByXPath(System.String)
+  fullName: TestingDriver.ITestingDriver.GetElementByXPath(System.String)
+  nameWithType: ITestingDriver.GetElementByXPath(String)
+- uid: TestingDriver.ITestingDriver.GetElementByXPath(System.String,System.Int32)
+  name: GetElementByXPath(String, Int32)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementByXPath_System_String_System_Int32_
+  commentId: M:TestingDriver.ITestingDriver.GetElementByXPath(System.String,System.Int32)
+  fullName: TestingDriver.ITestingDriver.GetElementByXPath(System.String, System.Int32)
+  nameWithType: ITestingDriver.GetElementByXPath(String, Int32)
+- uid: TestingDriver.ITestingDriver.GetElementByXPath*
+  name: GetElementByXPath
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementByXPath_
+  commentId: Overload:TestingDriver.ITestingDriver.GetElementByXPath
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.GetElementByXPath
+  nameWithType: ITestingDriver.GetElementByXPath
 - uid: TestingDriver.ITestingDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LoadingSpinner
@@ -764,6 +799,22 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.ExecuteJS
   nameWithType: SeleniumDriver.ExecuteJS
+- uid: TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
+  name: FindElementByJs(String, List<IWebElement>)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_FindElementByJs_System_String_System_Collections_Generic_List_OpenQA_Selenium_IWebElement__
+  commentId: M:TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
+  name.vb: FindElementByJs(String, List(Of IWebElement))
+  fullName: TestingDriver.SeleniumDriver.FindElementByJs(System.String, System.Collections.Generic.List<OpenQA.Selenium.IWebElement>)
+  fullName.vb: TestingDriver.SeleniumDriver.FindElementByJs(System.String, System.Collections.Generic.List(Of OpenQA.Selenium.IWebElement))
+  nameWithType: SeleniumDriver.FindElementByJs(String, List<IWebElement>)
+  nameWithType.vb: SeleniumDriver.FindElementByJs(String, List(Of IWebElement))
+- uid: TestingDriver.SeleniumDriver.FindElementByJs*
+  name: FindElementByJs
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_FindElementByJs_
+  commentId: Overload:TestingDriver.SeleniumDriver.FindElementByJs
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.FindElementByJs
+  nameWithType: SeleniumDriver.FindElementByJs
 - uid: TestingDriver.SeleniumDriver.ForceKillWebDriver
   name: ForceKillWebDriver()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ForceKillWebDriver
@@ -816,6 +867,25 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.GetAllLinksURL
   nameWithType: SeleniumDriver.GetAllLinksURL
+- uid: TestingDriver.SeleniumDriver.GetElementByXPath(System.String)
+  name: GetElementByXPath(String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementByXPath_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)
+  fullName: TestingDriver.SeleniumDriver.GetElementByXPath(System.String)
+  nameWithType: SeleniumDriver.GetElementByXPath(String)
+- uid: TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)
+  name: GetElementByXPath(String, Int32)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementByXPath_System_String_System_Int32_
+  commentId: M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)
+  fullName: TestingDriver.SeleniumDriver.GetElementByXPath(System.String, System.Int32)
+  nameWithType: SeleniumDriver.GetElementByXPath(String, Int32)
+- uid: TestingDriver.SeleniumDriver.GetElementByXPath*
+  name: GetElementByXPath
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementByXPath_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetElementByXPath
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.GetElementByXPath
+  nameWithType: SeleniumDriver.GetElementByXPath
 - uid: TestingDriver.SeleniumDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LoadingSpinner
