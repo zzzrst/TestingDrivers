@@ -474,6 +474,41 @@ namespace TestingDriver
             }
         }
 
+        /// <inheritdoc/>
+        public IWebElement GetElementByXPath(string xPath)
+        {
+            this.WaitForLoadingSpinner();
+            return this.wdWait.Until(driver => driver.FindElement(By.XPath(xPath)));
+        }
+
+        /// <inheritdoc/>
+        public IWebElement GetElementByXPath(string xPath, int tries)
+        {
+            this.WaitForLoadingSpinner();
+            IWebElement element = null;
+            for (int i = 0; i < tries; i++)
+            {
+                try
+                {
+                    element = this.webDriver.FindElement(By.XPath(xPath));
+                    break;
+                }
+                catch
+                {
+                }
+            }
+
+            return element;
+        }
+
+        /// <inheritdoc/>
+        public IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements)
+        {
+            this.SetActiveTab();
+            var element = ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElements);
+            return (IWebElement)element;
+        }
+
         private Browser GetBrowserType(string browserName)
         {
             Browser browser;
@@ -507,55 +542,6 @@ namespace TestingDriver
             }
 
             return browser;
-        }
-
-        /// <summary>
-        /// Finds the first IWebElement By XPath.
-        /// </summary>
-        /// <param name="xPath">The xpath to find the web element.</param>
-        /// <returns> The first IWebElement whose xpath matches. </returns>
-        private IWebElement GetElementByXPath(string xPath)
-        {
-            this.WaitForLoadingSpinner();
-            return this.wdWait.Until(driver => driver.FindElement(By.XPath(xPath)));
-        }
-
-        /// <summary>
-        /// Finds the first IWebElement By XPath.
-        /// </summary>
-        /// <param name="xPath">The xpath to find the web element.</param>
-        /// <param name="tries"> The amount in seconds to wait for.</param>
-        /// <returns> The first IWebElement whose xpath matches. </returns>
-        private IWebElement GetElementByXPath(string xPath, int tries)
-        {
-            this.WaitForLoadingSpinner();
-            IWebElement element = null;
-            for (int i = 0; i < tries; i++)
-            {
-                try
-                {
-                    element = this.webDriver.FindElement(By.XPath(xPath));
-                    break;
-                }
-                catch
-                {
-                }
-            }
-
-            return element;
-        }
-
-        /// <summary>
-        /// The FindElementByJs.
-        /// </summary>
-        /// <param name="jsCommand">The jsCommand<see cref="string"/>.</param>
-        /// <param name="webElements">The webElements<see cref="List{IWebElement}"/>.</param>
-        /// <returns>The <see cref="IWebElement"/>.</returns>
-        private IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements)
-        {
-            this.SetActiveTab();
-            var element = ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElements);
-            return (IWebElement)element;
         }
 
         private void InstantiateSeleniumDriver()
