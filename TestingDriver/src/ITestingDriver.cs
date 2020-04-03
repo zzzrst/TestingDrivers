@@ -232,7 +232,7 @@ namespace TestingDriver
         /// <summary>
         /// Switches to appropriate IFrame.
         /// </summary>
-        /// <param name="xPath"> xPath to find the iFrame.</param>
+        /// <param name="xPath"> xPath to find the iFrame. use "root" to leave iframe.</param>
         public void SwitchToIFrame(string xPath);
 
         /// <summary>
@@ -268,5 +268,28 @@ namespace TestingDriver
         /// Checks if there are any errors in the error container.
         /// </summary>
         public void CheckErrorContainer();
+
+        /// <summary>
+        /// Finds the first IWebElement By XPath.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the web element.</param>
+        /// <returns> The first IWebElement whose xpath matches. </returns>
+        public IWebElement GetElementByXPath(string xPath);
+
+        /// <summary>
+        /// Finds the first IWebElement By XPath.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the web element.</param>
+        /// <param name="tries"> The amount in seconds to wait for.</param>
+        /// <returns> The first IWebElement whose xpath matches. </returns>
+        public IWebElement GetElementByXPath(string xPath, int tries);
+
+        /// <summary>
+        /// The FindElementByJs.
+        /// </summary>
+        /// <param name="jsCommand">The jsCommand<see cref="string"/>.</param>
+        /// <param name="webElements">The webElements<see cref="List{IWebElement}"/>.</param>
+        /// <returns>The <see cref="IWebElement"/>.</returns>
+        public IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements);
     }
 }

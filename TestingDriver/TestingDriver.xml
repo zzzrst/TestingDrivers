@@ -225,7 +225,7 @@
             <summary>
             Switches to appropriate IFrame.
             </summary>
-            <param name="xPath"> xPath to find the iFrame.</param>
+            <param name="xPath"> xPath to find the iFrame. use "root" to leave iframe.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.SwitchToTab(System.Int32)">
             <summary>
