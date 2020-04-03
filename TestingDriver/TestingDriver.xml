@@ -94,6 +94,11 @@
             Gets or sets the error container to check if any errors are shown on the UI.
             </summary>
         </member>
+        <member name="P:TestingDriver.ITestingDriver.WebDriver">
+            <summary>
+            Gets the Web Driver to  run.
+            </summary>
+        </member>
         <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
             <summary>
             Checks for an element state.
@@ -394,6 +399,9 @@
             <inheritdoc/>
         </member>
         <member name="P:TestingDriver.SeleniumDriver.ErrorContainer">
+            <inheritdoc/>
+        </member>
+        <member name="P:TestingDriver.SeleniumDriver.WebDriver">
             <inheritdoc/>
         </member>
         <member name="P:TestingDriver.SeleniumDriver.InIFrame">

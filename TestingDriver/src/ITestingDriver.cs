@@ -103,6 +103,11 @@ namespace TestingDriver
         public string ErrorContainer { get; set; }
 
         /// <summary>
+        /// Gets the Web Driver to  run.
+        /// </summary>
+        public IWebDriver WebDriver { get; }
+
+        /// <summary>
         /// Checks for an element state.
         /// </summary>
         /// <param name="xPath"> The xpath to find the web element. </param>

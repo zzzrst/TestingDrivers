@@ -96,9 +96,7 @@ namespace TestingDriver
         /// <inheritdoc/>
         public string ErrorContainer { get; set; }
 
-        /// <summary>
-        /// Gets the Web Driver to  run.
-        /// </summary>
+        /// <inheritdoc/>
         public IWebDriver WebDriver { get; private set; }
 
         /// <summary>

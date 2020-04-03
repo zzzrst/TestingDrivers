@@ -535,6 +535,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.WaitForLoadingSpinner
   nameWithType: ITestingDriver.WaitForLoadingSpinner
+- uid: TestingDriver.ITestingDriver.WebDriver
+  name: WebDriver
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver
+  commentId: P:TestingDriver.ITestingDriver.WebDriver
+  fullName: TestingDriver.ITestingDriver.WebDriver
+  nameWithType: ITestingDriver.WebDriver
+- uid: TestingDriver.ITestingDriver.WebDriver*
+  name: WebDriver
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver_
+  commentId: Overload:TestingDriver.ITestingDriver.WebDriver
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.WebDriver
+  nameWithType: ITestingDriver.WebDriver
 - uid: TestingDriver.Logger
   name: Logger
   href: api/TestingDriver.Logger.html
@@ -1120,6 +1133,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.WaitForLoadingSpinner
   nameWithType: SeleniumDriver.WaitForLoadingSpinner
+- uid: TestingDriver.SeleniumDriver.WebDriver
+  name: WebDriver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WebDriver
+  commentId: P:TestingDriver.SeleniumDriver.WebDriver
+  fullName: TestingDriver.SeleniumDriver.WebDriver
+  nameWithType: SeleniumDriver.WebDriver
+- uid: TestingDriver.SeleniumDriver.WebDriver*
+  name: WebDriver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WebDriver_
+  commentId: Overload:TestingDriver.SeleniumDriver.WebDriver
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.WebDriver
+  nameWithType: SeleniumDriver.WebDriver
 - uid: TestingDriver.TestingDriverBuilder
   name: TestingDriverBuilder
   href: api/TestingDriver.TestingDriverBuilder.html
