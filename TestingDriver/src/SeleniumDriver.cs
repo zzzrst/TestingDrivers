@@ -34,7 +34,6 @@ namespace TestingDriver
         private readonly string seleniumDriverLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         private IAccessibilityChecker axeDriver = null;
-        private IWebDriver webDriver;
         private WebDriverWait wdWait;
         private Actions Action;
 
@@ -89,13 +88,18 @@ namespace TestingDriver
         public TestingDriverType Name { get; } = TestingDriverType.Selenium;
 
         /// <inheritdoc/>
-        public string CurrentURL { get => this.webDriver.Url; }
+        public string CurrentURL { get => this.WebDriver.Url; }
 
         /// <inheritdoc/>
         public string LoadingSpinner { get; set; }
 
         /// <inheritdoc/>
         public string ErrorContainer { get; set; }
+
+        /// <summary>
+        /// Gets the Web Driver to  run.
+        /// </summary>
+        public IWebDriver WebDriver { get; private set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the web driver is in an IFrame or not.
@@ -151,7 +155,7 @@ namespace TestingDriver
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
             if (byJS)
             {
-                IJavaScriptExecutor executor = (IJavaScriptExecutor)this.webDriver;
+                IJavaScriptExecutor executor = (IJavaScriptExecutor)this.WebDriver;
                 executor.ExecuteScript("var element=arguments[0]; setTimeout(function() {element.click();}, 100)", element);
             }
             else
@@ -163,39 +167,39 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void CloseBrowser()
         {
-            this.webDriver.Close();
+            this.WebDriver.Close();
         }
 
         /// <inheritdoc/>
         public void AcceptAlert()
         {
-            this.webDriver.SwitchTo().Alert().Accept();
+            this.WebDriver.SwitchTo().Alert().Accept();
             this.SetActiveTab();
         }
 
         /// <inheritdoc/>
         public void DismissAlert()
         {
-            this.webDriver.SwitchTo().Alert().Dismiss();
+            this.WebDriver.SwitchTo().Alert().Dismiss();
             this.SetActiveTab();
         }
 
         /// <inheritdoc/>
         public string GetAlertText()
         {
-            return this.webDriver.SwitchTo().Alert().Text;
+            return this.WebDriver.SwitchTo().Alert().Text;
         }
 
         /// <inheritdoc/>
         public void ExecuteJS(string jsCommand, IWebElement webElement)
         {
-            ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElement);
+            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElement);
         }
 
         /// <inheritdoc/>
         public void ExecuteJS(string jsCommand)
         {
-            ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand);
+            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand);
         }
 
         /// <inheritdoc/>
@@ -203,8 +207,8 @@ namespace TestingDriver
         {
             try
             {
-                this.webDriver.Quit();
-                this.webDriver.Dispose();
+                this.WebDriver.Quit();
+                this.WebDriver.Dispose();
             }
             catch
             {
@@ -218,7 +222,7 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void Maximize()
         {
-            this.webDriver.Manage().Window.Maximize();
+            this.WebDriver.Manage().Window.Maximize();
         }
 
         /// <inheritdoc/>
@@ -266,7 +270,7 @@ namespace TestingDriver
         public List<string> GetAllLinksURL()
         {
             this.WaitForLoadingSpinner();
-            var allElements = this.webDriver.FindElements(By.TagName("a"));
+            var allElements = this.WebDriver.FindElements(By.TagName("a"));
             List<string> result = new List<string>();
             foreach (IWebElement link in allElements)
             {
@@ -301,7 +305,7 @@ namespace TestingDriver
                     this.InstantiateSeleniumDriver();
                 }
 
-                this.webDriver.Url = url;
+                this.WebDriver.Url = url;
                 return true;
             }
             catch (Exception e)
@@ -324,7 +328,7 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void RefreshWebPage()
         {
-            this.webDriver.Navigate().Refresh();
+            this.WebDriver.Navigate().Refresh();
         }
 
         /// <inheritdoc/>
@@ -343,7 +347,7 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void SendKeys(string keystroke)
         {
-            Actions action = new Actions(this.webDriver);
+            Actions action = new Actions(this.WebDriver);
             if (keystroke == "{ENTER}")
             {
                 action.SendKeys(Keys.Enter);
@@ -370,14 +374,14 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void SetTimeOutThreshold(string seconds)
         {
-            this.wdWait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(Convert.ToDouble(seconds)));
+            this.wdWait = new WebDriverWait(this.WebDriver, TimeSpan.FromSeconds(Convert.ToDouble(seconds)));
         }
 
         /// <inheritdoc/>
         public void SwitchToIFrame(string xPath)
         {
             this.SetActiveTab();
-            this.webDriver.SwitchTo().DefaultContent();
+            this.WebDriver.SwitchTo().DefaultContent();
 
             if (xPath == "root")
             {
@@ -394,8 +398,8 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void SwitchToTab(int tab)
         {
-            var tabs = this.webDriver.WindowHandles;
-            this.webDriver.SwitchTo().Window(tabs[tab]);
+            var tabs = this.WebDriver.WindowHandles;
+            this.WebDriver.SwitchTo().Window(tabs[tab]);
         }
 
         /// <inheritdoc/>
@@ -403,7 +407,7 @@ namespace TestingDriver
         {
             try
             {
-                Screenshot screenshot = this.webDriver.TakeScreenshot();
+                Screenshot screenshot = this.WebDriver.TakeScreenshot();
                 screenshot.SaveAsFile(this.screenshotSaveLocation + "\\" + $"{DateTime.Now:yyyy_MM_dd-hh_mm_ss_tt}.png");
             }
             catch
@@ -454,7 +458,7 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void Wait(int seconds)
         {
-            this.webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
+            this.WebDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
         }
 
         /// <inheritdoc/>
@@ -464,7 +468,7 @@ namespace TestingDriver
             {
                 try
                 {
-                    IWebElement errorContainer = this.webDriver.FindElement(By.XPath(this.ErrorContainer));
+                    IWebElement errorContainer = this.WebDriver.FindElement(By.XPath(this.ErrorContainer));
                     Logger.Error($"Found the following in the error container: {errorContainer.Text}");
                 }
                 catch (Exception)
@@ -490,7 +494,7 @@ namespace TestingDriver
             {
                 try
                 {
-                    element = this.webDriver.FindElement(By.XPath(xPath));
+                    element = this.WebDriver.FindElement(By.XPath(xPath));
                     break;
                 }
                 catch
@@ -505,7 +509,7 @@ namespace TestingDriver
         public IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements)
         {
             this.SetActiveTab();
-            var element = ((IJavaScriptExecutor)this.webDriver).ExecuteScript(jsCommand, webElements);
+            var element = ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElements);
             return (IWebElement)element;
         }
 
@@ -550,7 +554,7 @@ namespace TestingDriver
             {
                 this.Quit();
 
-                this.webDriver = null;
+                this.WebDriver = null;
 
                 ChromeOptions chromeOptions;
                 ChromeDriverService service;
@@ -568,7 +572,7 @@ namespace TestingDriver
                         chromeOptions.AddArgument("--log-level=3");
                         chromeOptions.AddArgument("--silent");
 
-                        this.webDriver = new RemoteWebDriver(new Uri(this.remoteHost), chromeOptions.ToCapabilities(), this.actualTimeOut);
+                        this.WebDriver = new RemoteWebDriver(new Uri(this.remoteHost), chromeOptions.ToCapabilities(), this.actualTimeOut);
 
                         break;
                     case Browser.Chrome:
@@ -601,7 +605,7 @@ namespace TestingDriver
                         service = ChromeDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         service.SuppressInitialDiagnosticInformation = true;
 
-                        this.webDriver = new ChromeDriver(this.seleniumDriverLocation, chromeOptions, this.actualTimeOut);
+                        this.WebDriver = new ChromeDriver(this.seleniumDriverLocation, chromeOptions, this.actualTimeOut);
                         this.PID = service.ProcessId;
                         Logger.Info($"Chrome Driver service PID is: {this.PID}");
 
@@ -636,7 +640,7 @@ namespace TestingDriver
                         ChromeDriverService edgeService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "msedgedriver.exe");
 
                         edgeService.SuppressInitialDiagnosticInformation = true;
-                        this.webDriver = new ChromeDriver(edgeService, options, this.actualTimeOut);
+                        this.WebDriver = new ChromeDriver(edgeService, options, this.actualTimeOut);
                         this.PID = edgeService.ProcessId;
 
                         break;
@@ -664,7 +668,7 @@ namespace TestingDriver
                         FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         fireFoxService.SuppressInitialDiagnosticInformation = true;
 
-                        this.webDriver = new FirefoxDriver(fireFoxService, fireFoxOptions, this.actualTimeOut);
+                        this.WebDriver = new FirefoxDriver(fireFoxService, fireFoxOptions, this.actualTimeOut);
                         this.PID = fireFoxService.ProcessId;
                         break;
                     case Browser.IE:
@@ -690,7 +694,7 @@ namespace TestingDriver
 
                         try
                         {
-                            this.webDriver = new InternetExplorerDriver(ieService, ieOptions, this.actualTimeOut);
+                            this.WebDriver = new InternetExplorerDriver(ieService, ieOptions, this.actualTimeOut);
                             this.PID = ieService.ProcessId;
                             Logger.Info($"Internet Driver service PID is: {this.PID}");
                         }
@@ -701,7 +705,7 @@ namespace TestingDriver
                         }
 
                         // (ALM #24960) Shortkey to set zoom level to default in IE.
-                        IWebElement element = this.webDriver.FindElement(By.TagName("body"));
+                        IWebElement element = this.WebDriver.FindElement(By.TagName("body"));
                         element.SendKeys(Keys.Control + "0");
                         break;
                     case Browser.Safari:
@@ -711,12 +715,12 @@ namespace TestingDriver
                         break;
                 }
 
-                this.wdWait = new WebDriverWait(this.webDriver, this.timeOutThreshold);
-                this.Action = new Actions(this.webDriver);
+                this.wdWait = new WebDriverWait(this.WebDriver, this.timeOutThreshold);
+                this.Action = new Actions(this.WebDriver);
 
                 if (this.axeDriver == null)
                 {
-                    this.axeDriver = new AxeDriver(this.webDriver);
+                    this.axeDriver = new AxeDriver(this.WebDriver);
                 }
             }
             catch (Exception e)
@@ -733,14 +737,14 @@ namespace TestingDriver
         {
             if (!this.InIFrame)
             {
-                var windows = this.webDriver.WindowHandles;
+                var windows = this.WebDriver.WindowHandles;
                 int windowCount = windows.Count;
 
                 // save the current window / tab we are on. Only focus the browser when a new page / tab actually is there.
                 if (windowCount != this.CurrentWindow)
                 {
                     this.CurrentWindow = windowCount;
-                    this.webDriver.SwitchTo().Window(windows[windowCount - 1]);
+                    this.WebDriver.SwitchTo().Window(windows[windowCount - 1]);
                 }
             }
             else
