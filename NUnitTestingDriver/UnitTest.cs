@@ -61,7 +61,15 @@ namespace NUnitTestingDriver
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
             Assert.Pass("Nothing should go wrong when switching into i frames");
         }
-
+#if DEBUG
+        [Test]
+        public void TestAODA()
+        {
+            driver.ClickElement("//a[contains(text(),'Form Authentication')]");
+            driver.RunAODA("title");
+            driver.GenerateAODAResults("./Log");
+        }
+#endif
         [TearDown]
         public void TearDown()
         {
