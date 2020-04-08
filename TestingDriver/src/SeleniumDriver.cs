@@ -720,6 +720,11 @@ namespace TestingDriver
                 {
                     this.axeDriver = new AxeDriver(this.WebDriver);
                 }
+                else
+                {
+                    // Make sure to update the driver to the new one.
+                    this.axeDriver.Driver = this.WebDriver;
+                }
             }
             catch (Exception e)
             {
