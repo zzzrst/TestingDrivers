@@ -9,6 +9,7 @@ namespace TestingDriver
     using System.Configuration;
     using System.Diagnostics;
     using System.IO;
+    using System.Linq;
     using System.Management;
     using System.Reflection;
     using AxeAccessibilityDriver;
@@ -96,8 +97,7 @@ namespace TestingDriver
         /// <inheritdoc/>
         public string ErrorContainer { get; set; }
 
-        /// <inheritdoc/>
-        public IWebDriver WebDriver { get; private set; }
+        private IWebDriver WebDriver { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the web driver is in an IFrame or not.
@@ -107,6 +107,13 @@ namespace TestingDriver
         private string IFrameXPath { get; set; } = string.Empty;
 
         private int CurrentWindow { get; set; } = -1;
+
+        /// <inheritdoc/>
+        public void AcceptAlert()
+        {
+            this.WebDriver.SwitchTo().Alert().Accept();
+            this.SetActiveTab();
+        }
 
         /// <inheritdoc/>
         public bool CheckForElementState(string xPath, ElementState state)
@@ -169,13 +176,6 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void AcceptAlert()
-        {
-            this.WebDriver.SwitchTo().Alert().Accept();
-            this.SetActiveTab();
-        }
-
-        /// <inheritdoc/>
         public void DismissAlert()
         {
             this.WebDriver.SwitchTo().Alert().Dismiss();
@@ -186,18 +186,6 @@ namespace TestingDriver
         public string GetAlertText()
         {
             return this.WebDriver.SwitchTo().Alert().Text;
-        }
-
-        /// <inheritdoc/>
-        public void ExecuteJS(string jsCommand, IWebElement webElement)
-        {
-            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElement);
-        }
-
-        /// <inheritdoc/>
-        public void ExecuteJS(string jsCommand)
-        {
-            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand);
         }
 
         /// <inheritdoc/>
@@ -280,12 +268,6 @@ namespace TestingDriver
             }
 
             return result;
-        }
-
-        /// <inheritdoc/>
-        public void MouseOver(IWebElement element)
-        {
-            this.Action.MoveToElement(element).Build().Perform();
         }
 
         /// <inheritdoc/>
@@ -460,6 +442,44 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
+        public bool VerifyAttribute(string attribute, string expectedValue, string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            attribute = attribute.ToLower();
+            var k = element.GetAttribute(attribute);
+            return element.GetAttribute(attribute) == expectedValue;
+        }
+
+        /// <inheritdoc/>
+        public bool VerifyElementText(string expected, string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            return expected == element.Text;
+        }
+
+        /// <inheritdoc/>
+        public bool VerifyElementSelected(string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            return element.Selected;
+        }
+
+        /// <inheritdoc/>
+        public bool VerifyDropDownContent(List<string> expected, string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            SelectElement selectElement = new SelectElement(element);
+
+            List<string> actualValue = new List<string>();
+            foreach (IWebElement e in selectElement.Options)
+            {
+                actualValue.Add(e.Text);
+            }
+
+            return expected.All(e => actualValue.Contains(e));
+        }
+
+        /// <inheritdoc/>
         public void CheckErrorContainer()
         {
             if (this.ErrorContainer != string.Empty)
@@ -476,15 +496,24 @@ namespace TestingDriver
             }
         }
 
-        /// <inheritdoc/>
-        public IWebElement GetElementByXPath(string xPath)
+        /// <summary>
+        /// Finds the first IWebElement By XPath.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the web element.</param>
+        /// <returns> The first IWebElement whose xpath matches. </returns>
+        private IWebElement GetElementByXPath(string xPath)
         {
             this.WaitForLoadingSpinner();
             return this.wdWait.Until(driver => driver.FindElement(By.XPath(xPath)));
         }
 
-        /// <inheritdoc/>
-        public IWebElement GetElementByXPath(string xPath, int tries)
+        /// <summary>
+        /// Finds the first IWebElement By XPath.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the web element.</param>
+        /// <param name="tries"> The amount in seconds to wait for.</param>
+        /// <returns> The first IWebElement whose xpath matches. </returns>
+        private IWebElement GetElementByXPath(string xPath, int tries)
         {
             this.WaitForLoadingSpinner();
             IWebElement element = null;
@@ -503,8 +532,41 @@ namespace TestingDriver
             return element;
         }
 
-        /// <inheritdoc/>
-        public IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements)
+        /// <summary>
+        /// Executes JS command on this element.
+        /// </summary>
+        /// <param name="jsCommand">command.</param>
+        /// <param name="webElement">Elemnt to interact with.</param>
+        private void ExecuteJS(string jsCommand, IWebElement webElement)
+        {
+            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElement);
+        }
+
+        /// <summary>
+        /// Executes JS command on this element.
+        /// </summary>
+        /// <param name="jsCommand">command.</param>
+        private void ExecuteJS(string jsCommand)
+        {
+            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand);
+        }
+
+        /// <summary>
+        /// Moves the mouse to the given element.
+        /// </summary>
+        /// <param name="element">Web element to mouse over.</param>
+        private void MouseOver(IWebElement element)
+        {
+            this.Action.MoveToElement(element).Build().Perform();
+        }
+
+        /// <summary>
+        /// The FindElementByJs.
+        /// </summary>
+        /// <param name="jsCommand">The jsCommand<see cref="string"/>.</param>
+        /// <param name="webElements">The webElements<see cref="List{IWebElement}"/>.</param>
+        /// <returns>The <see cref="IWebElement"/>.</returns>
+        private IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements)
         {
             this.SetActiveTab();
             var element = ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElements);
@@ -544,6 +606,56 @@ namespace TestingDriver
             }
 
             return browser;
+        }
+
+        /// <summary>
+        /// Finds the web element of the corresponding test object under the given timeout duration.
+        /// </summary>
+        /// <param name="xPath">The xPath of the element.</param>.
+        /// <param name="jsCommand">Optional. Any java script commands to use.</param>
+        /// <returns>The web element of the corresponding test object.</returns>
+        private IWebElement FindElement(string xPath, string jsCommand = "")
+        {
+            IWebElement webElement = null;
+            double timeout = this.timeOutThreshold.TotalSeconds;
+
+            // wait for browser to finish loading before finding the object
+            this.WaitForLoadingSpinner();
+
+            // wait for timeout or until object is found
+            var stopWatch = Stopwatch.StartNew();
+            stopWatch.Start();
+            var start = stopWatch.Elapsed.TotalSeconds;
+
+            while ((stopWatch.Elapsed.TotalSeconds - start) < timeout && webElement == null)
+            {
+                try
+                {
+                    List<IWebElement> webElements = this.WebDriver.FindElements(By.XPath(xPath)).ToList();
+                    if (jsCommand != string.Empty)
+                    {
+                        webElement = (IWebElement)((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElements);
+                    }
+                    else
+                    {
+                        if (webElements.Count > 0)
+                        {
+                            webElement = webElements[0];
+                        }
+                    }
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // do nothing, since we didn't find the element.
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e.ToString());
+                }
+            }
+
+            stopWatch.Stop();
+            return webElement;
         }
 
         private void InstantiateSeleniumDriver()

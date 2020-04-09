@@ -103,11 +103,6 @@ namespace TestingDriver
         public string ErrorContainer { get; set; }
 
         /// <summary>
-        /// Gets the Web Driver to  run.
-        /// </summary>
-        public IWebDriver WebDriver { get; }
-
-        /// <summary>
         /// Checks for an element state.
         /// </summary>
         /// <param name="xPath"> The xpath to find the web element. </param>
@@ -144,19 +139,6 @@ namespace TestingDriver
         public string GetAlertText();
 
         /// <summary>
-        /// Executes JS command on this element.
-        /// </summary>
-        /// <param name="jsCommand">command.</param>
-        /// <param name="webElement">Elemnt to interact with.</param>
-        public void ExecuteJS(string jsCommand, IWebElement webElement);
-
-        /// <summary>
-        /// Executes JS command on this element.
-        /// </summary>
-        /// <param name="jsCommand">command.</param>
-        public void ExecuteJS(string jsCommand);
-
-        /// <summary>
         /// Quits the webdriver. Call this when you want the driver to be closed.
         /// </summary>
         public void Quit();
@@ -184,18 +166,49 @@ namespace TestingDriver
         public List<string> GetAllLinksURL();
 
         /// <summary>
-        /// Moves the mouse to the given element.
-        /// </summary>
-        /// <param name="element">Web element to mouse over.</param>
-        public void MouseOver(IWebElement element);
-
-        /// <summary>
         /// Tells the browser to navigate to the provided url.
         /// </summary>
         /// <param name="url">URL for the browser to navigate to.</param>
         /// <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
-        /// <returns> <code>true</code> if the navigation was successful. </returns>
+        /// <returns> <code>true</code> if the navigation was successful. </returns>C:\Users\DuongCh\Projects\TestingDrivers\TestingDriver\src\ITestingDriver.cs
         public bool NavigateToURL(string url = "", bool instantiateNewDriver = true);
+
+        /// <summary>
+        /// Returns whether or not the actual attribute value of the check box matches with the expected value,
+        /// given a verification attribute string to check.
+        /// </summary>
+        /// <param name="attribute">Verification attribute string to check.</param>
+        /// <param name="expectedValue">Expected value to compare with.</param>
+        /// <param name="xPath">The xpath of the element.</param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        /// <returns><code>true</code> if actual attribute value matches with the expected value.</returns>
+        public bool VerifyAttribute(string attribute, string expectedValue, string xPath, string jsCommand = "");
+
+        /// <summary>
+        /// Returns whether or not the element's text is the same as the expected value.
+        /// </summary>
+        /// <param name="expected">What the value is expected to be.</param>
+        /// <param name="xPath">The xpath of the element.</param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        /// <returns><code>true</code> if it is the same.</returns>
+        public bool VerifyElementText(string expected, string xPath, string jsCommand = "");
+
+        /// <summary>
+        /// Returns whether or not the element is selected or not.
+        /// </summary>
+        /// <param name="xPath">The xpath of the element.</param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        /// <returns><code>true</code> the element is current selected.</returns>
+        public bool VerifyElementSelected(string xPath, string jsCommand = "");
+
+        /// <summary>
+        /// Returns whether or not the drop down list contains all the given strings.
+        /// </summary>
+        /// <param name="expected">The list of expected strings.</param>
+        /// <param name="xPath">The xpath of the element.</param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        /// <returns><code>true</code> the drop down contains all the given strings.</returns>
+        public bool VerifyDropDownContent(List<string> expected, string xPath, string jsCommand = "");
 
         /// <summary>
         /// Performs the action of populating a value.
@@ -273,28 +286,5 @@ namespace TestingDriver
         /// Checks if there are any errors in the error container.
         /// </summary>
         public void CheckErrorContainer();
-
-        /// <summary>
-        /// Finds the first IWebElement By XPath.
-        /// </summary>
-        /// <param name="xPath">The xpath to find the web element.</param>
-        /// <returns> The first IWebElement whose xpath matches. </returns>
-        public IWebElement GetElementByXPath(string xPath);
-
-        /// <summary>
-        /// Finds the first IWebElement By XPath.
-        /// </summary>
-        /// <param name="xPath">The xpath to find the web element.</param>
-        /// <param name="tries"> The amount in seconds to wait for.</param>
-        /// <returns> The first IWebElement whose xpath matches. </returns>
-        public IWebElement GetElementByXPath(string xPath, int tries);
-
-        /// <summary>
-        /// The FindElementByJs.
-        /// </summary>
-        /// <param name="jsCommand">The jsCommand<see cref="string"/>.</param>
-        /// <param name="webElements">The webElements<see cref="List{IWebElement}"/>.</param>
-        /// <returns>The <see cref="IWebElement"/>.</returns>
-        public IWebElement FindElementByJs(string jsCommand, List<IWebElement> webElements);
     }
 }

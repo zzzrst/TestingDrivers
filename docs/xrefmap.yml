@@ -183,41 +183,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.ErrorContainer
   nameWithType: ITestingDriver.ErrorContainer
-- uid: TestingDriver.ITestingDriver.ExecuteJS(System.String)
-  name: ExecuteJS(String)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ExecuteJS_System_String_
-  commentId: M:TestingDriver.ITestingDriver.ExecuteJS(System.String)
-  fullName: TestingDriver.ITestingDriver.ExecuteJS(System.String)
-  nameWithType: ITestingDriver.ExecuteJS(String)
-- uid: TestingDriver.ITestingDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)
-  name: ExecuteJS(String, IWebElement)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ExecuteJS_System_String_OpenQA_Selenium_IWebElement_
-  commentId: M:TestingDriver.ITestingDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)
-  fullName: TestingDriver.ITestingDriver.ExecuteJS(System.String, OpenQA.Selenium.IWebElement)
-  nameWithType: ITestingDriver.ExecuteJS(String, IWebElement)
-- uid: TestingDriver.ITestingDriver.ExecuteJS*
-  name: ExecuteJS
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ExecuteJS_
-  commentId: Overload:TestingDriver.ITestingDriver.ExecuteJS
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.ExecuteJS
-  nameWithType: ITestingDriver.ExecuteJS
-- uid: TestingDriver.ITestingDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
-  name: FindElementByJs(String, List<IWebElement>)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_FindElementByJs_System_String_System_Collections_Generic_List_OpenQA_Selenium_IWebElement__
-  commentId: M:TestingDriver.ITestingDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
-  name.vb: FindElementByJs(String, List(Of IWebElement))
-  fullName: TestingDriver.ITestingDriver.FindElementByJs(System.String, System.Collections.Generic.List<OpenQA.Selenium.IWebElement>)
-  fullName.vb: TestingDriver.ITestingDriver.FindElementByJs(System.String, System.Collections.Generic.List(Of OpenQA.Selenium.IWebElement))
-  nameWithType: ITestingDriver.FindElementByJs(String, List<IWebElement>)
-  nameWithType.vb: ITestingDriver.FindElementByJs(String, List(Of IWebElement))
-- uid: TestingDriver.ITestingDriver.FindElementByJs*
-  name: FindElementByJs
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_FindElementByJs_
-  commentId: Overload:TestingDriver.ITestingDriver.FindElementByJs
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.FindElementByJs
-  nameWithType: ITestingDriver.FindElementByJs
 - uid: TestingDriver.ITestingDriver.ForceKillWebDriver
   name: ForceKillWebDriver()
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ForceKillWebDriver
@@ -270,25 +235,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.GetAllLinksURL
   nameWithType: ITestingDriver.GetAllLinksURL
-- uid: TestingDriver.ITestingDriver.GetElementByXPath(System.String)
-  name: GetElementByXPath(String)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementByXPath_System_String_
-  commentId: M:TestingDriver.ITestingDriver.GetElementByXPath(System.String)
-  fullName: TestingDriver.ITestingDriver.GetElementByXPath(System.String)
-  nameWithType: ITestingDriver.GetElementByXPath(String)
-- uid: TestingDriver.ITestingDriver.GetElementByXPath(System.String,System.Int32)
-  name: GetElementByXPath(String, Int32)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementByXPath_System_String_System_Int32_
-  commentId: M:TestingDriver.ITestingDriver.GetElementByXPath(System.String,System.Int32)
-  fullName: TestingDriver.ITestingDriver.GetElementByXPath(System.String, System.Int32)
-  nameWithType: ITestingDriver.GetElementByXPath(String, Int32)
-- uid: TestingDriver.ITestingDriver.GetElementByXPath*
-  name: GetElementByXPath
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementByXPath_
-  commentId: Overload:TestingDriver.ITestingDriver.GetElementByXPath
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.GetElementByXPath
-  nameWithType: ITestingDriver.GetElementByXPath
 - uid: TestingDriver.ITestingDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LoadingSpinner
@@ -315,19 +261,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.Maximize
   nameWithType: ITestingDriver.Maximize
-- uid: TestingDriver.ITestingDriver.MouseOver(OpenQA.Selenium.IWebElement)
-  name: MouseOver(IWebElement)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_MouseOver_OpenQA_Selenium_IWebElement_
-  commentId: M:TestingDriver.ITestingDriver.MouseOver(OpenQA.Selenium.IWebElement)
-  fullName: TestingDriver.ITestingDriver.MouseOver(OpenQA.Selenium.IWebElement)
-  nameWithType: ITestingDriver.MouseOver(IWebElement)
-- uid: TestingDriver.ITestingDriver.MouseOver*
-  name: MouseOver
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_MouseOver_
-  commentId: Overload:TestingDriver.ITestingDriver.MouseOver
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.MouseOver
-  nameWithType: ITestingDriver.MouseOver
 - uid: TestingDriver.ITestingDriver.Name
   name: Name
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Name
@@ -496,6 +429,61 @@ references:
   commentId: F:TestingDriver.ITestingDriver.TestingDriverType.Selenium
   fullName: TestingDriver.ITestingDriver.TestingDriverType.Selenium
   nameWithType: ITestingDriver.TestingDriverType.Selenium
+- uid: TestingDriver.ITestingDriver.VerifyAttribute(System.String,System.String,System.String,System.String)
+  name: VerifyAttribute(String, String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyAttribute_System_String_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.VerifyAttribute(System.String,System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.VerifyAttribute(System.String, System.String, System.String, System.String)
+  nameWithType: ITestingDriver.VerifyAttribute(String, String, String, String)
+- uid: TestingDriver.ITestingDriver.VerifyAttribute*
+  name: VerifyAttribute
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyAttribute_
+  commentId: Overload:TestingDriver.ITestingDriver.VerifyAttribute
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.VerifyAttribute
+  nameWithType: ITestingDriver.VerifyAttribute
+- uid: TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)
+  name: VerifyDropDownContent(List<String>, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyDropDownContent_System_Collections_Generic_List_System_String__System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)
+  name.vb: VerifyDropDownContent(List(Of String), String, String)
+  fullName: TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List<System.String>, System.String, System.String)
+  fullName.vb: TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List(Of System.String), System.String, System.String)
+  nameWithType: ITestingDriver.VerifyDropDownContent(List<String>, String, String)
+  nameWithType.vb: ITestingDriver.VerifyDropDownContent(List(Of String), String, String)
+- uid: TestingDriver.ITestingDriver.VerifyDropDownContent*
+  name: VerifyDropDownContent
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyDropDownContent_
+  commentId: Overload:TestingDriver.ITestingDriver.VerifyDropDownContent
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.VerifyDropDownContent
+  nameWithType: ITestingDriver.VerifyDropDownContent
+- uid: TestingDriver.ITestingDriver.VerifyElementSelected(System.String,System.String)
+  name: VerifyElementSelected(String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyElementSelected_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.VerifyElementSelected(System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.VerifyElementSelected(System.String, System.String)
+  nameWithType: ITestingDriver.VerifyElementSelected(String, String)
+- uid: TestingDriver.ITestingDriver.VerifyElementSelected*
+  name: VerifyElementSelected
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyElementSelected_
+  commentId: Overload:TestingDriver.ITestingDriver.VerifyElementSelected
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.VerifyElementSelected
+  nameWithType: ITestingDriver.VerifyElementSelected
+- uid: TestingDriver.ITestingDriver.VerifyElementText(System.String,System.String,System.String)
+  name: VerifyElementText(String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyElementText_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.VerifyElementText(System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.VerifyElementText(System.String, System.String, System.String)
+  nameWithType: ITestingDriver.VerifyElementText(String, String, String)
+- uid: TestingDriver.ITestingDriver.VerifyElementText*
+  name: VerifyElementText
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyElementText_
+  commentId: Overload:TestingDriver.ITestingDriver.VerifyElementText
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.VerifyElementText
+  nameWithType: ITestingDriver.VerifyElementText
 - uid: TestingDriver.ITestingDriver.Wait(System.Int32)
   name: Wait(Int32)
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Wait_System_Int32_
@@ -535,19 +523,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.WaitForLoadingSpinner
   nameWithType: ITestingDriver.WaitForLoadingSpinner
-- uid: TestingDriver.ITestingDriver.WebDriver
-  name: WebDriver
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver
-  commentId: P:TestingDriver.ITestingDriver.WebDriver
-  fullName: TestingDriver.ITestingDriver.WebDriver
-  nameWithType: ITestingDriver.WebDriver
-- uid: TestingDriver.ITestingDriver.WebDriver*
-  name: WebDriver
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver_
-  commentId: Overload:TestingDriver.ITestingDriver.WebDriver
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.WebDriver
-  nameWithType: ITestingDriver.WebDriver
 - uid: TestingDriver.Logger
   name: Logger
   href: api/TestingDriver.Logger.html
@@ -793,41 +768,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.ErrorContainer
   nameWithType: SeleniumDriver.ErrorContainer
-- uid: TestingDriver.SeleniumDriver.ExecuteJS(System.String)
-  name: ExecuteJS(String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)
-  fullName: TestingDriver.SeleniumDriver.ExecuteJS(System.String)
-  nameWithType: SeleniumDriver.ExecuteJS(String)
-- uid: TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)
-  name: ExecuteJS(String, IWebElement)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_System_String_OpenQA_Selenium_IWebElement_
-  commentId: M:TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)
-  fullName: TestingDriver.SeleniumDriver.ExecuteJS(System.String, OpenQA.Selenium.IWebElement)
-  nameWithType: SeleniumDriver.ExecuteJS(String, IWebElement)
-- uid: TestingDriver.SeleniumDriver.ExecuteJS*
-  name: ExecuteJS
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_
-  commentId: Overload:TestingDriver.SeleniumDriver.ExecuteJS
-  isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.ExecuteJS
-  nameWithType: SeleniumDriver.ExecuteJS
-- uid: TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
-  name: FindElementByJs(String, List<IWebElement>)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_FindElementByJs_System_String_System_Collections_Generic_List_OpenQA_Selenium_IWebElement__
-  commentId: M:TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})
-  name.vb: FindElementByJs(String, List(Of IWebElement))
-  fullName: TestingDriver.SeleniumDriver.FindElementByJs(System.String, System.Collections.Generic.List<OpenQA.Selenium.IWebElement>)
-  fullName.vb: TestingDriver.SeleniumDriver.FindElementByJs(System.String, System.Collections.Generic.List(Of OpenQA.Selenium.IWebElement))
-  nameWithType: SeleniumDriver.FindElementByJs(String, List<IWebElement>)
-  nameWithType.vb: SeleniumDriver.FindElementByJs(String, List(Of IWebElement))
-- uid: TestingDriver.SeleniumDriver.FindElementByJs*
-  name: FindElementByJs
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_FindElementByJs_
-  commentId: Overload:TestingDriver.SeleniumDriver.FindElementByJs
-  isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.FindElementByJs
-  nameWithType: SeleniumDriver.FindElementByJs
 - uid: TestingDriver.SeleniumDriver.ForceKillWebDriver
   name: ForceKillWebDriver()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ForceKillWebDriver
@@ -880,25 +820,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.GetAllLinksURL
   nameWithType: SeleniumDriver.GetAllLinksURL
-- uid: TestingDriver.SeleniumDriver.GetElementByXPath(System.String)
-  name: GetElementByXPath(String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementByXPath_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)
-  fullName: TestingDriver.SeleniumDriver.GetElementByXPath(System.String)
-  nameWithType: SeleniumDriver.GetElementByXPath(String)
-- uid: TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)
-  name: GetElementByXPath(String, Int32)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementByXPath_System_String_System_Int32_
-  commentId: M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)
-  fullName: TestingDriver.SeleniumDriver.GetElementByXPath(System.String, System.Int32)
-  nameWithType: SeleniumDriver.GetElementByXPath(String, Int32)
-- uid: TestingDriver.SeleniumDriver.GetElementByXPath*
-  name: GetElementByXPath
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementByXPath_
-  commentId: Overload:TestingDriver.SeleniumDriver.GetElementByXPath
-  isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.GetElementByXPath
-  nameWithType: SeleniumDriver.GetElementByXPath
 - uid: TestingDriver.SeleniumDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LoadingSpinner
@@ -925,19 +846,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.Maximize
   nameWithType: SeleniumDriver.Maximize
-- uid: TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)
-  name: MouseOver(IWebElement)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_MouseOver_OpenQA_Selenium_IWebElement_
-  commentId: M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)
-  fullName: TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)
-  nameWithType: SeleniumDriver.MouseOver(IWebElement)
-- uid: TestingDriver.SeleniumDriver.MouseOver*
-  name: MouseOver
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_MouseOver_
-  commentId: Overload:TestingDriver.SeleniumDriver.MouseOver
-  isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.MouseOver
-  nameWithType: SeleniumDriver.MouseOver
 - uid: TestingDriver.SeleniumDriver.Name
   name: Name
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Name
@@ -1094,6 +1002,61 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.TakeScreenShot
   nameWithType: SeleniumDriver.TakeScreenShot
+- uid: TestingDriver.SeleniumDriver.VerifyAttribute(System.String,System.String,System.String,System.String)
+  name: VerifyAttribute(String, String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyAttribute_System_String_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.VerifyAttribute(System.String,System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.VerifyAttribute(System.String, System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.VerifyAttribute(String, String, String, String)
+- uid: TestingDriver.SeleniumDriver.VerifyAttribute*
+  name: VerifyAttribute
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyAttribute_
+  commentId: Overload:TestingDriver.SeleniumDriver.VerifyAttribute
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.VerifyAttribute
+  nameWithType: SeleniumDriver.VerifyAttribute
+- uid: TestingDriver.SeleniumDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)
+  name: VerifyDropDownContent(List<String>, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyDropDownContent_System_Collections_Generic_List_System_String__System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)
+  name.vb: VerifyDropDownContent(List(Of String), String, String)
+  fullName: TestingDriver.SeleniumDriver.VerifyDropDownContent(System.Collections.Generic.List<System.String>, System.String, System.String)
+  fullName.vb: TestingDriver.SeleniumDriver.VerifyDropDownContent(System.Collections.Generic.List(Of System.String), System.String, System.String)
+  nameWithType: SeleniumDriver.VerifyDropDownContent(List<String>, String, String)
+  nameWithType.vb: SeleniumDriver.VerifyDropDownContent(List(Of String), String, String)
+- uid: TestingDriver.SeleniumDriver.VerifyDropDownContent*
+  name: VerifyDropDownContent
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyDropDownContent_
+  commentId: Overload:TestingDriver.SeleniumDriver.VerifyDropDownContent
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.VerifyDropDownContent
+  nameWithType: SeleniumDriver.VerifyDropDownContent
+- uid: TestingDriver.SeleniumDriver.VerifyElementSelected(System.String,System.String)
+  name: VerifyElementSelected(String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyElementSelected_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.VerifyElementSelected(System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.VerifyElementSelected(System.String, System.String)
+  nameWithType: SeleniumDriver.VerifyElementSelected(String, String)
+- uid: TestingDriver.SeleniumDriver.VerifyElementSelected*
+  name: VerifyElementSelected
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyElementSelected_
+  commentId: Overload:TestingDriver.SeleniumDriver.VerifyElementSelected
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.VerifyElementSelected
+  nameWithType: SeleniumDriver.VerifyElementSelected
+- uid: TestingDriver.SeleniumDriver.VerifyElementText(System.String,System.String,System.String)
+  name: VerifyElementText(String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyElementText_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.VerifyElementText(System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.VerifyElementText(System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.VerifyElementText(String, String, String)
+- uid: TestingDriver.SeleniumDriver.VerifyElementText*
+  name: VerifyElementText
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyElementText_
+  commentId: Overload:TestingDriver.SeleniumDriver.VerifyElementText
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.VerifyElementText
+  nameWithType: SeleniumDriver.VerifyElementText
 - uid: TestingDriver.SeleniumDriver.Wait(System.Int32)
   name: Wait(Int32)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Wait_System_Int32_
@@ -1133,19 +1096,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.WaitForLoadingSpinner
   nameWithType: SeleniumDriver.WaitForLoadingSpinner
-- uid: TestingDriver.SeleniumDriver.WebDriver
-  name: WebDriver
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WebDriver
-  commentId: P:TestingDriver.SeleniumDriver.WebDriver
-  fullName: TestingDriver.SeleniumDriver.WebDriver
-  nameWithType: SeleniumDriver.WebDriver
-- uid: TestingDriver.SeleniumDriver.WebDriver*
-  name: WebDriver
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WebDriver_
-  commentId: Overload:TestingDriver.SeleniumDriver.WebDriver
-  isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.WebDriver
-  nameWithType: SeleniumDriver.WebDriver
 - uid: TestingDriver.TestingDriverBuilder
   name: TestingDriverBuilder
   href: api/TestingDriver.TestingDriverBuilder.html
