@@ -94,11 +94,6 @@
             Gets or sets the error container to check if any errors are shown on the UI.
             </summary>
         </member>
-        <member name="P:TestingDriver.ITestingDriver.WebDriver">
-            <summary>
-            Gets the Web Driver to  run.
-            </summary>
-        </member>
         <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
             <summary>
             Checks for an element state.
@@ -135,19 +130,6 @@
             </summary>
             <returns>Alert Text.</returns>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)">
-            <summary>
-            Executes JS command on this element.
-            </summary>
-            <param name="jsCommand">command.</param>
-            <param name="webElement">Elemnt to interact with.</param>
-        </member>
-        <member name="M:TestingDriver.ITestingDriver.ExecuteJS(System.String)">
-            <summary>
-            Executes JS command on this element.
-            </summary>
-            <param name="jsCommand">command.</param>
-        </member>
         <member name="M:TestingDriver.ITestingDriver.Quit">
             <summary>
             Quits the webdriver. Call this when you want the driver to be closed.
@@ -175,19 +157,50 @@
             </summary>
             <returns>The <see cref="T:List{string}"/>.</returns>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.MouseOver(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Moves the mouse to the given element.
-            </summary>
-            <param name="element">Web element to mouse over.</param>
-        </member>
         <member name="M:TestingDriver.ITestingDriver.NavigateToURL(System.String,System.Boolean)">
             <summary>
             Tells the browser to navigate to the provided url.
             </summary>
             <param name="url">URL for the browser to navigate to.</param>
             <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
-            <returns> <code>true</code> if the navigation was successful. </returns>
+            <returns> <code>true</code> if the navigation was successful. </returns>C:\Users\DuongCh\Projects\TestingDrivers\TestingDriver\src\ITestingDriver.cs
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.VerifyAttribute(System.String,System.String,System.String,System.String)">
+            <summary>
+            Returns whether or not the actual attribute value of the check box matches with the expected value,
+            given a verification attribute string to check.
+            </summary>
+            <param name="attribute">Verification attribute string to check.</param>
+            <param name="expectedValue">Expected value to compare with.</param>
+            <param name="xPath">The xpath of the element.</param>
+            <param name="jsCommand">Any js command needed.</param>
+            <returns><code>true</code> if actual attribute value matches with the expected value.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.VerifyElementText(System.String,System.String,System.String)">
+            <summary>
+            Returns whether or not the element's text is the same as the expected value.
+            </summary>
+            <param name="expected">What the value is expected to be.</param>
+            <param name="xPath">The xpath of the element.</param>
+            <param name="jsCommand">Any js command needed.</param>
+            <returns><code>true</code> if it is the same.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.VerifyElementSelected(System.String,System.String)">
+            <summary>
+            Returns whether or not the element is selected or not.
+            </summary>
+            <param name="xPath">The xpath of the element.</param>
+            <param name="jsCommand">Any js command needed.</param>
+            <returns><code>true</code> the element is current selected.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            Returns whether or not the drop down list contains all the given strings.
+            </summary>
+            <param name="expected">The list of expected strings.</param>
+            <param name="xPath">The xpath of the element.</param>
+            <param name="jsCommand">Any js command needed.</param>
+            <returns><code>true</code> the drop down contains all the given strings.</returns>
         </member>
         <member name="M:TestingDriver.ITestingDriver.PopulateElement(System.String,System.String)">
             <summary>
@@ -265,29 +278,6 @@
             <summary>
             Checks if there are any errors in the error container.
             </summary>
-        </member>
-        <member name="M:TestingDriver.ITestingDriver.GetElementByXPath(System.String)">
-            <summary>
-            Finds the first IWebElement By XPath.
-            </summary>
-            <param name="xPath">The xpath to find the web element.</param>
-            <returns> The first IWebElement whose xpath matches. </returns>
-        </member>
-        <member name="M:TestingDriver.ITestingDriver.GetElementByXPath(System.String,System.Int32)">
-            <summary>
-            Finds the first IWebElement By XPath.
-            </summary>
-            <param name="xPath">The xpath to find the web element.</param>
-            <param name="tries"> The amount in seconds to wait for.</param>
-            <returns> The first IWebElement whose xpath matches. </returns>
-        </member>
-        <member name="M:TestingDriver.ITestingDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
-            <summary>
-            The FindElementByJs.
-            </summary>
-            <param name="jsCommand">The jsCommand<see cref="T:System.String"/>.</param>
-            <param name="webElements">The webElements<see cref="T:System.Collections.Generic.List`1"/>.</param>
-            <returns>The <see cref="T:OpenQA.Selenium.IWebElement"/>.</returns>
         </member>
         <member name="T:TestingDriver.Logger">
             <summary>
@@ -401,13 +391,13 @@
         <member name="P:TestingDriver.SeleniumDriver.ErrorContainer">
             <inheritdoc/>
         </member>
-        <member name="P:TestingDriver.SeleniumDriver.WebDriver">
-            <inheritdoc/>
-        </member>
         <member name="P:TestingDriver.SeleniumDriver.InIFrame">
             <summary>
             Gets or sets a value indicating whether the web driver is in an IFrame or not.
             </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
+            <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
             <inheritdoc/>
@@ -418,19 +408,10 @@
         <member name="M:TestingDriver.SeleniumDriver.CloseBrowser">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
-            <inheritdoc/>
-        </member>
         <member name="M:TestingDriver.SeleniumDriver.DismissAlert">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetAlertText">
-            <inheritdoc/>
-        </member>
-        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)">
-            <inheritdoc/>
-        </member>
-        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.Quit">
@@ -446,9 +427,6 @@
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetAllLinksURL">
-            <inheritdoc/>
-        </member>
-        <member name="M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.NavigateToURL(System.String,System.Boolean)">
@@ -490,17 +468,70 @@
         <member name="M:TestingDriver.SeleniumDriver.Wait(System.Int32)">
             <inheritdoc/>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.VerifyAttribute(System.String,System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.VerifyElementText(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.VerifyElementSelected(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <inheritdoc/>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.CheckErrorContainer">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)">
-            <inheritdoc/>
+            <summary>
+            Finds the first IWebElement By XPath.
+            </summary>
+            <param name="xPath">The xpath to find the web element.</param>
+            <returns> The first IWebElement whose xpath matches. </returns>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String,System.Int32)">
-            <inheritdoc/>
+            <summary>
+            Finds the first IWebElement By XPath.
+            </summary>
+            <param name="xPath">The xpath to find the web element.</param>
+            <param name="tries"> The amount in seconds to wait for.</param>
+            <returns> The first IWebElement whose xpath matches. </returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Executes JS command on this element.
+            </summary>
+            <param name="jsCommand">command.</param>
+            <param name="webElement">Elemnt to interact with.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)">
+            <summary>
+            Executes JS command on this element.
+            </summary>
+            <param name="jsCommand">command.</param>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Moves the mouse to the given element.
+            </summary>
+            <param name="element">Web element to mouse over.</param>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.FindElementByJs(System.String,System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
-            <inheritdoc/>
+            <summary>
+            The FindElementByJs.
+            </summary>
+            <param name="jsCommand">The jsCommand<see cref="T:System.String"/>.</param>
+            <param name="webElements">The webElements<see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <returns>The <see cref="T:OpenQA.Selenium.IWebElement"/>.</returns>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.FindElement(System.String,System.String)">
+            <summary>
+            Finds the web element of the corresponding test object under the given timeout duration.
+            </summary>
+            <param name="xPath">The xPath of the element.</param>.
+            <param name="jsCommand">Optional. Any java script commands to use.</param>
+            <returns>The web element of the corresponding test object.</returns>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SetActiveTab">
             <summary>

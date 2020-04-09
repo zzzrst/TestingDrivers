@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Threading;
 using TestingDriver;
 namespace NUnitTestingDriver
@@ -61,6 +62,38 @@ namespace NUnitTestingDriver
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
             Assert.Pass("Nothing should go wrong when switching into i frames");
         }
+
+        [Test]
+        public void TestVerifyAttribute()
+        {
+            driver.ClickElement("//a[contains(text(),'Broken Images')]");
+            Assert.IsTrue(driver.VerifyAttribute("src", "http://the-internet.herokuapp.com/img/avatar-blank.jpg", "//body//img[3]"), "The attribute src should equal http://the-internet.herokuapp.com/img/avatar-blank.jpg");
+            Assert.IsFalse(driver.VerifyAttribute("src", "img/image.jpg", "//body//img[3]"), "The attribute src should not equal img/image.jpg");
+        }
+
+        [Test]
+        public void TestVerifyElementText()
+        {
+            Assert.IsTrue(driver.VerifyElementText("Available Examples","//h2[contains(text(),'Available Examples')]"),"This should be the text");
+            Assert.IsFalse(driver.VerifyElementText("Available", "//h2[contains(text(),'Available Examples')]"),"This is the wrong text");
+        }
+
+        [Test]
+        public void TestVerifyElementSelected()
+        {
+            driver.ClickElement("//a[contains(text(),'Checkboxes')]");
+            Assert.IsTrue(driver.VerifyElementSelected("//body//input[2]"),"This element is selected");
+            Assert.IsFalse(driver.VerifyElementSelected("//body//input[1]"),"This element is not selected");
+        }
+
+        [Test]
+        public void TestVerifyDropDownContent()
+        {
+            driver.ClickElement("//a[contains(text(),'Dropdown')]");
+            Assert.IsTrue(driver.VerifyDropDownContent(new List<string>() {"Option 1","Option 2" }, "//select[@id='dropdown']"));
+            Assert.IsFalse(driver.VerifyDropDownContent(new List<string>() { "Option 1", "Option 3" }, "//select[@id='dropdown']"));
+        }
+
 #if DEBUG
         [Test]
         public void TestAODA()
