@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="AxeAccessibilityDriver" Version="2.1.7405.14587" />
+
     <PackageReference Include="docfx.console" Version="2.52.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
