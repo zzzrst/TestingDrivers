@@ -133,7 +133,7 @@
         </member>
         <member name="M:TestingDriver.ITestingDriver.ExecuteJS(System.String)">
             <summary>
-            Executes JS command;
+            Executes JS command.
             </summary>
             <param name="jsCommand">command.</param>
         </member>
