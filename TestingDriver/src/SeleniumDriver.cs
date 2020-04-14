@@ -116,13 +116,13 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public bool CheckForElementState(string xPath, ElementState state)
+        public bool CheckForElementState(string xPath, ElementState state, string jsCommand = "")
         {
             IWebElement element = null;
 
             try
             {
-                element = this.GetElementByXPath(xPath, 3);
+                element = this.FindElement(xPath, jsCommand, 3);
             }
             catch (NoSuchElementException)
             {
@@ -613,8 +613,9 @@ namespace TestingDriver
         /// </summary>
         /// <param name="xPath">The xPath of the element.</param>.
         /// <param name="jsCommand">Optional. Any java script commands to use.</param>
+        /// <param name="trys">Optional. Number of trys before giving up.</param>
         /// <returns>The web element of the corresponding test object.</returns>
-        private IWebElement FindElement(string xPath, string jsCommand = "")
+        private IWebElement FindElement(string xPath, string jsCommand = "", int trys = -1)
         {
             IWebElement webElement = null;
             double timeout = this.timeOutThreshold.TotalSeconds;
@@ -627,7 +628,7 @@ namespace TestingDriver
             stopWatch.Start();
             var start = stopWatch.Elapsed.TotalSeconds;
 
-            while ((stopWatch.Elapsed.TotalSeconds - start) < timeout && webElement == null)
+            while ((stopWatch.Elapsed.TotalSeconds - start) < timeout && webElement == null && trys != 0)
             {
                 try
                 {
@@ -651,6 +652,11 @@ namespace TestingDriver
                 catch (Exception e)
                 {
                     Logger.Error(e.ToString());
+                }
+
+                if (trys > 0)
+                {
+                    trys--;
                 }
             }
 

@@ -107,8 +107,9 @@ namespace TestingDriver
         /// </summary>
         /// <param name="xPath"> The xpath to find the web element. </param>
         /// <param name="state"> The state of the web element to wait for. </param>
+        /// <param name="jsCommand"> Any JS command to use when finding the element.</param>
         /// <returns> If the element state is as wanted.</returns>
-        public bool CheckForElementState(string xPath, ElementState state);
+        public bool CheckForElementState(string xPath, ElementState state, string jsCommand = "");
 
         /// <summary>
         /// Performs the actions of clicking the specified element. Uses Selenium binding by default.
