@@ -81,12 +81,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.CheckErrorContainer
   nameWithType: ITestingDriver.CheckErrorContainer
-- uid: TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  name: CheckForElementState(String, ITestingDriver.ElementState)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CheckForElementState_System_String_TestingDriver_ITestingDriver_ElementState_
-  commentId: M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  fullName: TestingDriver.ITestingDriver.CheckForElementState(System.String, TestingDriver.ITestingDriver.ElementState)
-  nameWithType: ITestingDriver.CheckForElementState(String, ITestingDriver.ElementState)
+- uid: TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  name: CheckForElementState(String, ITestingDriver.ElementState, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CheckForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_
+  commentId: M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  fullName: TestingDriver.ITestingDriver.CheckForElementState(System.String, TestingDriver.ITestingDriver.ElementState, System.String)
+  nameWithType: ITestingDriver.CheckForElementState(String, ITestingDriver.ElementState, String)
 - uid: TestingDriver.ITestingDriver.CheckForElementState*
   name: CheckForElementState
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CheckForElementState_
@@ -183,6 +183,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.ErrorContainer
   nameWithType: ITestingDriver.ErrorContainer
+- uid: TestingDriver.ITestingDriver.ExecuteJS(System.String)
+  name: ExecuteJS(String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ExecuteJS_System_String_
+  commentId: M:TestingDriver.ITestingDriver.ExecuteJS(System.String)
+  fullName: TestingDriver.ITestingDriver.ExecuteJS(System.String)
+  nameWithType: ITestingDriver.ExecuteJS(String)
+- uid: TestingDriver.ITestingDriver.ExecuteJS*
+  name: ExecuteJS
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ExecuteJS_
+  commentId: Overload:TestingDriver.ITestingDriver.ExecuteJS
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.ExecuteJS
+  nameWithType: ITestingDriver.ExecuteJS
 - uid: TestingDriver.ITestingDriver.ForceKillWebDriver
   name: ForceKillWebDriver()
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ForceKillWebDriver
@@ -523,6 +536,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.WaitForLoadingSpinner
   nameWithType: ITestingDriver.WaitForLoadingSpinner
+- uid: TestingDriver.ITestingDriver.WebDriver
+  name: WebDriver
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver
+  commentId: P:TestingDriver.ITestingDriver.WebDriver
+  fullName: TestingDriver.ITestingDriver.WebDriver
+  nameWithType: ITestingDriver.WebDriver
+- uid: TestingDriver.ITestingDriver.WebDriver*
+  name: WebDriver
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver_
+  commentId: Overload:TestingDriver.ITestingDriver.WebDriver
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.WebDriver
+  nameWithType: ITestingDriver.WebDriver
 - uid: TestingDriver.Logger
   name: Logger
   href: api/TestingDriver.Logger.html
@@ -690,12 +716,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.CheckErrorContainer
   nameWithType: SeleniumDriver.CheckErrorContainer
-- uid: TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  name: CheckForElementState(String, ITestingDriver.ElementState)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CheckForElementState_System_String_TestingDriver_ITestingDriver_ElementState_
-  commentId: M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  fullName: TestingDriver.SeleniumDriver.CheckForElementState(System.String, TestingDriver.ITestingDriver.ElementState)
-  nameWithType: SeleniumDriver.CheckForElementState(String, ITestingDriver.ElementState)
+- uid: TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  name: CheckForElementState(String, ITestingDriver.ElementState, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CheckForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  fullName: TestingDriver.SeleniumDriver.CheckForElementState(System.String, TestingDriver.ITestingDriver.ElementState, System.String)
+  nameWithType: SeleniumDriver.CheckForElementState(String, ITestingDriver.ElementState, String)
 - uid: TestingDriver.SeleniumDriver.CheckForElementState*
   name: CheckForElementState
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CheckForElementState_
@@ -768,6 +794,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.ErrorContainer
   nameWithType: SeleniumDriver.ErrorContainer
+- uid: TestingDriver.SeleniumDriver.ExecuteJS(System.String)
+  name: ExecuteJS(String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)
+  fullName: TestingDriver.SeleniumDriver.ExecuteJS(System.String)
+  nameWithType: SeleniumDriver.ExecuteJS(String)
+- uid: TestingDriver.SeleniumDriver.ExecuteJS*
+  name: ExecuteJS
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ExecuteJS_
+  commentId: Overload:TestingDriver.SeleniumDriver.ExecuteJS
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.ExecuteJS
+  nameWithType: SeleniumDriver.ExecuteJS
 - uid: TestingDriver.SeleniumDriver.ForceKillWebDriver
   name: ForceKillWebDriver()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ForceKillWebDriver
@@ -1096,6 +1135,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.WaitForLoadingSpinner
   nameWithType: SeleniumDriver.WaitForLoadingSpinner
+- uid: TestingDriver.SeleniumDriver.WebDriver
+  name: WebDriver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WebDriver
+  commentId: P:TestingDriver.SeleniumDriver.WebDriver
+  fullName: TestingDriver.SeleniumDriver.WebDriver
+  nameWithType: SeleniumDriver.WebDriver
+- uid: TestingDriver.SeleniumDriver.WebDriver*
+  name: WebDriver
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WebDriver_
+  commentId: Overload:TestingDriver.SeleniumDriver.WebDriver
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.WebDriver
+  nameWithType: SeleniumDriver.WebDriver
 - uid: TestingDriver.TestingDriverBuilder
   name: TestingDriverBuilder
   href: api/TestingDriver.TestingDriverBuilder.html
