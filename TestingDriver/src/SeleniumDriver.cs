@@ -97,7 +97,8 @@ namespace TestingDriver
         /// <inheritdoc/>
         public string ErrorContainer { get; set; }
 
-        private IWebDriver WebDriver { get; set; }
+        /// <inheritdoc/>
+        public IWebDriver WebDriver { get; private set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the web driver is in an IFrame or not.
@@ -146,7 +147,8 @@ namespace TestingDriver
                     return element != null && element.Displayed;
 
                 case ElementState.Clickable:
-                    return element != null && element.Displayed && element.Enabled;
+                    bool isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
+                    return element != null && element.Displayed && element.Enabled && !isReadOnly;
 
                 default:
                     return false;
