@@ -94,12 +94,19 @@
             Gets or sets the error container to check if any errors are shown on the UI.
             </summary>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+        <member name="P:TestingDriver.ITestingDriver.WebDriver">
+            <summary>
+            Gets web driver for selenium. Temporary Workaround for some methods.
+            This will eventualy be moved to private.
+            </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <summary>
             Checks for an element state.
             </summary>
             <param name="xPath"> The xpath to find the web element. </param>
             <param name="state"> The state of the web element to wait for. </param>
+            <param name="jsCommand"> Any JS command to use when finding the element.</param>
             <returns> If the element state is as wanted.</returns>
         </member>
         <member name="M:TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean)">
@@ -123,6 +130,12 @@
             <summary>
             Dismisses the alert provided taht there is an alert.
             </summary>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.ExecuteJS(System.String)">
+            <summary>
+            Executes JS command;
+            </summary>
+            <param name="jsCommand">command.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.GetAlertText">
             <summary>
@@ -391,6 +404,9 @@
         <member name="P:TestingDriver.SeleniumDriver.ErrorContainer">
             <inheritdoc/>
         </member>
+        <member name="P:TestingDriver.SeleniumDriver.WebDriver">
+            <inheritdoc/>
+        </member>
         <member name="P:TestingDriver.SeleniumDriver.InIFrame">
             <summary>
             Gets or sets a value indicating whether the web driver is in an IFrame or not.
@@ -399,7 +415,7 @@
         <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+        <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)">
@@ -483,6 +499,9 @@
         <member name="M:TestingDriver.SeleniumDriver.CheckErrorContainer">
             <inheritdoc/>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementByXPath(System.String)">
             <summary>
             Finds the first IWebElement By XPath.
@@ -505,12 +524,6 @@
             <param name="jsCommand">command.</param>
             <param name="webElement">Elemnt to interact with.</param>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.ExecuteJS(System.String)">
-            <summary>
-            Executes JS command on this element.
-            </summary>
-            <param name="jsCommand">command.</param>
-        </member>
         <member name="M:TestingDriver.SeleniumDriver.MouseOver(OpenQA.Selenium.IWebElement)">
             <summary>
             Moves the mouse to the given element.
@@ -525,12 +538,13 @@
             <param name="webElements">The webElements<see cref="T:System.Collections.Generic.List`1"/>.</param>
             <returns>The <see cref="T:OpenQA.Selenium.IWebElement"/>.</returns>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.FindElement(System.String,System.String)">
+        <member name="M:TestingDriver.SeleniumDriver.FindElement(System.String,System.String,System.Int32)">
             <summary>
             Finds the web element of the corresponding test object under the given timeout duration.
             </summary>
             <param name="xPath">The xPath of the element.</param>.
             <param name="jsCommand">Optional. Any java script commands to use.</param>
+            <param name="trys">Optional. Number of trys before giving up.</param>
             <returns>The web element of the corresponding test object.</returns>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SetActiveTab">

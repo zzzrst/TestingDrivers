@@ -498,6 +498,12 @@ namespace TestingDriver
             }
         }
 
+        /// <inheritdoc/>
+        public void ExecuteJS(string jsCommand)
+        {
+            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand);
+        }
+
         /// <summary>
         /// Finds the first IWebElement By XPath.
         /// </summary>
@@ -542,15 +548,6 @@ namespace TestingDriver
         private void ExecuteJS(string jsCommand, IWebElement webElement)
         {
             ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElement);
-        }
-
-        /// <summary>
-        /// Executes JS command on this element.
-        /// </summary>
-        /// <param name="jsCommand">command.</param>
-        private void ExecuteJS(string jsCommand)
-        {
-            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand);
         }
 
         /// <summary>
