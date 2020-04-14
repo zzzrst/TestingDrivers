@@ -140,7 +140,7 @@ namespace TestingDriver
         public void DismissAlert();
 
         /// <summary>
-        /// Executes JS command;
+        /// Executes JS command.
         /// </summary>
         /// <param name="jsCommand">command.</param>
         public void ExecuteJS(string jsCommand);
