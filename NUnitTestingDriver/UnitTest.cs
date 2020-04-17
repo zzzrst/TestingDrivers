@@ -13,7 +13,7 @@ namespace NUnitTestingDriver
         public void Setup()
         {
 #if DEBUG
-            driver = new SeleniumDriver(browser: "Chrome");
+            driver = new SeleniumDriver(browser: "Chrome", timeOut: 5);
 #else
             driver = new SeleniumDriver(browser:"remoteChrome", remoteHost:"http://localhost:4444/wd/hub");
 #endif
@@ -58,10 +58,14 @@ namespace NUnitTestingDriver
         [Test]
         public void TestIFrames()
         {
-            driver.ClickElement("//li[22]//a[1]");
-            driver.ClickElement("//a[contains(text(),'iFrame')]");
+            driver.ClickElement("//a[contains(text(),'WYSIWYG Editor')]");
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
-            Assert.Pass("Nothing should go wrong when switching into i frames");
+            Assert.IsTrue(driver.CheckForElementState("//body", ITestingDriver.ElementState.Clickable));
+            Assert.IsTrue(driver.VerifyElementText("Your content goes here.", "//body"));
+            driver.PopulateElement("//body", "Hello World");
+            driver.SwitchToIFrame("root");
+            driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
+            Assert.IsTrue(driver.VerifyElementText("Hello World", "//body"));
         }
 
         [Test]

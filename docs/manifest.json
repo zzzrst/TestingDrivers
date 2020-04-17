@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.Browser.html",
-          "hash": "WFVua7oQ6tjXbwjrtfrZtw=="
+          "hash": "blK8kXVkKxXCFDMOcOViwA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.ElementState.html",
-          "hash": "f2K9gUCwZNdHrTDC2SV32Q=="
+          "hash": "VD+98ALFWcvGSuBEnkYNnQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.TestingDriverType.html",
-          "hash": "iDIrO+2Gyj86Z1ds6W3/xg=="
+          "hash": "qZilbkp8SmVLLx7xMpddnA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.html",
-          "hash": "CdQSWtVT/TbHWS3YhHU/qw=="
+          "hash": "s79meFHJBNNKXWuMZ3ZAAA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.Logger.html",
-          "hash": "kqTmSfwLqovi1vQa/qSa/A=="
+          "hash": "PwThcp6BWmwmk9I//Kclew=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ReflectiveGetter.html",
-          "hash": "52ekXPLfaakTG5of3jxnVA=="
+          "hash": "RRJpqJAL+GTyy4v+Tph5fQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.SeleniumDriver.html",
-          "hash": "A+KijSlvl93yzuGUYIXPyA=="
+          "hash": "0W2ntWZOoHNC6V2jURxBMQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.TestingDriverBuilder.html",
-          "hash": "dCw+V9al7M37NRbP3GlYwg=="
+          "hash": "ipjcqA4/HRUFH+szbcMxNQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -108,7 +108,7 @@
           "hash": "Gv7qW39AIbPVJ0ZmASAGPg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -239,7 +239,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 9,
-          "skipped_file_count": 1
+          "skipped_file_count": 9
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

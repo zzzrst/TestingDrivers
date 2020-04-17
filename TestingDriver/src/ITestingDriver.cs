@@ -264,7 +264,7 @@ namespace TestingDriver
         public void SetTimeOutThreshold(string seconds);
 
         /// <summary>
-        /// Switches to appropriate IFrame.
+        /// Switches to appropriate IFrame. Use root in xpath to leave the iframe.
         /// </summary>
         /// <param name="xPath"> xPath to find the iFrame. use "root" to leave iframe.</param>
         /// <param name="jsCommand">Any js command needed.</param>
@@ -287,7 +287,7 @@ namespace TestingDriver
         /// <param name="xPath"> The xpath to find the web element. </param>
         /// <param name="state"> The state of the web element to wait for. </param>
         /// <param name="jsCommand">Any js command needed.</param>
-        public void WaitForElementState(string xPath, ElementState state, string jsCommand);
+        public void WaitForElementState(string xPath, ElementState state, string jsCommand = "");
 
         /// <summary>
         /// Sets implicit wait timeout in seconds.

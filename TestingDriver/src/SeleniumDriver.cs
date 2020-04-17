@@ -398,7 +398,7 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void WaitForElementState(string xPath, ElementState state, string jsCommand)
+        public void WaitForElementState(string xPath, ElementState state, string jsCommand = "")
         {
             switch (state)
             {
@@ -869,7 +869,7 @@ namespace TestingDriver
             }
             else
             {
-                this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.FrameToBeAvailableAndSwitchToIt(By.XPath(this.IFrameXPath)));
+                // this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.FrameToBeAvailableAndSwitchToIt(By.XPath(this.IFrameXPath)));
             }
         }
     }
