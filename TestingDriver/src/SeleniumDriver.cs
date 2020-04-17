@@ -456,7 +456,9 @@ namespace TestingDriver
         public bool VerifyElementText(string expected, string xPath, string jsCommand = "")
         {
             IWebElement element = this.FindElement(xPath, jsCommand);
-            return expected == element.Text;
+            bool result = false;
+            result = expected == element.Text;
+            return result;
         }
 
         /// <inheritdoc/>
