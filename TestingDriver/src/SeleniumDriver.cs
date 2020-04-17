@@ -156,9 +156,9 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void ClickElement(string xPath, bool byJS = false)
+        public void ClickElement(string xPath, bool byJS = false, string jsCommand = "")
         {
-            IWebElement element = this.GetElementByXPath(xPath);
+            IWebElement element = this.FindElement(xPath, jsCommand);
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
             if (byJS)
             {
@@ -298,9 +298,9 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void PopulateElement(string xPath, string value)
+        public void PopulateElement(string xPath, string value, string jsCommand = "")
         {
-            IWebElement element = this.GetElementByXPath(xPath);
+            IWebElement element = this.FindElement(xPath, jsCommand);
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
             element.Click();
             element.Clear();
@@ -345,9 +345,9 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void SelectValueInElement(string xPath, string value)
+        public void SelectValueInElement(string xPath, string value, string jsCommand)
         {
-            IWebElement ddlElement = this.GetElementByXPath(xPath);
+            IWebElement ddlElement = this.FindElement(xPath, jsCommand);
             SelectElement ddl = new SelectElement(ddlElement);
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(ddlElement));
             ddl.SelectByText(value);
@@ -360,7 +360,7 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void SwitchToIFrame(string xPath)
+        public void SwitchToIFrame(string xPath, string jsCommand)
         {
             this.SetActiveTab();
             this.WebDriver.SwitchTo().DefaultContent();
@@ -398,7 +398,7 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void WaitForElementState(string xPath, ElementState state)
+        public void WaitForElementState(string xPath, ElementState state, string jsCommand)
         {
             switch (state)
             {
@@ -608,7 +608,7 @@ namespace TestingDriver
         }
 
         /// <summary>
-        /// Finds the web element of the corresponding test object under the given timeout duration.
+        /// Finds the web element of the corresponding test object under the given timeout duration and trys.
         /// </summary>
         /// <param name="xPath">The xPath of the element.</param>.
         /// <param name="jsCommand">Optional. Any java script commands to use.</param>

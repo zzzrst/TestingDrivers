@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using TestingDriver;
@@ -76,6 +77,7 @@ namespace NUnitTestingDriver
         {
             Assert.IsTrue(driver.VerifyElementText("Available Examples","//h2[contains(text(),'Available Examples')]"),"This should be the text");
             Assert.IsFalse(driver.VerifyElementText("Available", "//h2[contains(text(),'Available Examples')]"),"This is the wrong text");
+            Assert.IsFalse(driver.VerifyElementText("Available", "//h2[contains(text(),'Avaiable les')]"), "There is no element at this xPath");
         }
 
         [Test]
