@@ -94,12 +94,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.CheckForElementState
   nameWithType: ITestingDriver.CheckForElementState
-- uid: TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean)
-  name: ClickElement(String, Boolean)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ClickElement_System_String_System_Boolean_
-  commentId: M:TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean)
-  fullName: TestingDriver.ITestingDriver.ClickElement(System.String, System.Boolean)
-  nameWithType: ITestingDriver.ClickElement(String, Boolean)
+- uid: TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean,System.String)
+  name: ClickElement(String, Boolean, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ClickElement_System_String_System_Boolean_System_String_
+  commentId: M:TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean,System.String)
+  fullName: TestingDriver.ITestingDriver.ClickElement(System.String, System.Boolean, System.String)
+  nameWithType: ITestingDriver.ClickElement(String, Boolean, String)
 - uid: TestingDriver.ITestingDriver.ClickElement*
   name: ClickElement
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_ClickElement_
@@ -300,12 +300,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.NavigateToURL
   nameWithType: ITestingDriver.NavigateToURL
-- uid: TestingDriver.ITestingDriver.PopulateElement(System.String,System.String)
-  name: PopulateElement(String, String)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_PopulateElement_System_String_System_String_
-  commentId: M:TestingDriver.ITestingDriver.PopulateElement(System.String,System.String)
-  fullName: TestingDriver.ITestingDriver.PopulateElement(System.String, System.String)
-  nameWithType: ITestingDriver.PopulateElement(String, String)
+- uid: TestingDriver.ITestingDriver.PopulateElement(System.String,System.String,System.String)
+  name: PopulateElement(String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_PopulateElement_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.PopulateElement(System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.PopulateElement(System.String, System.String, System.String)
+  nameWithType: ITestingDriver.PopulateElement(String, String, String)
 - uid: TestingDriver.ITestingDriver.PopulateElement*
   name: PopulateElement
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_PopulateElement_
@@ -352,12 +352,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.RunAODA
   nameWithType: ITestingDriver.RunAODA
-- uid: TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String)
-  name: SelectValueInElement(String, String)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SelectValueInElement_System_String_System_String_
-  commentId: M:TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String)
-  fullName: TestingDriver.ITestingDriver.SelectValueInElement(System.String, System.String)
-  nameWithType: ITestingDriver.SelectValueInElement(String, String)
+- uid: TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String,System.String)
+  name: SelectValueInElement(String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SelectValueInElement_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.SelectValueInElement(System.String, System.String, System.String)
+  nameWithType: ITestingDriver.SelectValueInElement(String, String, String)
 - uid: TestingDriver.ITestingDriver.SelectValueInElement*
   name: SelectValueInElement
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SelectValueInElement_
@@ -391,12 +391,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.SetTimeOutThreshold
   nameWithType: ITestingDriver.SetTimeOutThreshold
-- uid: TestingDriver.ITestingDriver.SwitchToIFrame(System.String)
-  name: SwitchToIFrame(String)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SwitchToIFrame_System_String_
-  commentId: M:TestingDriver.ITestingDriver.SwitchToIFrame(System.String)
-  fullName: TestingDriver.ITestingDriver.SwitchToIFrame(System.String)
-  nameWithType: ITestingDriver.SwitchToIFrame(String)
+- uid: TestingDriver.ITestingDriver.SwitchToIFrame(System.String,System.String)
+  name: SwitchToIFrame(String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SwitchToIFrame_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.SwitchToIFrame(System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.SwitchToIFrame(System.String, System.String)
+  nameWithType: ITestingDriver.SwitchToIFrame(String, String)
 - uid: TestingDriver.ITestingDriver.SwitchToIFrame*
   name: SwitchToIFrame
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_SwitchToIFrame_
@@ -510,12 +510,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.Wait
   nameWithType: ITestingDriver.Wait
-- uid: TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  name: WaitForElementState(String, ITestingDriver.ElementState)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_
-  commentId: M:TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  fullName: TestingDriver.ITestingDriver.WaitForElementState(System.String, TestingDriver.ITestingDriver.ElementState)
-  nameWithType: ITestingDriver.WaitForElementState(String, ITestingDriver.ElementState)
+- uid: TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  name: WaitForElementState(String, ITestingDriver.ElementState, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_
+  commentId: M:TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  fullName: TestingDriver.ITestingDriver.WaitForElementState(System.String, TestingDriver.ITestingDriver.ElementState, System.String)
+  nameWithType: ITestingDriver.WaitForElementState(String, ITestingDriver.ElementState, String)
 - uid: TestingDriver.ITestingDriver.WaitForElementState*
   name: WaitForElementState
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WaitForElementState_
@@ -729,12 +729,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.CheckForElementState
   nameWithType: SeleniumDriver.CheckForElementState
-- uid: TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)
-  name: ClickElement(String, Boolean)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ClickElement_System_String_System_Boolean_
-  commentId: M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)
-  fullName: TestingDriver.SeleniumDriver.ClickElement(System.String, System.Boolean)
-  nameWithType: SeleniumDriver.ClickElement(String, Boolean)
+- uid: TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean,System.String)
+  name: ClickElement(String, Boolean, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ClickElement_System_String_System_Boolean_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean,System.String)
+  fullName: TestingDriver.SeleniumDriver.ClickElement(System.String, System.Boolean, System.String)
+  nameWithType: SeleniumDriver.ClickElement(String, Boolean, String)
 - uid: TestingDriver.SeleniumDriver.ClickElement*
   name: ClickElement
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_ClickElement_
@@ -911,12 +911,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.NavigateToURL
   nameWithType: SeleniumDriver.NavigateToURL
-- uid: TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String)
-  name: PopulateElement(String, String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_PopulateElement_System_String_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String)
-  fullName: TestingDriver.SeleniumDriver.PopulateElement(System.String, System.String)
-  nameWithType: SeleniumDriver.PopulateElement(String, String)
+- uid: TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String,System.String)
+  name: PopulateElement(String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_PopulateElement_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.PopulateElement(System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.PopulateElement(String, String, String)
 - uid: TestingDriver.SeleniumDriver.PopulateElement*
   name: PopulateElement
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_PopulateElement_
@@ -963,12 +963,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.RunAODA
   nameWithType: SeleniumDriver.RunAODA
-- uid: TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)
-  name: SelectValueInElement(String, String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SelectValueInElement_System_String_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)
-  fullName: TestingDriver.SeleniumDriver.SelectValueInElement(System.String, System.String)
-  nameWithType: SeleniumDriver.SelectValueInElement(String, String)
+- uid: TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String,System.String)
+  name: SelectValueInElement(String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SelectValueInElement_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.SelectValueInElement(System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.SelectValueInElement(String, String, String)
 - uid: TestingDriver.SeleniumDriver.SelectValueInElement*
   name: SelectValueInElement
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SelectValueInElement_
@@ -1002,12 +1002,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.SetTimeOutThreshold
   nameWithType: SeleniumDriver.SetTimeOutThreshold
-- uid: TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)
-  name: SwitchToIFrame(String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)
-  fullName: TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)
-  nameWithType: SeleniumDriver.SwitchToIFrame(String)
+- uid: TestingDriver.SeleniumDriver.SwitchToIFrame(System.String,System.String)
+  name: SwitchToIFrame(String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.SwitchToIFrame(System.String, System.String)
+  nameWithType: SeleniumDriver.SwitchToIFrame(String, String)
 - uid: TestingDriver.SeleniumDriver.SwitchToIFrame*
   name: SwitchToIFrame
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_SwitchToIFrame_
@@ -1109,12 +1109,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.Wait
   nameWithType: SeleniumDriver.Wait
-- uid: TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  name: WaitForElementState(String, ITestingDriver.ElementState)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_
-  commentId: M:TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)
-  fullName: TestingDriver.SeleniumDriver.WaitForElementState(System.String, TestingDriver.ITestingDriver.ElementState)
-  nameWithType: SeleniumDriver.WaitForElementState(String, ITestingDriver.ElementState)
+- uid: TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  name: WaitForElementState(String, ITestingDriver.ElementState, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)
+  fullName: TestingDriver.SeleniumDriver.WaitForElementState(System.String, TestingDriver.ITestingDriver.ElementState, System.String)
+  nameWithType: SeleniumDriver.WaitForElementState(String, ITestingDriver.ElementState, String)
 - uid: TestingDriver.SeleniumDriver.WaitForElementState*
   name: WaitForElementState
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_WaitForElementState_

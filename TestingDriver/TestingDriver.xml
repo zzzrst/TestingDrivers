@@ -109,12 +109,13 @@
             <param name="jsCommand"> Any JS command to use when finding the element.</param>
             <returns> If the element state is as wanted.</returns>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean)">
+        <member name="M:TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean,System.String)">
             <summary>
             Performs the actions of clicking the specified element. Uses Selenium binding by default.
             </summary>
             <param name="xPath">The xpath to find the specified element.</param>
             <param name="byJS"> Whether to use JS to perform the click / not. </param>
+            <param name="jsCommand">Any js command needed.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.CloseBrowser">
             <summary>
@@ -215,12 +216,13 @@
             <param name="jsCommand">Any js command needed.</param>
             <returns><code>true</code> the drop down contains all the given strings.</returns>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.PopulateElement(System.String,System.String)">
+        <member name="M:TestingDriver.ITestingDriver.PopulateElement(System.String,System.String,System.String)">
             <summary>
             Performs the action of populating a value.
             </summary>
             <param name="xPath"> The xpath to use to identify the element. </param>
             <param name="value"> The value to populate.</param>
+            <param name="jsCommand">Any js command needed.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.RefreshWebPage">
             <summary>
@@ -239,12 +241,13 @@
             </summary>
             <param name="keystroke">The keystroke<see cref="T:System.String"/>.</param>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String)">
+        <member name="M:TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String,System.String)">
             <summary>
             Performs the action of selecting a value in an element.
             </summary>
             <param name="xPath"> The xpath to use to identify the element. </param>
             <param name="value"> The value to select in the element.</param>
+            <param name="jsCommand">Any js command needed.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.SetTimeOutThreshold(System.String)">
             <summary>
@@ -252,11 +255,12 @@
             </summary>
             <param name="seconds">maximum duration of timeout.</param>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.SwitchToIFrame(System.String)">
+        <member name="M:TestingDriver.ITestingDriver.SwitchToIFrame(System.String,System.String)">
             <summary>
-            Switches to appropriate IFrame.
+            Switches to appropriate IFrame. Use root in xpath to leave the iframe.
             </summary>
             <param name="xPath"> xPath to find the iFrame. use "root" to leave iframe.</param>
+            <param name="jsCommand">Any js command needed.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.SwitchToTab(System.Int32)">
             <summary>
@@ -269,12 +273,13 @@
             Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
             </summary>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+        <member name="M:TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <summary>
             Waits for an element state.
             </summary>
             <param name="xPath"> The xpath to find the web element. </param>
             <param name="state"> The state of the web element to wait for. </param>
+            <param name="jsCommand">Any js command needed.</param>
         </member>
         <member name="M:TestingDriver.ITestingDriver.Wait(System.Int32)">
             <summary>
@@ -418,7 +423,7 @@
         <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)">
+        <member name="M:TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.CloseBrowser">
@@ -448,7 +453,7 @@
         <member name="M:TestingDriver.SeleniumDriver.NavigateToURL(System.String,System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String)">
+        <member name="M:TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.RefreshWebPage">
@@ -460,13 +465,13 @@
         <member name="M:TestingDriver.SeleniumDriver.SendKeys(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)">
+        <member name="M:TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SetTimeOutThreshold(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)">
+        <member name="M:TestingDriver.SeleniumDriver.SwitchToIFrame(System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.SwitchToTab(System.Int32)">
@@ -475,7 +480,7 @@
         <member name="M:TestingDriver.SeleniumDriver.TakeScreenShot">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">
+        <member name="M:TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.WaitForLoadingSpinner">
@@ -540,7 +545,7 @@
         </member>
         <member name="M:TestingDriver.SeleniumDriver.FindElement(System.String,System.String,System.Int32)">
             <summary>
-            Finds the web element of the corresponding test object under the given timeout duration.
+            Finds the web element of the corresponding test object under the given timeout duration and trys.
             </summary>
             <param name="xPath">The xPath of the element.</param>.
             <param name="jsCommand">Optional. Any java script commands to use.</param>

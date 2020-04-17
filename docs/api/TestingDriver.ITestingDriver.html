@@ -247,7 +247,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_AcceptAlert.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.AcceptAlert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L135">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L136">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_AcceptAlert_" data-uid="TestingDriver.ITestingDriver.AcceptAlert*"></a>
   <h4 id="TestingDriver_ITestingDriver_AcceptAlert" data-uid="TestingDriver.ITestingDriver.AcceptAlert">AcceptAlert()</h4>
@@ -263,7 +263,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_CheckErrorContainer.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.CheckErrorContainer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L301">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L306">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_CheckErrorContainer_" data-uid="TestingDriver.ITestingDriver.CheckErrorContainer*"></a>
   <h4 id="TestingDriver_ITestingDriver_CheckErrorContainer" data-uid="TestingDriver.ITestingDriver.CheckErrorContainer">CheckErrorContainer()</h4>
@@ -338,19 +338,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_ClickElement_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.ClickElement(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_ClickElement_System_String_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.ClickElement(System.String%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L125">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L126">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_ClickElement_" data-uid="TestingDriver.ITestingDriver.ClickElement*"></a>
-  <h4 id="TestingDriver_ITestingDriver_ClickElement_System_String_System_Boolean_" data-uid="TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean)">ClickElement(String, Boolean)</h4>
+  <h4 id="TestingDriver_ITestingDriver_ClickElement_System_String_System_Boolean_System_String_" data-uid="TestingDriver.ITestingDriver.ClickElement(System.String,System.Boolean,System.String)">ClickElement(String, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Performs the actions of clicking the specified element. Uses Selenium binding by default.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void ClickElement(string xPath, bool byJS = false)</code></pre>
+    <pre><code class="lang-csharp hljs">void ClickElement(string xPath, bool byJS = false, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -374,6 +374,12 @@ This will eventualy be moved to private.</p>
         <td><p>Whether to use JS to perform the click / not.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -381,7 +387,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_CloseBrowser.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.CloseBrowser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L130">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L131">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_CloseBrowser_" data-uid="TestingDriver.ITestingDriver.CloseBrowser*"></a>
   <h4 id="TestingDriver_ITestingDriver_CloseBrowser" data-uid="TestingDriver.ITestingDriver.CloseBrowser">CloseBrowser()</h4>
@@ -397,7 +403,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_DismissAlert.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.DismissAlert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L140">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L141">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_DismissAlert_" data-uid="TestingDriver.ITestingDriver.DismissAlert*"></a>
   <h4 id="TestingDriver_ITestingDriver_DismissAlert" data-uid="TestingDriver.ITestingDriver.DismissAlert">DismissAlert()</h4>
@@ -413,7 +419,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_ExecuteJS_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.ExecuteJS(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L146">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L147">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_ExecuteJS_" data-uid="TestingDriver.ITestingDriver.ExecuteJS*"></a>
   <h4 id="TestingDriver_ITestingDriver_ExecuteJS_System_String_" data-uid="TestingDriver.ITestingDriver.ExecuteJS(System.String)">ExecuteJS(String)</h4>
@@ -447,7 +453,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_ForceKillWebDriver.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.ForceKillWebDriver%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L167">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L168">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_ForceKillWebDriver_" data-uid="TestingDriver.ITestingDriver.ForceKillWebDriver*"></a>
   <h4 id="TestingDriver_ITestingDriver_ForceKillWebDriver" data-uid="TestingDriver.ITestingDriver.ForceKillWebDriver">ForceKillWebDriver()</h4>
@@ -463,7 +469,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_GenerateAODAResults_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.GenerateAODAResults(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L173">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L174">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_GenerateAODAResults_" data-uid="TestingDriver.ITestingDriver.GenerateAODAResults*"></a>
   <h4 id="TestingDriver_ITestingDriver_GenerateAODAResults_System_String_" data-uid="TestingDriver.ITestingDriver.GenerateAODAResults(System.String)">GenerateAODAResults(String)</h4>
@@ -497,7 +503,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_GetAlertText.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.GetAlertText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L152">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L153">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_GetAlertText_" data-uid="TestingDriver.ITestingDriver.GetAlertText*"></a>
   <h4 id="TestingDriver_ITestingDriver_GetAlertText" data-uid="TestingDriver.ITestingDriver.GetAlertText">GetAlertText()</h4>
@@ -529,7 +535,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_GetAllLinksURL.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.GetAllLinksURL%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L179">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L180">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_GetAllLinksURL_" data-uid="TestingDriver.ITestingDriver.GetAllLinksURL*"></a>
   <h4 id="TestingDriver_ITestingDriver_GetAllLinksURL" data-uid="TestingDriver.ITestingDriver.GetAllLinksURL">GetAllLinksURL()</h4>
@@ -561,7 +567,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_Maximize.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.Maximize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L162">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L163">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_Maximize_" data-uid="TestingDriver.ITestingDriver.Maximize*"></a>
   <h4 id="TestingDriver_ITestingDriver_Maximize" data-uid="TestingDriver.ITestingDriver.Maximize">Maximize()</h4>
@@ -577,7 +583,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_NavigateToURL_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.NavigateToURL(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L187">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L188">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_NavigateToURL_" data-uid="TestingDriver.ITestingDriver.NavigateToURL*"></a>
   <h4 id="TestingDriver_ITestingDriver_NavigateToURL_System_String_System_Boolean_" data-uid="TestingDriver.ITestingDriver.NavigateToURL(System.String,System.Boolean)">NavigateToURL(String, Boolean)</h4>
@@ -630,19 +636,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_PopulateElement_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.PopulateElement(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_PopulateElement_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.PopulateElement(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L231">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L233">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_PopulateElement_" data-uid="TestingDriver.ITestingDriver.PopulateElement*"></a>
-  <h4 id="TestingDriver_ITestingDriver_PopulateElement_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.PopulateElement(System.String,System.String)">PopulateElement(String, String)</h4>
+  <h4 id="TestingDriver_ITestingDriver_PopulateElement_System_String_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.PopulateElement(System.String,System.String,System.String)">PopulateElement(String, String, String)</h4>
   <div class="markdown level1 summary"><p>Performs the action of populating a value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void PopulateElement(string xPath, string value)</code></pre>
+    <pre><code class="lang-csharp hljs">void PopulateElement(string xPath, string value, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -666,6 +672,12 @@ This will eventualy be moved to private.</p>
         <td><p>The value to populate.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -673,7 +685,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_Quit.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.Quit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L157">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L158">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_Quit_" data-uid="TestingDriver.ITestingDriver.Quit*"></a>
   <h4 id="TestingDriver_ITestingDriver_Quit" data-uid="TestingDriver.ITestingDriver.Quit">Quit()</h4>
@@ -689,7 +701,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_RefreshWebPage.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.RefreshWebPage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L236">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L238">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_RefreshWebPage_" data-uid="TestingDriver.ITestingDriver.RefreshWebPage*"></a>
   <h4 id="TestingDriver_ITestingDriver_RefreshWebPage" data-uid="TestingDriver.ITestingDriver.RefreshWebPage">RefreshWebPage()</h4>
@@ -705,7 +717,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_RunAODA_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.RunAODA(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L242">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L244">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_RunAODA_" data-uid="TestingDriver.ITestingDriver.RunAODA*"></a>
   <h4 id="TestingDriver_ITestingDriver_RunAODA_System_String_" data-uid="TestingDriver.ITestingDriver.RunAODA(System.String)">RunAODA(String)</h4>
@@ -736,19 +748,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SelectValueInElement_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SelectValueInElement(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SelectValueInElement_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SelectValueInElement(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L255">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L258">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_SelectValueInElement_" data-uid="TestingDriver.ITestingDriver.SelectValueInElement*"></a>
-  <h4 id="TestingDriver_ITestingDriver_SelectValueInElement_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String)">SelectValueInElement(String, String)</h4>
+  <h4 id="TestingDriver_ITestingDriver_SelectValueInElement_System_String_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.SelectValueInElement(System.String,System.String,System.String)">SelectValueInElement(String, String, String)</h4>
   <div class="markdown level1 summary"><p>Performs the action of selecting a value in an element.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void SelectValueInElement(string xPath, string value)</code></pre>
+    <pre><code class="lang-csharp hljs">void SelectValueInElement(string xPath, string value, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -772,6 +784,12 @@ This will eventualy be moved to private.</p>
         <td><p>The value to select in the element.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -779,7 +797,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SendKeys_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SendKeys(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L248">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L250">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_SendKeys_" data-uid="TestingDriver.ITestingDriver.SendKeys*"></a>
   <h4 id="TestingDriver_ITestingDriver_SendKeys_System_String_" data-uid="TestingDriver.ITestingDriver.SendKeys(System.String)">SendKeys(String)</h4>
@@ -813,7 +831,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SetTimeOutThreshold_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SetTimeOutThreshold(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L261">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L264">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_SetTimeOutThreshold_" data-uid="TestingDriver.ITestingDriver.SetTimeOutThreshold*"></a>
   <h4 id="TestingDriver_ITestingDriver_SetTimeOutThreshold_System_String_" data-uid="TestingDriver.ITestingDriver.SetTimeOutThreshold(System.String)">SetTimeOutThreshold(String)</h4>
@@ -844,19 +862,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SwitchToIFrame_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SwitchToIFrame(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SwitchToIFrame_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SwitchToIFrame(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L267">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L271">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_SwitchToIFrame_" data-uid="TestingDriver.ITestingDriver.SwitchToIFrame*"></a>
-  <h4 id="TestingDriver_ITestingDriver_SwitchToIFrame_System_String_" data-uid="TestingDriver.ITestingDriver.SwitchToIFrame(System.String)">SwitchToIFrame(String)</h4>
-  <div class="markdown level1 summary"><p>Switches to appropriate IFrame.</p>
+  <h4 id="TestingDriver_ITestingDriver_SwitchToIFrame_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.SwitchToIFrame(System.String,System.String)">SwitchToIFrame(String, String)</h4>
+  <div class="markdown level1 summary"><p>Switches to appropriate IFrame. Use root in xpath to leave the iframe.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void SwitchToIFrame(string xPath)</code></pre>
+    <pre><code class="lang-csharp hljs">void SwitchToIFrame(string xPath, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -874,6 +892,12 @@ This will eventualy be moved to private.</p>
         <td><p>xPath to find the iFrame. use &quot;root&quot; to leave iframe.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -881,7 +905,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_SwitchToTab_System_Int32_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.SwitchToTab(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L273">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L277">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_SwitchToTab_" data-uid="TestingDriver.ITestingDriver.SwitchToTab*"></a>
   <h4 id="TestingDriver_ITestingDriver_SwitchToTab_System_Int32_" data-uid="TestingDriver.ITestingDriver.SwitchToTab(System.Int32)">SwitchToTab(Int32)</h4>
@@ -915,7 +939,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_TakeScreenShot.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.TakeScreenShot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L278">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L282">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_TakeScreenShot_" data-uid="TestingDriver.ITestingDriver.TakeScreenShot*"></a>
   <h4 id="TestingDriver_ITestingDriver_TakeScreenShot" data-uid="TestingDriver.ITestingDriver.TakeScreenShot">TakeScreenShot()</h4>
@@ -931,7 +955,7 @@ This will eventualy be moved to private.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_VerifyAttribute_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.VerifyAttribute(System.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L198">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L199">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_VerifyAttribute_" data-uid="TestingDriver.ITestingDriver.VerifyAttribute*"></a>
   <h4 id="TestingDriver_ITestingDriver_VerifyAttribute_System_String_System_String_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.VerifyAttribute(System.String,System.String,System.String,System.String)">VerifyAttribute(String, String, String, String)</h4>
@@ -1000,7 +1024,7 @@ given a verification attribute string to check.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_VerifyDropDownContent_System_Collections_Generic_List_System_String__System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List%7BSystem.String%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L224">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L225">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_VerifyDropDownContent_" data-uid="TestingDriver.ITestingDriver.VerifyDropDownContent*"></a>
   <h4 id="TestingDriver_ITestingDriver_VerifyDropDownContent_System_Collections_Generic_List_System_String__System_String_System_String_" data-uid="TestingDriver.ITestingDriver.VerifyDropDownContent(System.Collections.Generic.List{System.String},System.String,System.String)">VerifyDropDownContent(List&lt;String&gt;, String, String)</h4>
@@ -1062,7 +1086,7 @@ given a verification attribute string to check.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_VerifyElementSelected_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.VerifyElementSelected(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L215">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L216">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_VerifyElementSelected_" data-uid="TestingDriver.ITestingDriver.VerifyElementSelected*"></a>
   <h4 id="TestingDriver_ITestingDriver_VerifyElementSelected_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.VerifyElementSelected(System.String,System.String)">VerifyElementSelected(String, String)</h4>
@@ -1118,7 +1142,7 @@ given a verification attribute string to check.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_VerifyElementText_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.VerifyElementText(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L207">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L208">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_VerifyElementText_" data-uid="TestingDriver.ITestingDriver.VerifyElementText*"></a>
   <h4 id="TestingDriver_ITestingDriver_VerifyElementText_System_String_System_String_System_String_" data-uid="TestingDriver.ITestingDriver.VerifyElementText(System.String,System.String,System.String)">VerifyElementText(String, String, String)</h4>
@@ -1180,7 +1204,7 @@ given a verification attribute string to check.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_Wait_System_Int32_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.Wait(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L291">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L296">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_Wait_" data-uid="TestingDriver.ITestingDriver.Wait*"></a>
   <h4 id="TestingDriver_ITestingDriver_Wait_System_Int32_" data-uid="TestingDriver.ITestingDriver.Wait(System.Int32)">Wait(Int32)</h4>
@@ -1211,19 +1235,19 @@ given a verification attribute string to check.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.WaitForElementState(System.String%2CTestingDriver.ITestingDriver.ElementState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.WaitForElementState(System.String%2CTestingDriver.ITestingDriver.ElementState%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L285">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L290">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_WaitForElementState_" data-uid="TestingDriver.ITestingDriver.WaitForElementState*"></a>
-  <h4 id="TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_" data-uid="TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">WaitForElementState(String, ITestingDriver.ElementState)</h4>
+  <h4 id="TestingDriver_ITestingDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_" data-uid="TestingDriver.ITestingDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">WaitForElementState(String, ITestingDriver.ElementState, String)</h4>
   <div class="markdown level1 summary"><p>Waits for an element state.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void WaitForElementState(string xPath, ITestingDriver.ElementState state)</code></pre>
+    <pre><code class="lang-csharp hljs">void WaitForElementState(string xPath, ITestingDriver.ElementState state, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1247,6 +1271,12 @@ given a verification attribute string to check.</p>
         <td><p>The state of the web element to wait for.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -1254,7 +1284,7 @@ given a verification attribute string to check.</p>
     <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_ITestingDriver_WaitForLoadingSpinner.md&amp;value=---%0Auid%3A%20TestingDriver.ITestingDriver.WaitForLoadingSpinner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L296">View Source</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/ITestingDriver.cs/#L301">View Source</a>
   </span>
   <a id="TestingDriver_ITestingDriver_WaitForLoadingSpinner_" data-uid="TestingDriver.ITestingDriver.WaitForLoadingSpinner*"></a>
   <h4 id="TestingDriver_ITestingDriver_WaitForLoadingSpinner" data-uid="TestingDriver.ITestingDriver.WaitForLoadingSpinner">WaitForLoadingSpinner()</h4>

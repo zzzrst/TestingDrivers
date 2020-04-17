@@ -455,19 +455,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_ClickElement_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.ClickElement(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_ClickElement_System_String_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.ClickElement(System.String%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/SeleniumDriver.cs/#L159">View Source</a>
   </span>
   <a id="TestingDriver_SeleniumDriver_ClickElement_" data-uid="TestingDriver.SeleniumDriver.ClickElement*"></a>
-  <h4 id="TestingDriver_SeleniumDriver_ClickElement_System_String_System_Boolean_" data-uid="TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean)">ClickElement(String, Boolean)</h4>
+  <h4 id="TestingDriver_SeleniumDriver_ClickElement_System_String_System_Boolean_System_String_" data-uid="TestingDriver.SeleniumDriver.ClickElement(System.String,System.Boolean,System.String)">ClickElement(String, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Performs the actions of clicking the specified element. Uses Selenium binding by default.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ClickElement(string xPath, bool byJS = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ClickElement(string xPath, bool byJS = false, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -489,6 +489,12 @@ This will eventualy be moved to private.</p>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">byJS</span></td>
         <td><p>Whether to use JS to perform the click / not.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
 </td>
       </tr>
     </tbody>
@@ -747,19 +753,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_PopulateElement_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.PopulateElement(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_PopulateElement_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.PopulateElement(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/SeleniumDriver.cs/#L301">View Source</a>
   </span>
   <a id="TestingDriver_SeleniumDriver_PopulateElement_" data-uid="TestingDriver.SeleniumDriver.PopulateElement*"></a>
-  <h4 id="TestingDriver_SeleniumDriver_PopulateElement_System_String_System_String_" data-uid="TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String)">PopulateElement(String, String)</h4>
+  <h4 id="TestingDriver_SeleniumDriver_PopulateElement_System_String_System_String_System_String_" data-uid="TestingDriver.SeleniumDriver.PopulateElement(System.String,System.String,System.String)">PopulateElement(String, String, String)</h4>
   <div class="markdown level1 summary"><p>Performs the action of populating a value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void PopulateElement(string xPath, string value)</code></pre>
+    <pre><code class="lang-csharp hljs">public void PopulateElement(string xPath, string value, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -781,6 +787,12 @@ This will eventualy be moved to private.</p>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">value</span></td>
         <td><p>The value to populate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
 </td>
       </tr>
     </tbody>
@@ -853,19 +865,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_SelectValueInElement_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.SelectValueInElement(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_SelectValueInElement_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.SelectValueInElement(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/SeleniumDriver.cs/#L348">View Source</a>
   </span>
   <a id="TestingDriver_SeleniumDriver_SelectValueInElement_" data-uid="TestingDriver.SeleniumDriver.SelectValueInElement*"></a>
-  <h4 id="TestingDriver_SeleniumDriver_SelectValueInElement_System_String_System_String_" data-uid="TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String)">SelectValueInElement(String, String)</h4>
+  <h4 id="TestingDriver_SeleniumDriver_SelectValueInElement_System_String_System_String_System_String_" data-uid="TestingDriver.SeleniumDriver.SelectValueInElement(System.String,System.String,System.String)">SelectValueInElement(String, String, String)</h4>
   <div class="markdown level1 summary"><p>Performs the action of selecting a value in an element.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SelectValueInElement(string xPath, string value)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SelectValueInElement(string xPath, string value, string jsCommand)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -887,6 +899,12 @@ This will eventualy be moved to private.</p>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">value</span></td>
         <td><p>The value to select in the element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
 </td>
       </tr>
     </tbody>
@@ -961,19 +979,19 @@ This will eventualy be moved to private.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.SwitchToIFrame(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/SeleniumDriver.cs/#L363">View Source</a>
   </span>
   <a id="TestingDriver_SeleniumDriver_SwitchToIFrame_" data-uid="TestingDriver.SeleniumDriver.SwitchToIFrame*"></a>
-  <h4 id="TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_" data-uid="TestingDriver.SeleniumDriver.SwitchToIFrame(System.String)">SwitchToIFrame(String)</h4>
-  <div class="markdown level1 summary"><p>Switches to appropriate IFrame.</p>
+  <h4 id="TestingDriver_SeleniumDriver_SwitchToIFrame_System_String_System_String_" data-uid="TestingDriver.SeleniumDriver.SwitchToIFrame(System.String,System.String)">SwitchToIFrame(String, String)</h4>
+  <div class="markdown level1 summary"><p>Switches to appropriate IFrame. Use root in xpath to leave the iframe.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SwitchToIFrame(string xPath)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SwitchToIFrame(string xPath, string jsCommand)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -989,6 +1007,12 @@ This will eventualy be moved to private.</p>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">xPath</span></td>
         <td><p>xPath to find the iFrame. use &quot;root&quot; to leave iframe.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
 </td>
       </tr>
     </tbody>
@@ -1328,19 +1352,19 @@ given a verification attribute string to check.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.WaitForElementState(System.String%2CTestingDriver.ITestingDriver.ElementState)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/zzzrst/TestingDrivers/new/Branch1/apiSpec/new?filename=TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_.md&amp;value=---%0Auid%3A%20TestingDriver.SeleniumDriver.WaitForElementState(System.String%2CTestingDriver.ITestingDriver.ElementState%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/zzzrst/TestingDrivers/blob/Branch1/TestingDriver/src/SeleniumDriver.cs/#L401">View Source</a>
   </span>
   <a id="TestingDriver_SeleniumDriver_WaitForElementState_" data-uid="TestingDriver.SeleniumDriver.WaitForElementState*"></a>
-  <h4 id="TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_" data-uid="TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState)">WaitForElementState(String, ITestingDriver.ElementState)</h4>
+  <h4 id="TestingDriver_SeleniumDriver_WaitForElementState_System_String_TestingDriver_ITestingDriver_ElementState_System_String_" data-uid="TestingDriver.SeleniumDriver.WaitForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">WaitForElementState(String, ITestingDriver.ElementState, String)</h4>
   <div class="markdown level1 summary"><p>Waits for an element state.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void WaitForElementState(string xPath, ITestingDriver.ElementState state)</code></pre>
+    <pre><code class="lang-csharp hljs">public void WaitForElementState(string xPath, ITestingDriver.ElementState state, string jsCommand = &quot;&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1362,6 +1386,12 @@ given a verification attribute string to check.</p>
         <td><a class="xref" href="TestingDriver.ITestingDriver.ElementState.html">ITestingDriver.ElementState</a></td>
         <td><span class="parametername">state</span></td>
         <td><p>The state of the web element to wait for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jsCommand</span></td>
+        <td><p>Any js command needed.</p>
 </td>
       </tr>
     </tbody>

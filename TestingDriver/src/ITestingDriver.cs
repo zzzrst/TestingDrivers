@@ -122,7 +122,8 @@ namespace TestingDriver
         /// </summary>
         /// <param name="xPath">The xpath to find the specified element.</param>
         /// <param name="byJS"> Whether to use JS to perform the click / not. </param>
-        public void ClickElement(string xPath, bool byJS = false);
+        /// <param name="jsCommand">Any js command needed.</param>
+        public void ClickElement(string xPath, bool byJS = false, string jsCommand = "");
 
         /// <summary>
         /// Closes the current window. It will quit the browser if it is the last window opened.
@@ -228,7 +229,8 @@ namespace TestingDriver
         /// </summary>
         /// <param name="xPath"> The xpath to use to identify the element. </param>
         /// <param name="value"> The value to populate.</param>
-        public void PopulateElement(string xPath, string value);
+        /// <param name="jsCommand">Any js command needed.</param>
+        public void PopulateElement(string xPath, string value, string jsCommand = "");
 
         /// <summary>
         /// Refreshes the webpage.
@@ -252,7 +254,8 @@ namespace TestingDriver
         /// </summary>
         /// <param name="xPath"> The xpath to use to identify the element. </param>
         /// <param name="value"> The value to select in the element.</param>
-        public void SelectValueInElement(string xPath, string value);
+        /// <param name="jsCommand">Any js command needed.</param>
+        public void SelectValueInElement(string xPath, string value, string jsCommand = "");
 
         /// <summary>
         /// Sets the global timeout in seconds.
@@ -261,10 +264,11 @@ namespace TestingDriver
         public void SetTimeOutThreshold(string seconds);
 
         /// <summary>
-        /// Switches to appropriate IFrame.
+        /// Switches to appropriate IFrame. Use root in xpath to leave the iframe.
         /// </summary>
         /// <param name="xPath"> xPath to find the iFrame. use "root" to leave iframe.</param>
-        public void SwitchToIFrame(string xPath);
+        /// <param name="jsCommand">Any js command needed.</param>
+        public void SwitchToIFrame(string xPath, string jsCommand = "");
 
         /// <summary>
         /// The SwitchToTab.
@@ -282,7 +286,8 @@ namespace TestingDriver
         /// </summary>
         /// <param name="xPath"> The xpath to find the web element. </param>
         /// <param name="state"> The state of the web element to wait for. </param>
-        public void WaitForElementState(string xPath, ElementState state);
+        /// <param name="jsCommand">Any js command needed.</param>
+        public void WaitForElementState(string xPath, ElementState state, string jsCommand = "");
 
         /// <summary>
         /// Sets implicit wait timeout in seconds.
