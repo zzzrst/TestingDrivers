@@ -97,7 +97,9 @@ namespace TestingDriver
         /// <inheritdoc/>
         public string ErrorContainer { get; set; }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Gets the web driver in use.
+        /// </summary>
         public IWebDriver WebDriver { get; private set; }
 
         /// <summary>
@@ -108,6 +110,17 @@ namespace TestingDriver
         private string IFrameXPath { get; set; } = string.Empty;
 
         private int CurrentWindow { get; set; } = -1;
+
+        /// <summary>
+        /// Returns the webElement at the given xPath.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the element at.</param>
+        /// <param name="jsCommand">any Js Command To use.</param>
+        /// <returns>The web element.</returns>
+        public IWebElement GetWebElement(string xPath, string jsCommand = "")
+        {
+           return this.FindElement(xPath, jsCommand);
+        }
 
         /// <inheritdoc/>
         public void AcceptAlert()
@@ -182,6 +195,13 @@ namespace TestingDriver
         {
             this.WebDriver.SwitchTo().Alert().Dismiss();
             this.SetActiveTab();
+        }
+
+        /// <inheritdoc/>
+        public string GetAttribute(string attribute, string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            return element.GetAttribute(attribute);
         }
 
         /// <inheritdoc/>
@@ -448,7 +468,6 @@ namespace TestingDriver
         {
             IWebElement element = this.FindElement(xPath, jsCommand);
             attribute = attribute.ToLower();
-            var k = element.GetAttribute(attribute);
             return element.GetAttribute(attribute) == expectedValue;
         }
 
@@ -456,8 +475,7 @@ namespace TestingDriver
         public bool VerifyElementText(string expected, string xPath, string jsCommand = "")
         {
             IWebElement element = this.FindElement(xPath, jsCommand);
-            bool result = false;
-            result = expected == element.Text;
+            bool result = expected == element.Text;
             return result;
         }
 

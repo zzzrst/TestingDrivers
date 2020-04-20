@@ -103,12 +103,6 @@ namespace TestingDriver
         public string ErrorContainer { get; set; }
 
         /// <summary>
-        /// Gets web driver for selenium. Temporary Workaround for some methods.
-        /// This will eventualy be moved to private.
-        /// </summary>
-        public IWebDriver WebDriver { get; }
-
-        /// <summary>
         /// Checks for an element state.
         /// </summary>
         /// <param name="xPath"> The xpath to find the web element. </param>
@@ -172,6 +166,15 @@ namespace TestingDriver
         /// </summary>
         /// <param name="folderLocation"> The folder to generate AODA results in. </param>
         public void GenerateAODAResults(string folderLocation);
+
+        /// <summary>
+        /// Returns the given attribute for the element given.
+        /// </summary>
+        /// <param name="attributeName">The name of the attribute.</param>
+        /// <param name="xPath">xpath to find the attribute.</param>
+        /// <param name="jsCommand">any js command to use.</param>
+        /// <returns>the value of the attribute.</returns>
+        public string GetAttribute(string attributeName, string xPath, string jsCommand = "");
 
         /// <summary>
         /// The GetAllLinksURL.

@@ -94,12 +94,6 @@
             Gets or sets the error container to check if any errors are shown on the UI.
             </summary>
         </member>
-        <member name="P:TestingDriver.ITestingDriver.WebDriver">
-            <summary>
-            Gets web driver for selenium. Temporary Workaround for some methods.
-            This will eventualy be moved to private.
-            </summary>
-        </member>
         <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <summary>
             Checks for an element state.
@@ -164,6 +158,15 @@
             Generates the AODA results.
             </summary>
             <param name="folderLocation"> The folder to generate AODA results in. </param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GetAttribute(System.String,System.String,System.String)">
+            <summary>
+            Returns the given attribute for the element given.
+            </summary>
+            <param name="attributeName">The name of the attribute.</param>
+            <param name="xPath">xpath to find the attribute.</param>
+            <param name="jsCommand">any js command to use.</param>
+            <returns>the value of the attribute.</returns>
         </member>
         <member name="M:TestingDriver.ITestingDriver.GetAllLinksURL">
             <summary>
@@ -410,12 +413,22 @@
             <inheritdoc/>
         </member>
         <member name="P:TestingDriver.SeleniumDriver.WebDriver">
-            <inheritdoc/>
+            <summary>
+            Gets the web driver in use.
+            </summary>
         </member>
         <member name="P:TestingDriver.SeleniumDriver.InIFrame">
             <summary>
             Gets or sets a value indicating whether the web driver is in an IFrame or not.
             </summary>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetWebElement(System.String,System.String)">
+            <summary>
+            Returns the webElement at the given xPath.
+            </summary>
+            <param name="xPath">The xpath to find the element at.</param>
+            <param name="jsCommand">any Js Command To use.</param>
+            <returns>The web element.</returns>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
             <inheritdoc/>
@@ -430,6 +443,9 @@
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.DismissAlert">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetAttribute(System.String,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetAlertText">
