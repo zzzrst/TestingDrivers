@@ -248,6 +248,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.GetAllLinksURL
   nameWithType: ITestingDriver.GetAllLinksURL
+- uid: TestingDriver.ITestingDriver.GetAttribute(System.String,System.String,System.String)
+  name: GetAttribute(String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetAttribute_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.GetAttribute(System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.GetAttribute(System.String, System.String, System.String)
+  nameWithType: ITestingDriver.GetAttribute(String, String, String)
+- uid: TestingDriver.ITestingDriver.GetAttribute*
+  name: GetAttribute
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetAttribute_
+  commentId: Overload:TestingDriver.ITestingDriver.GetAttribute
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.GetAttribute
+  nameWithType: ITestingDriver.GetAttribute
 - uid: TestingDriver.ITestingDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LoadingSpinner
@@ -536,19 +549,6 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.WaitForLoadingSpinner
   nameWithType: ITestingDriver.WaitForLoadingSpinner
-- uid: TestingDriver.ITestingDriver.WebDriver
-  name: WebDriver
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver
-  commentId: P:TestingDriver.ITestingDriver.WebDriver
-  fullName: TestingDriver.ITestingDriver.WebDriver
-  nameWithType: ITestingDriver.WebDriver
-- uid: TestingDriver.ITestingDriver.WebDriver*
-  name: WebDriver
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_WebDriver_
-  commentId: Overload:TestingDriver.ITestingDriver.WebDriver
-  isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.WebDriver
-  nameWithType: ITestingDriver.WebDriver
 - uid: TestingDriver.Logger
   name: Logger
   href: api/TestingDriver.Logger.html
@@ -859,6 +859,32 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.GetAllLinksURL
   nameWithType: SeleniumDriver.GetAllLinksURL
+- uid: TestingDriver.SeleniumDriver.GetAttribute(System.String,System.String,System.String)
+  name: GetAttribute(String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAttribute_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.GetAttribute(System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.GetAttribute(System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.GetAttribute(String, String, String)
+- uid: TestingDriver.SeleniumDriver.GetAttribute*
+  name: GetAttribute
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAttribute_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetAttribute
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.GetAttribute
+  nameWithType: SeleniumDriver.GetAttribute
+- uid: TestingDriver.SeleniumDriver.GetWebElement(System.String,System.String)
+  name: GetWebElement(String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetWebElement_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.GetWebElement(System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.GetWebElement(System.String, System.String)
+  nameWithType: SeleniumDriver.GetWebElement(String, String)
+- uid: TestingDriver.SeleniumDriver.GetWebElement*
+  name: GetWebElement
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetWebElement_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetWebElement
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.GetWebElement
+  nameWithType: SeleniumDriver.GetWebElement
 - uid: TestingDriver.SeleniumDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LoadingSpinner
