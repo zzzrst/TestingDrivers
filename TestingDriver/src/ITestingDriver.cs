@@ -174,7 +174,15 @@ namespace TestingDriver
         /// <param name="xPath">xpath to find the attribute.</param>
         /// <param name="jsCommand">any js command to use.</param>
         /// <returns>the value of the attribute.</returns>
-        public string GetAttribute(string attributeName, string xPath, string jsCommand = "");
+        public string GetElementAttribute(string attributeName, string xPath, string jsCommand = "");
+
+        /// <summary>
+        /// Returns the given text for the element given.
+        /// </summary>
+        /// <param name="xPath">xpath to find the attribute.</param>
+        /// <param name="jsCommand">any js command to use.</param>
+        /// <returns>the value of the attribute.</returns>
+        public string GetElementText(string xPath, string jsCommand = "");
 
         /// <summary>
         /// The GetAllLinksURL.

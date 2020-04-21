@@ -159,11 +159,19 @@
             </summary>
             <param name="folderLocation"> The folder to generate AODA results in. </param>
         </member>
-        <member name="M:TestingDriver.ITestingDriver.GetAttribute(System.String,System.String,System.String)">
+        <member name="M:TestingDriver.ITestingDriver.GetElementAttribute(System.String,System.String,System.String)">
             <summary>
             Returns the given attribute for the element given.
             </summary>
             <param name="attributeName">The name of the attribute.</param>
+            <param name="xPath">xpath to find the attribute.</param>
+            <param name="jsCommand">any js command to use.</param>
+            <returns>the value of the attribute.</returns>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.GetElementText(System.String,System.String)">
+            <summary>
+            Returns the given text for the element given.
+            </summary>
             <param name="xPath">xpath to find the attribute.</param>
             <param name="jsCommand">any js command to use.</param>
             <returns>the value of the attribute.</returns>
@@ -445,7 +453,10 @@
         <member name="M:TestingDriver.SeleniumDriver.DismissAlert">
             <inheritdoc/>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.GetAttribute(System.String,System.String,System.String)">
+        <member name="M:TestingDriver.SeleniumDriver.GetElementAttribute(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.GetElementText(System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetAlertText">

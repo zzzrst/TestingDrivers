@@ -198,10 +198,17 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public string GetAttribute(string attribute, string xPath, string jsCommand = "")
+        public string GetElementAttribute(string attribute, string xPath, string jsCommand = "")
         {
             IWebElement element = this.FindElement(xPath, jsCommand);
             return element.GetAttribute(attribute);
+        }
+
+        /// <inheritdoc/>
+        public string GetElementText(string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            return element.Text;
         }
 
         /// <inheritdoc/>
