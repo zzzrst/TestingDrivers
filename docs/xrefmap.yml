@@ -248,19 +248,32 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.GetAllLinksURL
   nameWithType: ITestingDriver.GetAllLinksURL
-- uid: TestingDriver.ITestingDriver.GetAttribute(System.String,System.String,System.String)
-  name: GetAttribute(String, String, String)
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetAttribute_System_String_System_String_System_String_
-  commentId: M:TestingDriver.ITestingDriver.GetAttribute(System.String,System.String,System.String)
-  fullName: TestingDriver.ITestingDriver.GetAttribute(System.String, System.String, System.String)
-  nameWithType: ITestingDriver.GetAttribute(String, String, String)
-- uid: TestingDriver.ITestingDriver.GetAttribute*
-  name: GetAttribute
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetAttribute_
-  commentId: Overload:TestingDriver.ITestingDriver.GetAttribute
+- uid: TestingDriver.ITestingDriver.GetElementAttribute(System.String,System.String,System.String)
+  name: GetElementAttribute(String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementAttribute_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.GetElementAttribute(System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.GetElementAttribute(System.String, System.String, System.String)
+  nameWithType: ITestingDriver.GetElementAttribute(String, String, String)
+- uid: TestingDriver.ITestingDriver.GetElementAttribute*
+  name: GetElementAttribute
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementAttribute_
+  commentId: Overload:TestingDriver.ITestingDriver.GetElementAttribute
   isSpec: "True"
-  fullName: TestingDriver.ITestingDriver.GetAttribute
-  nameWithType: ITestingDriver.GetAttribute
+  fullName: TestingDriver.ITestingDriver.GetElementAttribute
+  nameWithType: ITestingDriver.GetElementAttribute
+- uid: TestingDriver.ITestingDriver.GetElementText(System.String,System.String)
+  name: GetElementText(String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementText_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.GetElementText(System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.GetElementText(System.String, System.String)
+  nameWithType: ITestingDriver.GetElementText(String, String)
+- uid: TestingDriver.ITestingDriver.GetElementText*
+  name: GetElementText
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GetElementText_
+  commentId: Overload:TestingDriver.ITestingDriver.GetElementText
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.GetElementText
+  nameWithType: ITestingDriver.GetElementText
 - uid: TestingDriver.ITestingDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LoadingSpinner
@@ -859,19 +872,32 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.GetAllLinksURL
   nameWithType: SeleniumDriver.GetAllLinksURL
-- uid: TestingDriver.SeleniumDriver.GetAttribute(System.String,System.String,System.String)
-  name: GetAttribute(String, String, String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAttribute_System_String_System_String_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.GetAttribute(System.String,System.String,System.String)
-  fullName: TestingDriver.SeleniumDriver.GetAttribute(System.String, System.String, System.String)
-  nameWithType: SeleniumDriver.GetAttribute(String, String, String)
-- uid: TestingDriver.SeleniumDriver.GetAttribute*
-  name: GetAttribute
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetAttribute_
-  commentId: Overload:TestingDriver.SeleniumDriver.GetAttribute
+- uid: TestingDriver.SeleniumDriver.GetElementAttribute(System.String,System.String,System.String)
+  name: GetElementAttribute(String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementAttribute_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.GetElementAttribute(System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.GetElementAttribute(System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.GetElementAttribute(String, String, String)
+- uid: TestingDriver.SeleniumDriver.GetElementAttribute*
+  name: GetElementAttribute
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementAttribute_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetElementAttribute
   isSpec: "True"
-  fullName: TestingDriver.SeleniumDriver.GetAttribute
-  nameWithType: SeleniumDriver.GetAttribute
+  fullName: TestingDriver.SeleniumDriver.GetElementAttribute
+  nameWithType: SeleniumDriver.GetElementAttribute
+- uid: TestingDriver.SeleniumDriver.GetElementText(System.String,System.String)
+  name: GetElementText(String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementText_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.GetElementText(System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.GetElementText(System.String, System.String)
+  nameWithType: SeleniumDriver.GetElementText(String, String)
+- uid: TestingDriver.SeleniumDriver.GetElementText*
+  name: GetElementText
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetElementText_
+  commentId: Overload:TestingDriver.SeleniumDriver.GetElementText
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.GetElementText
+  nameWithType: SeleniumDriver.GetElementText
 - uid: TestingDriver.SeleniumDriver.GetWebElement(System.String,System.String)
   name: GetWebElement(String, String)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GetWebElement_System_String_System_String_
