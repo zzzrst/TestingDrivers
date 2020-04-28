@@ -222,8 +222,11 @@ namespace TestingDriver
         {
             try
             {
-                this.WebDriver.Quit();
-                this.WebDriver.Dispose();
+                if (this.WebDriver != null)
+                {
+                    this.WebDriver.Quit();
+                    this.WebDriver.Dispose();
+                }
             }
             catch
             {
@@ -854,6 +857,9 @@ namespace TestingDriver
 
                         Logger.Info("We currently do not deal with Safari yet!");
 
+                        break;
+                    default:
+                        Logger.Error("Browser Type is null");
                         break;
                 }
 
