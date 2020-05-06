@@ -160,8 +160,15 @@ namespace TestingDriver
                     return element != null && element.Displayed;
 
                 case ElementState.Clickable:
-                    bool isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
-                    return element != null && element.Displayed && element.Enabled && !isReadOnly;
+                    if (element != null)
+                    {
+                        bool isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
+                        return element.Displayed && element.Enabled && !isReadOnly;
+                    }
+                    else
+                    {
+                        return false;
+                    }
 
                 default:
                     return false;

@@ -60,9 +60,11 @@ namespace NUnitTestingDriver
         {
             driver.ClickElement("//a[contains(text(),'Dynamic Controls')]");
             Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Clickable),"Element should be clickable");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Visible), "Element should be visible");
             Assert.IsFalse(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Invisible), "Element should be clickable");
-            Assert.IsTrue(driver.CheckForElementState("//div[@id='Empty']", ITestingDriver.ElementState.Invisible), "Element should be invisible");
-            Assert.IsFalse(driver.CheckForElementState("//div[@id='Empty']", ITestingDriver.ElementState.Visible), "Element should be invisible");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Invisible), "Element should be invisible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Visible), "Element should be invisible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Clickable), "Element should be invisible");
         }
 
         [Test]
