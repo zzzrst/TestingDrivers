@@ -56,16 +56,26 @@ namespace NUnitTestingDriver
         }
 
         [Test]
+        public void TestCheckElementState()
+        {
+            driver.ClickElement("//a[contains(text(),'Dynamic Controls')]");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Clickable),"Element should be clickable");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Invisible), "Element should be clickable");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='Empty']", ITestingDriver.ElementState.Invisible), "Element should be invisible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='Empty']", ITestingDriver.ElementState.Visible), "Element should be invisible");
+        }
+
+        [Test]
         public void TestIFrames()
         {
             driver.ClickElement("//a[contains(text(),'WYSIWYG Editor')]");
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
-            Assert.IsTrue(driver.CheckForElementState("//body", ITestingDriver.ElementState.Clickable));
-            Assert.IsTrue(driver.VerifyElementText("Your content goes here.", "//body"));
+            Assert.IsTrue(driver.CheckForElementState("//body", ITestingDriver.ElementState.Clickable),"element should be clickable");
+            Assert.IsTrue(driver.VerifyElementText("Your content goes here.", "//body"), "The text should be 'Your content goes here.'");
             driver.PopulateElement("//body", "Hello World");
             driver.SwitchToIFrame("root");
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
-            Assert.IsTrue(driver.VerifyElementText("Hello World", "//body"));
+            Assert.IsTrue(driver.VerifyElementText("Hello World", "//body"), "The new text should be 'Hello World'");
         }
 
         [Test]
