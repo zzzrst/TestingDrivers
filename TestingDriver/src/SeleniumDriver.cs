@@ -688,8 +688,9 @@ namespace TestingDriver
                 }
                 catch (Exception e)
                 {
-                    if (errorThrown = !errorThrown)
+                    if (!errorThrown)
                     {
+                        errorThrown = true;
                         Logger.Error(e.ToString());
                     }
                 }
