@@ -106,8 +106,15 @@ namespace NUnitTestingDriver
         [Test]
         public void TestBadXPath()
         {
-            driver.ClickElement("//a[]");
-            Assert.Pass();
+            try
+            {
+                driver.ClickElement("//a[]");
+                Assert.Fail("This should fail");
+            }
+            catch (Exception)
+            {
+                Assert.Pass();
+            }
         }
 
         [Test]
