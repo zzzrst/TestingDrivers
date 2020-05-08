@@ -655,6 +655,7 @@ namespace TestingDriver
         {
             IWebElement webElement = null;
             double timeout = this.timeOutThreshold.TotalSeconds;
+            bool errorThrown = false;
 
             // wait for browser to finish loading before finding the object
             this.WaitForLoadingSpinner();
@@ -687,7 +688,10 @@ namespace TestingDriver
                 }
                 catch (Exception e)
                 {
-                    Logger.Error(e.ToString());
+                    if (errorThrown = !errorThrown)
+                    {
+                        Logger.Error(e.ToString());
+                    }
                 }
 
                 if (trys > 0)

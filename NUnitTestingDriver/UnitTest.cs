@@ -104,6 +104,13 @@ namespace NUnitTestingDriver
         }
 
         [Test]
+        public void TestBadXPath()
+        {
+            driver.ClickElement("//a[]");
+            Assert.Pass();
+        }
+
+        [Test]
         public void TestVerifyDropDownContent()
         {
             driver.ClickElement("//a[contains(text(),'Dropdown')]");
