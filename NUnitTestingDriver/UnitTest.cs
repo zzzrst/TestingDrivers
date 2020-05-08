@@ -56,16 +56,28 @@ namespace NUnitTestingDriver
         }
 
         [Test]
+        public void TestCheckElementState()
+        {
+            driver.ClickElement("//a[contains(text(),'Dynamic Controls')]");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Clickable),"Element should be clickable");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Visible), "Element should be visible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Invisible), "Element should be clickable");
+            Assert.IsTrue(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Invisible), "Element should be invisible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Visible), "Element should be invisible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Clickable), "Element should be invisible");
+        }
+
+        [Test]
         public void TestIFrames()
         {
             driver.ClickElement("//a[contains(text(),'WYSIWYG Editor')]");
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
-            Assert.IsTrue(driver.CheckForElementState("//body", ITestingDriver.ElementState.Clickable));
-            Assert.IsTrue(driver.VerifyElementText("Your content goes here.", "//body"));
+            Assert.IsTrue(driver.CheckForElementState("//body", ITestingDriver.ElementState.Clickable),"element should be clickable");
+            Assert.IsTrue(driver.VerifyElementText("Your content goes here.", "//body"), "The text should be 'Your content goes here.'");
             driver.PopulateElement("//body", "Hello World");
             driver.SwitchToIFrame("root");
             driver.SwitchToIFrame("//iframe[@id='mce_0_ifr']");
-            Assert.IsTrue(driver.VerifyElementText("Hello World", "//body"));
+            Assert.IsTrue(driver.VerifyElementText("Hello World", "//body"), "The new text should be 'Hello World'");
         }
 
         [Test]
@@ -89,6 +101,20 @@ namespace NUnitTestingDriver
             driver.ClickElement("//a[contains(text(),'Checkboxes')]");
             Assert.IsTrue(driver.VerifyElementSelected("//body//input[2]"),"This element is selected");
             Assert.IsFalse(driver.VerifyElementSelected("//body//input[1]"),"This element is not selected");
+        }
+
+        [Test]
+        public void TestBadXPath()
+        {
+            try
+            {
+                driver.ClickElement("//a[]");
+                Assert.Fail("This should fail");
+            }
+            catch (Exception)
+            {
+                Assert.Pass();
+            }
         }
 
         [Test]

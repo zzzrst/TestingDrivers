@@ -160,8 +160,15 @@ namespace TestingDriver
                     return element != null && element.Displayed;
 
                 case ElementState.Clickable:
-                    bool isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
-                    return element != null && element.Displayed && element.Enabled && !isReadOnly;
+                    if (element != null)
+                    {
+                        bool isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
+                        return element.Displayed && element.Enabled && !isReadOnly;
+                    }
+                    else
+                    {
+                        return false;
+                    }
 
                 default:
                     return false;
@@ -648,6 +655,7 @@ namespace TestingDriver
         {
             IWebElement webElement = null;
             double timeout = this.timeOutThreshold.TotalSeconds;
+            bool errorThrown = false;
 
             // wait for browser to finish loading before finding the object
             this.WaitForLoadingSpinner();
@@ -680,7 +688,10 @@ namespace TestingDriver
                 }
                 catch (Exception e)
                 {
-                    Logger.Error(e.ToString());
+                    if (errorThrown = !errorThrown)
+                    {
+                        Logger.Error(e.ToString());
+                    }
                 }
 
                 if (trys > 0)
