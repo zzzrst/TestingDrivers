@@ -21,6 +21,16 @@ namespace NUnitTestingDriver
         }
 
         [Test]
+        public void TestBackAndForwards()
+        {
+            driver.ClickElement("//a[contains(text(),'Dropdown')]");
+            driver.Back();
+            driver.Forward();
+            driver.SelectValueInElement("//select[@id='dropdown']", "Option 1");
+            Assert.Pass("Nothing should go wrong when clicking a drop down");
+        }
+
+        [Test]
         public void TestLogIn()
         {
             driver.ClickElement("//a[contains(text(),'Form Authentication')]");
@@ -116,6 +126,7 @@ namespace NUnitTestingDriver
                 Assert.Pass();
             }
         }
+
 
         [Test]
         public void TestVerifyDropDownContent()

@@ -94,6 +94,11 @@
             Gets or sets the error container to check if any errors are shown on the UI.
             </summary>
         </member>
+        <member name="M:TestingDriver.ITestingDriver.Back">
+            <summary>
+            Goes back a page.
+            </summary>
+        </member>
         <member name="M:TestingDriver.ITestingDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <summary>
             Checks for an element state.
@@ -131,6 +136,11 @@
             Executes JS command.
             </summary>
             <param name="jsCommand">command.</param>
+        </member>
+        <member name="M:TestingDriver.ITestingDriver.Forward">
+            <summary>
+            Goes Fowards a page.
+            </summary>
         </member>
         <member name="M:TestingDriver.ITestingDriver.GetAlertText">
             <summary>
@@ -441,6 +451,9 @@
         <member name="M:TestingDriver.SeleniumDriver.AcceptAlert">
             <inheritdoc/>
         </member>
+        <member name="M:TestingDriver.SeleniumDriver.Back">
+            <inheritdoc/>
+        </member>
         <member name="M:TestingDriver.SeleniumDriver.CheckForElementState(System.String,TestingDriver.ITestingDriver.ElementState,System.String)">
             <inheritdoc/>
         </member>
@@ -451,6 +464,9 @@
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.DismissAlert">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestingDriver.SeleniumDriver.Forward">
             <inheritdoc/>
         </member>
         <member name="M:TestingDriver.SeleniumDriver.GetElementAttribute(System.String,System.String,System.String)">

@@ -130,6 +130,12 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
+        public void Back()
+        {
+            this.WebDriver.Navigate().Back();
+        }
+
+        /// <inheritdoc/>
         public bool CheckForElementState(string xPath, ElementState state, string jsCommand = "")
         {
             IWebElement element = null;
@@ -202,6 +208,12 @@ namespace TestingDriver
         {
             this.WebDriver.SwitchTo().Alert().Dismiss();
             this.SetActiveTab();
+        }
+
+        /// <inheritdoc/>
+        public void Forward()
+        {
+            this.WebDriver.Navigate().Forward();
         }
 
         /// <inheritdoc/>

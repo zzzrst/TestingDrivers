@@ -103,6 +103,11 @@ namespace TestingDriver
         public string ErrorContainer { get; set; }
 
         /// <summary>
+        /// Goes back a page.
+        /// </summary>
+        public void Back();
+
+        /// <summary>
         /// Checks for an element state.
         /// </summary>
         /// <param name="xPath"> The xpath to find the web element. </param>
@@ -139,6 +144,11 @@ namespace TestingDriver
         /// </summary>
         /// <param name="jsCommand">command.</param>
         public void ExecuteJS(string jsCommand);
+
+        /// <summary>
+        /// Goes Fowards a page.
+        /// </summary>
+        public void Forward();
 
         /// <summary>
         /// Gets the text inside the alert.
