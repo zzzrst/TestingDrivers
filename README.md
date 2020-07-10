@@ -1,4 +1,4 @@
-# TetingDriver
+# TestingDriver
 This is a .Net 2.0 Standard Library. 
 This directory contains the source code for the package ComparePDF. This program compares two different PDFs and see if they are identical. Uses software that runs on Windows 32 bit.
 ## Documentation
