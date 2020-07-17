@@ -63,6 +63,7 @@ namespace TestingDriver
         /// <param name="loadingSpinner">The xpath for any loading spinners.</param>
         /// <param name="errorContainer">The xpath for any error containers.</param>
         /// <param name="remoteHost">The address of the remote host.</param>
+        /// <param name="webDriver">Any Web driver to be passed in.</param>
         public SeleniumDriver(
             string browser = "chrome",
             int timeOut = 5,
@@ -72,7 +73,8 @@ namespace TestingDriver
             int actualTimeout = 60,
             string loadingSpinner = "",
             string errorContainer = "",
-            string remoteHost = "")
+            string remoteHost = "",
+            IWebDriver webDriver = null)
         {
             this.browserType = this.GetBrowserType(browser);
             this.timeOutThreshold = TimeSpan.FromSeconds(timeOut);
@@ -83,6 +85,7 @@ namespace TestingDriver
             this.LoadingSpinner = loadingSpinner;
             this.ErrorContainer = errorContainer;
             this.remoteHost = remoteHost;
+            this.WebDriver = webDriver;
         }
 
         /// <inheritdoc/>
@@ -367,7 +370,12 @@ namespace TestingDriver
         {
             try
             {
+                this.WebDriver.SwitchTo().DefaultContent();
                 this.axeDriver.CaptureResult(providedPageTitle);
+                if (this.InIFrame)
+                {
+                    this.SwitchToIFrame(this.IFrameXPath, string.Empty);
+                }
             }
             catch (Exception e)
             {
