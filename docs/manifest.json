@@ -12,7 +12,7 @@
           "hash": "+GtaoxGNvzwUJH+aUhYuAA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "laz9f+dpBGX15tPSn9NKgA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "0JkLr8KjryNT14JJp7ev3A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "CWCQF1o43yY3tLzoPSJXBQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "fIL8XFUK11Yl73SZ3tVSjw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -72,7 +72,7 @@
           "hash": "0Dw+7o7i7u+Agjsj03LhQA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -84,7 +84,7 @@
           "hash": "sf0hEKBCQit6YPfJ/CfKMg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "SRNmnyfdd93miLZh+ARiLw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -108,7 +108,7 @@
           "hash": "Gv7qW39AIbPVJ0ZmASAGPg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "m/lTzxcl+kokNRw+biGwBA=="
+          "hash": "D56Isl52Kur0C2/vGKC2PA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/ITestingDriver.html",
-          "hash": "o/xpZOlyEl4i/0iiIGey+A=="
+          "hash": "vLyjWR1DffStoIUE2RWyIw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/SeleniumDriver.html",
-          "hash": "chNIdM51h8dx/fZdbAP/Jw=="
+          "hash": "OA+gmPIxAiybgwvEYiiEJA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/TestingDriverBuilder.html",
-          "hash": "EjxFHDWnHCxO7S+2+8D8qg=="
+          "hash": "UBN8McIwQCkZ7HXgMGy4dA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "v7HbckBkYq9IfiqIZVryNA=="
+          "hash": "r7ZdvFQfy4p0twi5ARkqng=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "af7XkB7wQTtV7TVin/zENg=="
+          "hash": "7RvZPYNz9NaEigHTbO+L1g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -223,23 +223,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 6
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 9,
-          "skipped_file_count": 9
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -252,8 +254,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

@@ -404,7 +404,7 @@
             Location of the Selenium drivers on the current machine.
             </summary>
         </member>
-        <member name="M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)">
+        <member name="M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,OpenQA.Selenium.IWebDriver)">
             <summary>
             Initializes a new instance of the <see cref="T:TestingDriver.SeleniumDriver"/> class.
             </summary>
@@ -417,6 +417,7 @@
             <param name="loadingSpinner">The xpath for any loading spinners.</param>
             <param name="errorContainer">The xpath for any error containers.</param>
             <param name="remoteHost">The address of the remote host.</param>
+            <param name="webDriver">Any Web driver to be passed in.</param>
         </member>
         <member name="P:TestingDriver.SeleniumDriver.Name">
             <inheritdoc/>
