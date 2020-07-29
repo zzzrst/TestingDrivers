@@ -72,9 +72,15 @@ namespace NUnitTestingDriver
             Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Clickable),"Element should be clickable");
             Assert.IsTrue(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Visible), "Element should be visible");
             Assert.IsFalse(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Invisible), "Element should be clickable");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='checkbox']//input", ITestingDriver.ElementState.Disabled), "Element is not be disabled");
             Assert.IsTrue(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Invisible), "Element should be invisible");
             Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Visible), "Element should be invisible");
             Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Clickable), "Element should be invisible");
+            Assert.IsFalse(driver.CheckForElementState("//div[@id='plkj']", ITestingDriver.ElementState.Disabled), "Element is not be disabled");
+            Assert.IsTrue(driver.CheckForElementState("//form[@id='input-example']//input", ITestingDriver.ElementState.Disabled), "Element should be Disabled");
+            Assert.IsFalse(driver.CheckForElementState("//form[@id='input-example']//input", ITestingDriver.ElementState.Clickable), "Element is not Clickable");
+            Assert.IsTrue(driver.CheckForElementState("//form[@id='input-example']//input", ITestingDriver.ElementState.Visible), "Element is Visible");
+            Assert.IsFalse(driver.CheckForElementState("//form[@id='input-example']//input", ITestingDriver.ElementState.Invisible), "Element is not Invisible");
         }
 
         [Test]

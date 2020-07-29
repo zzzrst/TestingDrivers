@@ -179,6 +179,8 @@ namespace TestingDriver
                         return false;
                     }
 
+                case ElementState.Disabled:
+                    return element != null && element.Displayed && !element.Enabled;
                 default:
                     return false;
             }
