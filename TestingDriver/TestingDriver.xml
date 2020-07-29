@@ -64,6 +64,11 @@
             Element can be clicked.
             </summary>
         </member>
+        <member name="F:TestingDriver.ITestingDriver.ElementState.Disabled">
+            <summary>
+            Element Can be seen but cant be clicked.
+            </summary>
+        </member>
         <member name="T:TestingDriver.ITestingDriver.TestingDriverType">
             <summary>
             The usable testing applications.

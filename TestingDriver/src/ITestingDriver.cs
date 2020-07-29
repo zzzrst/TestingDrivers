@@ -69,6 +69,11 @@ namespace TestingDriver
             /// Element can be clicked.
             /// </summary>
             Clickable,
+
+            /// <summary>
+            /// Element Can be seen but cant be clicked.
+            /// </summary>
+            Disabled,
         }
 
         /// <summary>
