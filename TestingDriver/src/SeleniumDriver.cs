@@ -346,7 +346,7 @@ namespace TestingDriver
             }
             catch (Exception e)
             {
-                Logger.Error($"Something went wrong while navigating to url: {e.ToString()}");
+                Logger.Error($"Something went wrong while navigating to url: {e}");
                 return false;
             }
         }
