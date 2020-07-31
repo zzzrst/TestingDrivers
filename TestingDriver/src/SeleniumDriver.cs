@@ -160,6 +160,8 @@ namespace TestingDriver
                 Logger.Error(e.ToString());
             }
 
+            bool isReadOnly;
+
             switch (state)
             {
                 case ElementState.Invisible:
@@ -171,7 +173,7 @@ namespace TestingDriver
                 case ElementState.Clickable:
                     if (element != null)
                     {
-                        bool isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
+                        isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
                         return element.Displayed && element.Enabled && !isReadOnly;
                     }
                     else
@@ -180,7 +182,8 @@ namespace TestingDriver
                     }
 
                 case ElementState.Disabled:
-                    return element != null && element.Displayed && !element.Enabled;
+                    isReadOnly = bool.Parse(element.GetAttribute("readonly") ?? "false");
+                    return element != null && element.Displayed && (!element.Enabled || isReadOnly);
                 default:
                     return false;
             }
