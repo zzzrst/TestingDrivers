@@ -8,6 +8,8 @@ namespace TestingDriver
     using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics;
+    using System.Drawing;
+    using System.Drawing.Imaging;
     using System.IO;
     using System.Linq;
     using System.Management;
@@ -44,7 +46,6 @@ namespace TestingDriver
         private string url;
 
         private string screenshotSaveLocation;
-
         private Browser browserType;
         private TimeSpan timeOutThreshold;
         private TimeSpan actualTimeOut;
@@ -82,7 +83,16 @@ namespace TestingDriver
             this.url = url;
             this.screenshotSaveLocation = screenshotSaveLocation;
             this.actualTimeOut = TimeSpan.FromMinutes(actualTimeout);
-            this.LoadingSpinner = loadingSpinner;
+
+            if (string.IsNullOrEmpty(loadingSpinner))
+            {
+                this.LoadingSpinner = "loadingspinner";
+            }
+            else
+            {
+                this.LoadingSpinner = loadingSpinner; // added loading spinner default if null or empty
+            }
+
             this.ErrorContainer = errorContainer;
             this.remoteHost = remoteHost;
             this.WebDriver = webDriver;
@@ -99,6 +109,9 @@ namespace TestingDriver
 
         /// <inheritdoc/>
         public string ErrorContainer { get; set; }
+
+        /// <inheritdoc/>
+        public int LocalTimeout { get; set; }
 
         /// <summary>
         /// Gets the web driver in use.
@@ -122,7 +135,7 @@ namespace TestingDriver
         /// <returns>The web element.</returns>
         public IWebElement GetWebElement(string xPath, string jsCommand = "")
         {
-           return this.FindElement(xPath, jsCommand);
+            return this.FindElement(xPath, jsCommand);
         }
 
         /// <inheritdoc/>
@@ -141,6 +154,9 @@ namespace TestingDriver
         /// <inheritdoc/>
         public bool CheckForElementState(string xPath, ElementState state, string jsCommand = "")
         {
+            // wait for the page to be ready before clicking
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+
             IWebElement element = null;
 
             try
@@ -165,7 +181,7 @@ namespace TestingDriver
             switch (state)
             {
                 case ElementState.Invisible:
-                    return element == null;
+                    return element == null || !element.Displayed;
 
                 case ElementState.Visible:
                     return element != null && element.Displayed;
@@ -198,25 +214,85 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void ClickElement(string xPath, bool byJS = false, string jsCommand = "")
+        /// <summary>
+        /// Sets the check box's value to ON.
+        /// </summary>
+        public void Check(string xPath, bool byJS = false, string jsCommand = "")
         {
+            // wait for the page to be ready before clicking
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+
             IWebElement element = this.FindElement(xPath, jsCommand);
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+
+            // set checkbox to 'checked' if element is not yet selected
+            if (!element.Selected)
+            {
+                element.Click();
+            }
+
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+        }
+
+        /// <inheritdoc/>
+        /// <summary>
+        /// Sets the check box's value to OFF.
+        /// </summary>
+        public void Uncheck(string xPath, bool byJS = false, string jsCommand = "")
+        {
+            // wait for the page to be ready before clicking
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+
+            // set checkbox to 'unchecked' if element is already selected
+            if (element.Selected)
+            {
+                element.Click();
+            }
+
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+        }
+
+        /// <inheritdoc/>
+        public void ClickElement(string xPath, bool byJS = false, string jsCommand = "")
+        {
+            // we added this to wait for the page to load
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+
             if (byJS)
             {
-                IJavaScriptExecutor executor = (IJavaScriptExecutor)this.WebDriver;
-                executor.ExecuteScript("var element=arguments[0]; setTimeout(function() {element.click();}, 100)", element);
+                element.Click(); // changed by Victor for JS after comparing with SeleniumFramework
+                // IJavaScriptExecutor executor = (IJavaScriptExecutor)this.WebDriver;
+                // executor.ExecuteScript("var element=arguments[0]; setTimeout(function() {element.click();}, 100)", element);
             }
             else
             {
                 element.Click();
             }
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <inheritdoc/>
-        public void CloseBrowser()
+        public void CloseBrowser(bool closeAll)
         {
-            this.WebDriver.Close();
+            // if we are closing all browsers, then run webdriver quit
+            if (closeAll)
+            {
+                this.WebDriver.Quit();
+            }
+            // if we are closing only the current context browser, then close it and switch to the default context
+            else
+            {
+                this.WebDriver.Close();
+
+                // after closing the browser, switch to the default content
+                this.SetActiveTab();
+            }
         }
 
         /// <inheritdoc/>
@@ -275,7 +351,51 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void Maximize()
         {
+            // we want to determine what the size should be before maximizing.
+            Console.WriteLine("Maximizing browser");
+
+            string exType = ConfigurationManager.AppSettings["ExecutionType"];
+            List<string> exTypesList = ConfigurationManager.AppSettings["ListTypeOfExecutions"].Split(",").ToList();
+
+            // maximize the browser first, then do any changes
             this.WebDriver.Manage().Window.Maximize();
+
+            // grab the maximized brwoser size
+            Size windowSize = this.WebDriver.Manage().Window.Size;
+
+            if (exTypesList.Contains(exType))
+            {
+                switch (exType)
+                {
+                    case "mobile":
+                        windowSize.Width = windowSize.Width / 3;
+                        break;
+                    case "tablet":
+                        windowSize.Width = windowSize.Width / 2;
+                        break;
+                    case "desktop":
+                        windowSize.Width = 1024;
+                        windowSize.Height = 768;
+                        break;
+                    case "extended-desktop":
+                    case "max":
+                        // maximize to the max size of the window, which should already be done
+                        break;
+                    default:
+                        Logger.Warn("Not implemented error for size");
+                        break;
+                }
+            }
+            else
+            {
+                Logger.Info("Exeuction type list does not contain size" + exType);
+                this.WebDriver.Manage().Window.Maximize();
+            }
+
+            Console.WriteLine($"Size after maximization: {windowSize.Width} {windowSize.Height}");
+            this.WebDriver.Manage().Window.Size = windowSize;
+
+
         }
 
         /// <inheritdoc/>
@@ -316,7 +436,14 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void GenerateAODAResults(string folderLocation)
         {
-            this.axeDriver.LogResults(folderLocation);
+            try
+            {
+                this.axeDriver.LogResults(folderLocation);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("Could not generate AODA results " + ex);
+            }
         }
 
         /// <inheritdoc/>
@@ -363,6 +490,29 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
+        public bool LaunchNewTab(string url = "", bool instantiateNewDriver = false)
+        {
+            // launch new tab has not been tested extensively.
+            Logger.Info("Only works for non-incognito mode for launching tabs. ");
+            try
+            {
+                if (url == string.Empty)
+                {
+                    url = this.url;
+                }
+
+                this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
+                this.WebDriver.Url = url;
+                return true;
+            }
+            catch (Exception e)
+            {
+                Logger.Error($"Something went wrong while launching tab to url: {e.ToString()}");
+                return false;
+            }
+        }
+
+        /// <inheritdoc/>
         public void PopulateElement(string xPath, string value, string jsCommand = "")
         {
             IWebElement element = this.FindElement(xPath, jsCommand);
@@ -381,6 +531,13 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void RunAODA(string providedPageTitle)
         {
+            // add if this.axedriver is null (especially for AAD authentication)
+            if (this.Action == null || this.axeDriver == null)
+            {
+                // skipped validating Axe Driver since a non-action
+                Logger.Info("Skipped verifying Axe Driver");
+                return;
+            }
             try
             {
                 this.WebDriver.SwitchTo().DefaultContent();
@@ -399,26 +556,69 @@ namespace TestingDriver
         /// <inheritdoc/>
         public void SendKeys(string keystroke)
         {
+            // appears to only be stable for F5 and reloading
+            Logger.Info("Send keys is currently only stable for F5 and reloading");
+
             Actions action = new Actions(this.WebDriver);
             if (keystroke == "{ENTER}")
             {
-                action.SendKeys(Keys.Enter);
+                //action.SendKeys(Keys.Enter);
+                action.SendKeys(OpenQA.Selenium.Keys.Enter);
             }
             else if (keystroke == "{TAB}")
             {
-                action.SendKeys(Keys.Tab);
+                action.SendKeys(OpenQA.Selenium.Keys.Tab);
             }
             else
             {
-                action.SendKeys(keystroke);
+                // replace white space
+                //keystroke = keystroke.Replace("}", "");
+                //keystroke = keystroke.Replace("{", "");
+                keystroke = keystroke.Replace(" ", "");
+
+                if (keystroke == "{CTRL+F5}" || keystroke == "{F5+CTRL}" || keystroke == "{F5}")
+                {
+                    // note that we are refreshing page
+                    Logger.Info("Refreshing page using WebDriver.Navigate.Refresh");
+                    WebDriver.Navigate().Refresh();
+                }
+                //else if(keystroke == "F5")
+                //{
+                //    action.SendKeys(Keys.F5);
+                //}
+                else
+                {
+                    action.SendKeys(keystroke);
+                }
+                //action.SendKeys("F5");
             }
         }
 
         /// <inheritdoc/>
         public void SelectValueInElement(string xPath, string value, string jsCommand)
         {
+            // remove extra spaces at the start and end of the string and new line characters
+            value = value.Trim();
+
             IWebElement ddlElement = this.FindElement(xPath, jsCommand);
-            SelectElement ddl = new SelectElement(ddlElement);
+
+            SelectElement ddl;
+            try
+            {
+                // we added this to wait for the page to load
+                this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+                ddl = new SelectElement(ddlElement);
+            }
+            catch
+            {
+                Logger.Warn("Select was not a select object, will now be clicking instead");
+                this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(ddlElement));
+                ddlElement.Click();
+                return;
+            }
+
+            Logger.Info("Object was a select object, will now select");
+            // select by text if there is no problem selecting object
             this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(ddlElement));
             ddl.SelectByText(value);
         }
@@ -455,16 +655,126 @@ namespace TestingDriver
         }
 
         /// <inheritdoc/>
-        public void TakeScreenShot()
+        public void TakeScreenShot(string fileName)
         {
             try
             {
                 Screenshot screenshot = this.WebDriver.TakeScreenshot();
-                screenshot.SaveAsFile(this.screenshotSaveLocation + "\\" + $"{DateTime.Now:yyyy_MM_dd-hh_mm_ss_tt}.png");
+                screenshot.SaveAsFile(fileName); // convert to jpeg
             }
             catch
             {
             }
+        }
+
+        /// <inheritdoc/>
+        /// Returns true only if screenshot was successfully created
+        public bool TakeEntireScreenshot(string fileName, bool isMobile = false)
+        {
+            var pixelRatio = 1;
+
+            if (isMobile)
+            {
+                pixelRatio = (int)(long)((IJavaScriptExecutor)this.WebDriver).ExecuteScript("return window.devicePixelRatio");
+            }
+
+            // Size of page
+            var totalWidth = Convert.ToInt32((int)(long)((IJavaScriptExecutor)this.WebDriver).ExecuteScript("return document.body.offsetWidth") * pixelRatio);
+            var totalHeight = Convert.ToInt32((int)(long)((IJavaScriptExecutor)this.WebDriver).ExecuteScript("return  document.body.parentNode.scrollHeight") * pixelRatio);
+
+            // Size of the viewport
+            var viewportWidth = Convert.ToInt32((int)(long)((IJavaScriptExecutor)this.WebDriver).ExecuteScript("return document.body.clientWidth") * pixelRatio);
+            var viewportHeight = Convert.ToInt32((int)(long)((IJavaScriptExecutor)this.WebDriver).ExecuteScript("return window.innerHeight") * pixelRatio);
+
+
+            var screenshot = (ITakesScreenshot)this.WebDriver;
+            ((IJavaScriptExecutor)this.WebDriver).ExecuteScript("window.scrollTo(0, 0)");
+
+            if (totalWidth <= viewportWidth && totalHeight <= viewportHeight)
+            {
+                // take a screenshot without having to work with bitmap
+                screenshot.GetScreenshot().SaveAsFile(fileName); // convert to jpeg
+                return true;
+            }
+
+            var rectangles = new List<Rectangle>();
+            // Loop until the totalHeight is reached
+            for (var y = 0; y < totalHeight; y += viewportHeight)
+            {
+                var newHeight = viewportHeight;
+
+                // Fix if the height of the element is too big
+                if (y + viewportHeight > totalHeight)
+                {
+                    newHeight = totalHeight - y;
+                }
+
+                // Loop until the totalWidth is reached
+                for (var x = 0; x < totalWidth; x += viewportWidth)
+                {
+                    var newWidth = viewportWidth;
+                    // Fix if the Width of the Element is too big
+                    if (x + viewportWidth > totalWidth)
+                    {
+                        newWidth = totalWidth - x;
+                    }
+
+                    // Create and add the Rectangle
+                    rectangles.Add(new Rectangle(x, y, newWidth, newHeight));
+                }
+            }
+
+            Bitmap stitchedImage;
+            try
+            {
+                stitchedImage = new Bitmap(totalWidth, totalHeight, PixelFormat.Format16bppRgb555);
+            }
+            catch
+            {
+                Logger.Error($"Creating a bitmap of width {totalWidth} and height {totalHeight} failed");
+                // var stichedImage = new Bitmap(totalWidth, totalHeight, PixelFormat.)
+                return false;
+            }
+
+            var previous = Rectangle.Empty;
+            foreach (var rectangle in rectangles)
+            {
+                // Calculate scrolling (if needed)
+                if (previous != Rectangle.Empty)
+                {
+                    ((IJavaScriptExecutor)this.WebDriver).ExecuteScript($"window.scrollBy({(rectangle.Right - previous.Right) / pixelRatio}, {(rectangle.Bottom - previous.Bottom) / pixelRatio})");
+                }
+
+                // Copy the Image
+                using (var graphics = Graphics.FromImage(stitchedImage))
+                {
+                    screenshot.GetScreenshot().SaveAsFile(fileName); // save the screenshot at the specified file name
+                    Image newImage = Image.FromFile(fileName); // get the same screeenshot as an image
+
+                    int newImgWidthCut = 0;
+                    int newImgHeightCut = 0;
+
+                    // calculate percentage to cut from the newImage
+                    if (viewportHeight != rectangle.Height)
+                    {
+                        newImgHeightCut = newImage.Height - (rectangle.Height * (newImage.Height / viewportHeight));
+                    }
+                    if (viewportWidth != rectangle.Width)
+                    {
+                        newImgWidthCut = newImage.Width - (rectangle.Width * (newImage.Width / viewportWidth));
+                    }
+
+                    graphics.DrawImage(newImage, rectangle, newImgWidthCut, newImgHeightCut, newImage.Width, newImage.Height, GraphicsUnit.Pixel);
+                    newImage.Dispose(); // delete the image
+                }
+
+                previous = rectangle;
+            }
+            // save stiched image
+            stitchedImage.Save(fileName); // save the screenshot at the specified file name
+            stitchedImage.Dispose();
+
+            return true;
         }
 
         /// <inheritdoc/>
@@ -496,9 +806,13 @@ namespace TestingDriver
 
                 if (this.LoadingSpinner != string.Empty)
                 {
+                    // wait by ID like SeleniumFrammework.
                     this.wdWait.Until(
                         SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(
-                            By.XPath(this.LoadingSpinner)));
+                            By.Id(this.LoadingSpinner)));
+
+                    // wait for the page to be ready before continuing
+                    this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
                 }
             }
             catch (Exception)
@@ -524,9 +838,37 @@ namespace TestingDriver
         /// <inheritdoc/>
         public bool VerifyElementText(string expected, string xPath, string jsCommand = "")
         {
-            IWebElement element = this.FindElement(xPath, jsCommand);
+            IWebElement element = this.FindElement(xPath, jsCommand, -1);
+            // if the element cannot be found, return false
+            if (element == null)
+            {
+                return false;
+            }
+
             bool result = expected == element.Text;
             return result;
+        }
+
+        /// <inheritdoc/>
+        public bool VerifyFieldValue(string expected, string xPath, string jsCommand = "")
+        {
+            IWebElement element = this.FindElement(xPath, jsCommand);
+            // if the element cannot be found, return false
+            if (element == null)
+            {
+                return false;
+            }
+            // TODO: analyse verify field value forerrors
+            if (element.GetAttribute("value") == null)
+            {
+                Logger.Info("Returning early since value attrbute is null in VerifyFieldValue");
+                return false;
+            }
+            else
+            {
+                // return whether the string returned is 
+                return expected == element.GetAttribute("value");
+            }
         }
 
         /// <inheritdoc/>
@@ -687,7 +1029,7 @@ namespace TestingDriver
         private IWebElement FindElement(string xPath, string jsCommand = "", int trys = -1)
         {
             IWebElement webElement = null;
-            double timeout = this.timeOutThreshold.TotalSeconds;
+            //double timeout = this.timeOutThreshold.TotalSeconds;
             bool errorThrown = false;
 
             // wait for browser to finish loading before finding the object
@@ -697,6 +1039,12 @@ namespace TestingDriver
             var stopWatch = Stopwatch.StartNew();
             stopWatch.Start();
             var start = stopWatch.Elapsed.TotalSeconds;
+
+            // set the timeout to the local timeout defined
+            double timeout = this.LocalTimeout;
+
+            // print out the local timeout
+            // Console.WriteLine("Local timeout is set to: " + timeout);
 
             while ((stopWatch.Elapsed.TotalSeconds - start) < timeout && webElement == null && trys != 0)
             {
@@ -711,6 +1059,10 @@ namespace TestingDriver
                     {
                         if (webElements.Count > 0)
                         {
+                            // explicit wait until first element is displayed
+                            WebDriverWait wait = new WebDriverWait(this.WebDriver, TimeSpan.FromSeconds(5));
+                            wait.Until(d => webElements[0].Displayed);
+
                             webElement = webElements[0];
                         }
                     }
@@ -745,18 +1097,32 @@ namespace TestingDriver
                 this.Quit();
 
                 this.WebDriver = null;
+                //this.CurrentURL = "https://www.google.com/";
 
                 ChromeOptions chromeOptions;
                 ChromeDriverService service;
 
+                // create local var to determine whether to enable incog mode
+                // bool enableIncog = bool.Parse(ConfigurationManager.AppSettings["INCOGMODE"].ToString());
+                // bool enableHeadless = bool.Parse(ConfigurationManager.AppSettings["HEADLESS_MODE"].ToString());
+
+                Logger.Info("Browser type is: " + this.browserType);
+
                 switch (this.browserType)
                 {
+                    // remote chrome is used for Selenium Grid
                     case Browser.RemoteChrome:
 
                         chromeOptions = new ChromeOptions
                         {
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                         };
+
+                        // check if in incog mode, if it is, then we launch incog mode
+                        if (enableIncog)
+                        {
+                            chromeOptions.AddArgument("--incognito");
+                        }
 
                         chromeOptions.AddArgument("no-sandbox");
                         chromeOptions.AddArgument("--log-level=3");
@@ -773,6 +1139,21 @@ namespace TestingDriver
                         {
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                         };
+
+                        // check if in incog mode, if it is, then we launch incog mode
+                        if (enableIncog)
+                        {
+                            chromeOptions.AddArgument("--incognito");
+                        }
+
+                        // enable headless mode
+                        if (enableHeadless)
+                        {
+                            Logger.Info("Started a headless session");
+                            chromeOptions.AddArgument("--headless=new");
+                        }
+
+                        chromeOptions.AddArgument("--start-maximized");
 
                         chromeOptions.AddArgument("no-sandbox");
                         chromeOptions.AddArgument("--log-level=3");
@@ -796,18 +1177,30 @@ namespace TestingDriver
                         service.SuppressInitialDiagnosticInformation = true;
 
                         this.WebDriver = new ChromeDriver(this.seleniumDriverLocation, chromeOptions, this.actualTimeOut);
+
+                        // check for maximization
+                        this.Maximize(); // maximize the webdriver
+
                         this.PID = service.ProcessId;
                         Logger.Info($"Chrome Driver service PID is: {this.PID}");
 
                         break;
                     case Browser.Edge:
-
                         // this.webDriver = new EdgeDriver(this.seleniumDriverLocation, null, this.actualTimeOut);
                         // This is to test Micrsoft Edge (Chromium Based)
-                        ChromeOptions options = new ChromeOptions
+                        EdgeOptions options = new EdgeOptions
                         {
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                         };
+
+                        // check if in incog mode, if it is, then we launch incog mode
+                        if (enableIncog)
+                        {
+                            // options.AddArgument("--incognito");
+                            // options.AddAdditionalEdgeOption("InPrivate", true);
+                            options.AddArgument("InPrivate");
+                        }
+
                         options.AddArgument("no-sandbox");
                         options.AddArgument("--log-level=3");
                         options.AddArgument("--silent");
@@ -827,16 +1220,24 @@ namespace TestingDriver
                             }
                         }
 
-                        ChromeDriverService edgeService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "msedgedriver.exe");
+                        EdgeDriverService edgeService = EdgeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "msedgedriver.exe");
 
                         edgeService.SuppressInitialDiagnosticInformation = true;
-                        this.WebDriver = new ChromeDriver(edgeService, options, this.actualTimeOut);
+                        this.WebDriver = new EdgeDriver(edgeService, options, this.actualTimeOut);
                         this.PID = edgeService.ProcessId;
+                        Logger.Info($"Edge Driver service PID is: {this.PID}");
 
                         break;
                     case Browser.Firefox:
 
                         FirefoxOptions fireFoxOptions = new FirefoxOptions();
+
+                        // check if in incog mode, if it is, then we launch incog mode
+                        if (enableIncog)
+                        {
+                            fireFoxOptions.AddArgument("-private");
+                        }
+
                         fireFoxOptions.SetPreference("browser.download.folderList", 2);
                         fireFoxOptions.SetPreference("browser.download.dir", @"C:\Temp");
                         fireFoxOptions.SetPreference("browser.download.manager.alertOnEXEOpen", false);
@@ -853,9 +1254,11 @@ namespace TestingDriver
                         fireFoxOptions.SetPreference("pdfjs.disabled", true);
 
                         string firefoxFolderLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\firefox";
-                        fireFoxOptions.BrowserExecutableLocation = firefoxFolderLocation + "\\firefox_.exe";
+                        fireFoxOptions.BrowserExecutableLocation = firefoxFolderLocation + "\\firefox.exe";
 
-                        FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(this.seleniumDriverLocation);
+                        FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "geckodriver.exe");
+
+                        // FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         fireFoxService.SuppressInitialDiagnosticInformation = true;
 
                         this.WebDriver = new FirefoxDriver(fireFoxService, fireFoxOptions, this.actualTimeOut);
@@ -945,7 +1348,7 @@ namespace TestingDriver
                     this.WebDriver.SwitchTo().Window(windows[windowCount - 1]);
                 }
             }
-            else
+            else // future implementation for InIFrame
             {
                 // this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.FrameToBeAvailableAndSwitchToIt(By.XPath(this.IFrameXPath)));
             }
