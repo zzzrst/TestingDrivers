@@ -6,7 +6,6 @@ namespace TestingDriver
 {
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Diagnostics;
     using System.Drawing;
     using System.Drawing.Imaging;
@@ -50,6 +49,11 @@ namespace TestingDriver
         private TimeSpan timeOutThreshold;
         private TimeSpan actualTimeOut;
 
+        private bool incogMode;
+        private bool headless;
+
+        private string browserSize;
+
         private string remoteHost;
 
         /// <summary>
@@ -64,7 +68,10 @@ namespace TestingDriver
         /// <param name="loadingSpinner">The xpath for any loading spinners.</param>
         /// <param name="errorContainer">The xpath for any error containers.</param>
         /// <param name="remoteHost">The address of the remote host.</param>
+        /// <param name="headless">Indicate whether to run the browser in headless mode.</param>
+        /// <param name="incogMode">Indicate whether to run the browser in incognito mode.</param>
         /// <param name="webDriver">Any Web driver to be passed in.</param>
+        /// <param name="browserSize">The execution type which indicates how the test will be executed in.</param>
         public SeleniumDriver(
             string browser = "chrome",
             int timeOut = 5,
@@ -75,7 +82,10 @@ namespace TestingDriver
             string loadingSpinner = "",
             string errorContainer = "",
             string remoteHost = "",
-            IWebDriver webDriver = null)
+            bool headless = true,
+            bool incogMode = true,
+            IWebDriver webDriver = null,
+            string browserSize = "max")
         {
             this.browserType = this.GetBrowserType(browser);
             this.timeOutThreshold = TimeSpan.FromSeconds(timeOut);
@@ -83,6 +93,10 @@ namespace TestingDriver
             this.url = url;
             this.screenshotSaveLocation = screenshotSaveLocation;
             this.actualTimeOut = TimeSpan.FromMinutes(actualTimeout);
+
+            this.incogMode = incogMode;
+            this.headless = headless;
+            this.browserSize = browserSize;
 
             if (string.IsNullOrEmpty(loadingSpinner))
             {
@@ -354,48 +368,37 @@ namespace TestingDriver
             // we want to determine what the size should be before maximizing.
             Console.WriteLine("Maximizing browser");
 
-            string exType = ConfigurationManager.AppSettings["ExecutionType"];
-            List<string> exTypesList = ConfigurationManager.AppSettings["ListTypeOfExecutions"].Split(",").ToList();
-
             // maximize the browser first, then do any changes
             this.WebDriver.Manage().Window.Maximize();
 
             // grab the maximized brwoser size
             Size windowSize = this.WebDriver.Manage().Window.Size;
 
-            if (exTypesList.Contains(exType))
+            // browser Width and browser Height
+            switch (this.browserSize)
             {
-                switch (exType)
-                {
-                    case "mobile":
-                        windowSize.Width = windowSize.Width / 3;
-                        break;
-                    case "tablet":
-                        windowSize.Width = windowSize.Width / 2;
-                        break;
-                    case "desktop":
-                        windowSize.Width = 1024;
-                        windowSize.Height = 768;
-                        break;
-                    case "extended-desktop":
-                    case "max":
-                        // maximize to the max size of the window, which should already be done
-                        break;
-                    default:
-                        Logger.Warn("Not implemented error for size");
-                        break;
-                }
-            }
-            else
-            {
-                Logger.Info("Exeuction type list does not contain size" + exType);
-                this.WebDriver.Manage().Window.Maximize();
+                case "mobile":
+                    windowSize.Width = windowSize.Width / 3;
+                    break;
+                case "tablet":
+                    windowSize.Width = windowSize.Width / 2;
+                    break;
+                case "desktop":
+                    windowSize.Width = 1024;
+                    windowSize.Height = 768;
+                    break;
+                case "extended-desktop":
+                    break;
+                case "max":
+                    // maximize to the max size of the window, which should already be done
+                    break;
+                default:
+                    Logger.Warn("Not implemented error for size");
+                    break;
             }
 
             Console.WriteLine($"Size after maximization: {windowSize.Width} {windowSize.Height}");
             this.WebDriver.Manage().Window.Size = windowSize;
-
-
         }
 
         /// <inheritdoc/>
@@ -1102,10 +1105,6 @@ namespace TestingDriver
                 ChromeOptions chromeOptions;
                 ChromeDriverService service;
 
-                // create local var to determine whether to enable incog mode
-                // bool enableIncog = bool.Parse(ConfigurationManager.AppSettings["INCOGMODE"].ToString());
-                // bool enableHeadless = bool.Parse(ConfigurationManager.AppSettings["HEADLESS_MODE"].ToString());
-
                 Logger.Info("Browser type is: " + this.browserType);
 
                 switch (this.browserType)
@@ -1119,7 +1118,7 @@ namespace TestingDriver
                         };
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (enableIncog)
+                        if (this.incogMode)
                         {
                             chromeOptions.AddArgument("--incognito");
                         }
@@ -1141,13 +1140,13 @@ namespace TestingDriver
                         };
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (enableIncog)
+                        if (this.incogMode)
                         {
                             chromeOptions.AddArgument("--incognito");
                         }
 
                         // enable headless mode
-                        if (enableHeadless)
+                        if (this.headless)
                         {
                             Logger.Info("Started a headless session");
                             chromeOptions.AddArgument("--headless=new");
@@ -1194,7 +1193,7 @@ namespace TestingDriver
                         };
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (enableIncog)
+                        if (this.incogMode)
                         {
                             // options.AddArgument("--incognito");
                             // options.AddAdditionalEdgeOption("InPrivate", true);
@@ -1233,7 +1232,7 @@ namespace TestingDriver
                         FirefoxOptions fireFoxOptions = new FirefoxOptions();
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (enableIncog)
+                        if (this.incogMode)
                         {
                             fireFoxOptions.AddArgument("-private");
                         }
@@ -1274,7 +1273,7 @@ namespace TestingDriver
                             IntroduceInstabilityByIgnoringProtectedModeSettings = true,
                             IgnoreZoomLevel = true,
                             EnsureCleanSession = true,
-                            EnableNativeEvents = bool.Parse(ConfigurationManager.AppSettings["IEEnableNativeEvents"].ToString()),
+                            EnableNativeEvents = true,
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                             RequireWindowFocus = true,
 
