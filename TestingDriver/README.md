@@ -1,6 +1,8 @@
 # TestingDriver
 This is a .Net 6.0 Library. 
 
+Previously, this was a .NET 2.0 Standard library. 
+
 This directory contains the source code for the package TestingDriver. This package is a package for interacting with testing drivers for Selenium. Currently supported browsers are Chromium, Firefox, and Edge. 
 
 ## Documentation
