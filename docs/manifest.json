@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/DuongCh/Projects/TestingDrivers/TestingDriver",
+  "source_base_path": "C:/Users/ZhengVi/Documents/GitHub-victor-zheng-codes/TestingDrivers/TestingDriver",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.Browser.html",
-          "hash": "+GtaoxGNvzwUJH+aUhYuAA=="
+          "hash": "F3P3STP0mlw3yqdl154WCQNc3AK+KG+kzbX9bGFcxBw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.ElementState.html",
-          "hash": "laz9f+dpBGX15tPSn9NKgA=="
+          "hash": "6WMZo70WLCoI+C/r/BUdo8Ohf6p178h3unvWBroG2Io="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.TestingDriverType.html",
-          "hash": "0JkLr8KjryNT14JJp7ev3A=="
+          "hash": "3FZApqe7nZQbUPkOVeKiiqbAUgNlF8fBgfbPoM25Cg0="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ITestingDriver.html",
-          "hash": "CWCQF1o43yY3tLzoPSJXBQ=="
+          "hash": "+OoUhFjOUAjNGpbAengFjznvw0g/wI0aCW2vUcRj614="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.Logger.html",
-          "hash": "fIL8XFUK11Yl73SZ3tVSjw=="
+          "hash": "vTlkwmsum0ERN7Z5DJ78Vzsr1aNK0Yhx2aIKQScQnCU="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.ReflectiveGetter.html",
-          "hash": "0Dw+7o7i7u+Agjsj03LhQA=="
+          "hash": "2Gv+Ue7u6xyPo2zGo5UOKQeWF1tbbCznu+ms0+JNUzY="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.SeleniumDriver.html",
-          "hash": "sf0hEKBCQit6YPfJ/CfKMg=="
+          "hash": "45uyO+4NobOAcBYD9/3Q6WMzsWUQ2qNbhNwbcPdek9c="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.TestingDriverBuilder.html",
-          "hash": "SRNmnyfdd93miLZh+ARiLw=="
+          "hash": "hFNOK/frIyjN9WMY1PQe2rrbfR4vvuTYZpfLczBnjAw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/TestingDriver.html",
-          "hash": "Gv7qW39AIbPVJ0ZmASAGPg=="
+          "hash": "ej11dcVX1ASvYLV+aQ/nm79xCG2EzNSOUOomGHZWM7I="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "VKUsgddfL81Veyy9zTaPlA=="
+          "hash": "oqDkqWDIjBDHBJpiaIW9MqFe6iV3RGKwBKX8acwrdgY="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "mYlYhV2Rj2TM0K6pP8fZVQ=="
+          "hash": "ea9XoFcKi9I/hr7nTJQ4unMwqPfMrkTeuAmOrbxZ2jI="
         }
       },
       "is_incremental": false,
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/ITestingDriver.html",
-          "hash": "yzaSOY/rprcNQMmMBBl7Fg=="
+          "hash": "4FgsObmhIkOyfY9ih8qjg5RnUwwCdehAOoCFacWGfZM="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/SeleniumDriver.html",
-          "hash": "8x/6dOP17+13DUgqBz2ejQ=="
+          "hash": "DIrCeva2C98axFJ7WFoEPM2/pI7m1/FO1vNJ0Rg0xC0="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/TestingDriverBuilder.html",
-          "hash": "0BKVxp/PjJ0ELEtzd/K+hA=="
+          "hash": "QQNX4w5B4TiVpQGFgmrMA0q+kSbkCJVsiLCFY24SEqA="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "ODC2Xz6nx3HlE+lLNIG77A=="
+          "hash": "lC8qFbYxfdgKPRQ9dK7njKSnlVNYPRmvf/EbfZXoBAs="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "JKo0UCH3Px05Q+I8lBZjvw=="
+          "hash": "/L27/HtLkYTNB9ETvuiyu86iAKSS6tZQY7dD+Z6vmjI="
         }
       },
       "is_incremental": false,
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "MOJERQeucHA0Ko+fl5EV7w=="
+          "hash": "VJgRw37z4tMETapPlW21ko/PCE7Gma/Oa95+AHPn6Xw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
         }
       },
       "is_incremental": false,
@@ -223,23 +223,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 6
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 9,
-          "skipped_file_count": 9
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -252,8 +254,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
