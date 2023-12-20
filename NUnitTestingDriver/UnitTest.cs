@@ -41,6 +41,8 @@ namespace NUnitTestingDriver
         {
             driver.ClickElement("//a[contains(text(),'Form Authentication')]");
 
+            Console.WriteLine("Current url " + driver.CurrentURL);
+
             Assert.That("http://the-internet.herokuapp.com/login".Equals(driver.CurrentURL), "URL is incorrect");
 
             driver.PopulateElement("//input[@id='username']", "tomsmith");
