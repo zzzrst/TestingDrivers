@@ -26,6 +26,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.AcceptAlert
   nameWithType: ITestingDriver.AcceptAlert
+- uid: TestingDriver.ITestingDriver.Back
+  name: Back()
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Back
+  commentId: M:TestingDriver.ITestingDriver.Back
+  fullName: TestingDriver.ITestingDriver.Back()
+  nameWithType: ITestingDriver.Back()
+- uid: TestingDriver.ITestingDriver.Back*
+  name: Back
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Back_
+  commentId: Overload:TestingDriver.ITestingDriver.Back
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.Back
+  nameWithType: ITestingDriver.Back
 - uid: TestingDriver.ITestingDriver.Browser
   name: ITestingDriver.Browser
   href: api/TestingDriver.ITestingDriver.Browser.html
@@ -68,6 +81,19 @@ references:
   commentId: F:TestingDriver.ITestingDriver.Browser.Safari
   fullName: TestingDriver.ITestingDriver.Browser.Safari
   nameWithType: ITestingDriver.Browser.Safari
+- uid: TestingDriver.ITestingDriver.Check(System.String,System.Boolean,System.String)
+  name: Check(String, Boolean, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Check_System_String_System_Boolean_System_String_
+  commentId: M:TestingDriver.ITestingDriver.Check(System.String,System.Boolean,System.String)
+  fullName: TestingDriver.ITestingDriver.Check(System.String, System.Boolean, System.String)
+  nameWithType: ITestingDriver.Check(String, Boolean, String)
+- uid: TestingDriver.ITestingDriver.Check*
+  name: Check
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Check_
+  commentId: Overload:TestingDriver.ITestingDriver.Check
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.Check
+  nameWithType: ITestingDriver.Check
 - uid: TestingDriver.ITestingDriver.CheckErrorContainer
   name: CheckErrorContainer()
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CheckErrorContainer
@@ -107,12 +133,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.ClickElement
   nameWithType: ITestingDriver.ClickElement
-- uid: TestingDriver.ITestingDriver.CloseBrowser
-  name: CloseBrowser()
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CloseBrowser
-  commentId: M:TestingDriver.ITestingDriver.CloseBrowser
-  fullName: TestingDriver.ITestingDriver.CloseBrowser()
-  nameWithType: ITestingDriver.CloseBrowser()
+- uid: TestingDriver.ITestingDriver.CloseBrowser(System.Boolean)
+  name: CloseBrowser(Boolean)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CloseBrowser_System_Boolean_
+  commentId: M:TestingDriver.ITestingDriver.CloseBrowser(System.Boolean)
+  fullName: TestingDriver.ITestingDriver.CloseBrowser(System.Boolean)
+  nameWithType: ITestingDriver.CloseBrowser(Boolean)
 - uid: TestingDriver.ITestingDriver.CloseBrowser*
   name: CloseBrowser
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_CloseBrowser_
@@ -158,6 +184,12 @@ references:
   commentId: F:TestingDriver.ITestingDriver.ElementState.Clickable
   fullName: TestingDriver.ITestingDriver.ElementState.Clickable
   nameWithType: ITestingDriver.ElementState.Clickable
+- uid: TestingDriver.ITestingDriver.ElementState.Disabled
+  name: Disabled
+  href: api/TestingDriver.ITestingDriver.ElementState.html#TestingDriver_ITestingDriver_ElementState_Disabled
+  commentId: F:TestingDriver.ITestingDriver.ElementState.Disabled
+  fullName: TestingDriver.ITestingDriver.ElementState.Disabled
+  nameWithType: ITestingDriver.ElementState.Disabled
 - uid: TestingDriver.ITestingDriver.ElementState.Invisible
   name: Invisible
   href: api/TestingDriver.ITestingDriver.ElementState.html#TestingDriver_ITestingDriver_ElementState_Invisible
@@ -209,6 +241,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.ForceKillWebDriver
   nameWithType: ITestingDriver.ForceKillWebDriver
+- uid: TestingDriver.ITestingDriver.Forward
+  name: Forward()
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Forward
+  commentId: M:TestingDriver.ITestingDriver.Forward
+  fullName: TestingDriver.ITestingDriver.Forward()
+  nameWithType: ITestingDriver.Forward()
+- uid: TestingDriver.ITestingDriver.Forward*
+  name: Forward
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Forward_
+  commentId: Overload:TestingDriver.ITestingDriver.Forward
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.Forward
+  nameWithType: ITestingDriver.Forward
 - uid: TestingDriver.ITestingDriver.GenerateAODAResults(System.String)
   name: GenerateAODAResults(String)
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_GenerateAODAResults_System_String_
@@ -274,6 +319,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.GetElementText
   nameWithType: ITestingDriver.GetElementText
+- uid: TestingDriver.ITestingDriver.LaunchNewTab(System.String,System.Boolean)
+  name: LaunchNewTab(String, Boolean)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LaunchNewTab_System_String_System_Boolean_
+  commentId: M:TestingDriver.ITestingDriver.LaunchNewTab(System.String,System.Boolean)
+  fullName: TestingDriver.ITestingDriver.LaunchNewTab(System.String, System.Boolean)
+  nameWithType: ITestingDriver.LaunchNewTab(String, Boolean)
+- uid: TestingDriver.ITestingDriver.LaunchNewTab*
+  name: LaunchNewTab
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LaunchNewTab_
+  commentId: Overload:TestingDriver.ITestingDriver.LaunchNewTab
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.LaunchNewTab
+  nameWithType: ITestingDriver.LaunchNewTab
 - uid: TestingDriver.ITestingDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LoadingSpinner
@@ -287,6 +345,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.LoadingSpinner
   nameWithType: ITestingDriver.LoadingSpinner
+- uid: TestingDriver.ITestingDriver.LocalTimeout
+  name: LocalTimeout
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LocalTimeout
+  commentId: P:TestingDriver.ITestingDriver.LocalTimeout
+  fullName: TestingDriver.ITestingDriver.LocalTimeout
+  nameWithType: ITestingDriver.LocalTimeout
+- uid: TestingDriver.ITestingDriver.LocalTimeout*
+  name: LocalTimeout
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_LocalTimeout_
+  commentId: Overload:TestingDriver.ITestingDriver.LocalTimeout
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.LocalTimeout
+  nameWithType: ITestingDriver.LocalTimeout
 - uid: TestingDriver.ITestingDriver.Maximize
   name: Maximize()
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Maximize
@@ -443,12 +514,25 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.SwitchToTab
   nameWithType: ITestingDriver.SwitchToTab
-- uid: TestingDriver.ITestingDriver.TakeScreenShot
-  name: TakeScreenShot()
-  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_TakeScreenShot
-  commentId: M:TestingDriver.ITestingDriver.TakeScreenShot
-  fullName: TestingDriver.ITestingDriver.TakeScreenShot()
-  nameWithType: ITestingDriver.TakeScreenShot()
+- uid: TestingDriver.ITestingDriver.TakeEntireScreenshot(System.String,System.Boolean)
+  name: TakeEntireScreenshot(String, Boolean)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_TakeEntireScreenshot_System_String_System_Boolean_
+  commentId: M:TestingDriver.ITestingDriver.TakeEntireScreenshot(System.String,System.Boolean)
+  fullName: TestingDriver.ITestingDriver.TakeEntireScreenshot(System.String, System.Boolean)
+  nameWithType: ITestingDriver.TakeEntireScreenshot(String, Boolean)
+- uid: TestingDriver.ITestingDriver.TakeEntireScreenshot*
+  name: TakeEntireScreenshot
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_TakeEntireScreenshot_
+  commentId: Overload:TestingDriver.ITestingDriver.TakeEntireScreenshot
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.TakeEntireScreenshot
+  nameWithType: ITestingDriver.TakeEntireScreenshot
+- uid: TestingDriver.ITestingDriver.TakeScreenShot(System.String)
+  name: TakeScreenShot(String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_TakeScreenShot_System_String_
+  commentId: M:TestingDriver.ITestingDriver.TakeScreenShot(System.String)
+  fullName: TestingDriver.ITestingDriver.TakeScreenShot(System.String)
+  nameWithType: ITestingDriver.TakeScreenShot(String)
 - uid: TestingDriver.ITestingDriver.TakeScreenShot*
   name: TakeScreenShot
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_TakeScreenShot_
@@ -468,6 +552,19 @@ references:
   commentId: F:TestingDriver.ITestingDriver.TestingDriverType.Selenium
   fullName: TestingDriver.ITestingDriver.TestingDriverType.Selenium
   nameWithType: ITestingDriver.TestingDriverType.Selenium
+- uid: TestingDriver.ITestingDriver.Uncheck(System.String,System.Boolean,System.String)
+  name: Uncheck(String, Boolean, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Uncheck_System_String_System_Boolean_System_String_
+  commentId: M:TestingDriver.ITestingDriver.Uncheck(System.String,System.Boolean,System.String)
+  fullName: TestingDriver.ITestingDriver.Uncheck(System.String, System.Boolean, System.String)
+  nameWithType: ITestingDriver.Uncheck(String, Boolean, String)
+- uid: TestingDriver.ITestingDriver.Uncheck*
+  name: Uncheck
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Uncheck_
+  commentId: Overload:TestingDriver.ITestingDriver.Uncheck
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.Uncheck
+  nameWithType: ITestingDriver.Uncheck
 - uid: TestingDriver.ITestingDriver.VerifyAttribute(System.String,System.String,System.String,System.String)
   name: VerifyAttribute(String, String, String, String)
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyAttribute_System_String_System_String_System_String_System_String_
@@ -523,6 +620,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.ITestingDriver.VerifyElementText
   nameWithType: ITestingDriver.VerifyElementText
+- uid: TestingDriver.ITestingDriver.VerifyFieldValue(System.String,System.String,System.String)
+  name: VerifyFieldValue(String, String, String)
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyFieldValue_System_String_System_String_System_String_
+  commentId: M:TestingDriver.ITestingDriver.VerifyFieldValue(System.String,System.String,System.String)
+  fullName: TestingDriver.ITestingDriver.VerifyFieldValue(System.String, System.String, System.String)
+  nameWithType: ITestingDriver.VerifyFieldValue(String, String, String)
+- uid: TestingDriver.ITestingDriver.VerifyFieldValue*
+  name: VerifyFieldValue
+  href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_VerifyFieldValue_
+  commentId: Overload:TestingDriver.ITestingDriver.VerifyFieldValue
+  isSpec: "True"
+  fullName: TestingDriver.ITestingDriver.VerifyFieldValue
+  nameWithType: ITestingDriver.VerifyFieldValue
 - uid: TestingDriver.ITestingDriver.Wait(System.Int32)
   name: Wait(Int32)
   href: api/TestingDriver.ITestingDriver.html#TestingDriver_ITestingDriver_Wait_System_Int32_
@@ -690,12 +800,12 @@ references:
   commentId: T:TestingDriver.SeleniumDriver
   fullName: TestingDriver.SeleniumDriver
   nameWithType: SeleniumDriver
-- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)
-  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_System_String_
-  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)
-  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String, System.String)
-  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String)
+- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.Boolean,OpenQA.Selenium.IWebDriver,System.String,System.Int32)
+  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String, Boolean, Boolean, IWebDriver, String, Int32)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_System_String_System_Boolean_System_Boolean_OpenQA_Selenium_IWebDriver_System_String_System_Int32_
+  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.Boolean,OpenQA.Selenium.IWebDriver,System.String,System.Int32)
+  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String, System.String, System.Boolean, System.Boolean, OpenQA.Selenium.IWebDriver, System.String, System.Int32)
+  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String, Boolean, Boolean, IWebDriver, String, Int32)
 - uid: TestingDriver.SeleniumDriver.#ctor*
   name: SeleniumDriver
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_
@@ -716,6 +826,32 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.AcceptAlert
   nameWithType: SeleniumDriver.AcceptAlert
+- uid: TestingDriver.SeleniumDriver.Back
+  name: Back()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Back
+  commentId: M:TestingDriver.SeleniumDriver.Back
+  fullName: TestingDriver.SeleniumDriver.Back()
+  nameWithType: SeleniumDriver.Back()
+- uid: TestingDriver.SeleniumDriver.Back*
+  name: Back
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Back_
+  commentId: Overload:TestingDriver.SeleniumDriver.Back
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.Back
+  nameWithType: SeleniumDriver.Back
+- uid: TestingDriver.SeleniumDriver.Check(System.String,System.Boolean,System.String)
+  name: Check(String, Boolean, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Check_System_String_System_Boolean_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.Check(System.String,System.Boolean,System.String)
+  fullName: TestingDriver.SeleniumDriver.Check(System.String, System.Boolean, System.String)
+  nameWithType: SeleniumDriver.Check(String, Boolean, String)
+- uid: TestingDriver.SeleniumDriver.Check*
+  name: Check
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Check_
+  commentId: Overload:TestingDriver.SeleniumDriver.Check
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.Check
+  nameWithType: SeleniumDriver.Check
 - uid: TestingDriver.SeleniumDriver.CheckErrorContainer
   name: CheckErrorContainer()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CheckErrorContainer
@@ -755,12 +891,12 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.ClickElement
   nameWithType: SeleniumDriver.ClickElement
-- uid: TestingDriver.SeleniumDriver.CloseBrowser
-  name: CloseBrowser()
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CloseBrowser
-  commentId: M:TestingDriver.SeleniumDriver.CloseBrowser
-  fullName: TestingDriver.SeleniumDriver.CloseBrowser()
-  nameWithType: SeleniumDriver.CloseBrowser()
+- uid: TestingDriver.SeleniumDriver.CloseBrowser(System.Boolean)
+  name: CloseBrowser(Boolean)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CloseBrowser_System_Boolean_
+  commentId: M:TestingDriver.SeleniumDriver.CloseBrowser(System.Boolean)
+  fullName: TestingDriver.SeleniumDriver.CloseBrowser(System.Boolean)
+  nameWithType: SeleniumDriver.CloseBrowser(Boolean)
 - uid: TestingDriver.SeleniumDriver.CloseBrowser*
   name: CloseBrowser
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_CloseBrowser_
@@ -833,6 +969,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.ForceKillWebDriver
   nameWithType: SeleniumDriver.ForceKillWebDriver
+- uid: TestingDriver.SeleniumDriver.Forward
+  name: Forward()
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Forward
+  commentId: M:TestingDriver.SeleniumDriver.Forward
+  fullName: TestingDriver.SeleniumDriver.Forward()
+  nameWithType: SeleniumDriver.Forward()
+- uid: TestingDriver.SeleniumDriver.Forward*
+  name: Forward
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Forward_
+  commentId: Overload:TestingDriver.SeleniumDriver.Forward
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.Forward
+  nameWithType: SeleniumDriver.Forward
 - uid: TestingDriver.SeleniumDriver.GenerateAODAResults(System.String)
   name: GenerateAODAResults(String)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_GenerateAODAResults_System_String_
@@ -911,6 +1060,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.GetWebElement
   nameWithType: SeleniumDriver.GetWebElement
+- uid: TestingDriver.SeleniumDriver.LaunchNewTab(System.String,System.Boolean)
+  name: LaunchNewTab(String, Boolean)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LaunchNewTab_System_String_System_Boolean_
+  commentId: M:TestingDriver.SeleniumDriver.LaunchNewTab(System.String,System.Boolean)
+  fullName: TestingDriver.SeleniumDriver.LaunchNewTab(System.String, System.Boolean)
+  nameWithType: SeleniumDriver.LaunchNewTab(String, Boolean)
+- uid: TestingDriver.SeleniumDriver.LaunchNewTab*
+  name: LaunchNewTab
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LaunchNewTab_
+  commentId: Overload:TestingDriver.SeleniumDriver.LaunchNewTab
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.LaunchNewTab
+  nameWithType: SeleniumDriver.LaunchNewTab
 - uid: TestingDriver.SeleniumDriver.LoadingSpinner
   name: LoadingSpinner
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LoadingSpinner
@@ -924,6 +1086,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.LoadingSpinner
   nameWithType: SeleniumDriver.LoadingSpinner
+- uid: TestingDriver.SeleniumDriver.LocalTimeout
+  name: LocalTimeout
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LocalTimeout
+  commentId: P:TestingDriver.SeleniumDriver.LocalTimeout
+  fullName: TestingDriver.SeleniumDriver.LocalTimeout
+  nameWithType: SeleniumDriver.LocalTimeout
+- uid: TestingDriver.SeleniumDriver.LocalTimeout*
+  name: LocalTimeout
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_LocalTimeout_
+  commentId: Overload:TestingDriver.SeleniumDriver.LocalTimeout
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.LocalTimeout
+  nameWithType: SeleniumDriver.LocalTimeout
 - uid: TestingDriver.SeleniumDriver.Maximize
   name: Maximize()
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Maximize
@@ -1080,12 +1255,25 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.SwitchToTab
   nameWithType: SeleniumDriver.SwitchToTab
-- uid: TestingDriver.SeleniumDriver.TakeScreenShot
-  name: TakeScreenShot()
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_TakeScreenShot
-  commentId: M:TestingDriver.SeleniumDriver.TakeScreenShot
-  fullName: TestingDriver.SeleniumDriver.TakeScreenShot()
-  nameWithType: SeleniumDriver.TakeScreenShot()
+- uid: TestingDriver.SeleniumDriver.TakeEntireScreenshot(System.String,System.Boolean)
+  name: TakeEntireScreenshot(String, Boolean)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_TakeEntireScreenshot_System_String_System_Boolean_
+  commentId: M:TestingDriver.SeleniumDriver.TakeEntireScreenshot(System.String,System.Boolean)
+  fullName: TestingDriver.SeleniumDriver.TakeEntireScreenshot(System.String, System.Boolean)
+  nameWithType: SeleniumDriver.TakeEntireScreenshot(String, Boolean)
+- uid: TestingDriver.SeleniumDriver.TakeEntireScreenshot*
+  name: TakeEntireScreenshot
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_TakeEntireScreenshot_
+  commentId: Overload:TestingDriver.SeleniumDriver.TakeEntireScreenshot
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.TakeEntireScreenshot
+  nameWithType: SeleniumDriver.TakeEntireScreenshot
+- uid: TestingDriver.SeleniumDriver.TakeScreenShot(System.String)
+  name: TakeScreenShot(String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_TakeScreenShot_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.TakeScreenShot(System.String)
+  fullName: TestingDriver.SeleniumDriver.TakeScreenShot(System.String)
+  nameWithType: SeleniumDriver.TakeScreenShot(String)
 - uid: TestingDriver.SeleniumDriver.TakeScreenShot*
   name: TakeScreenShot
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_TakeScreenShot_
@@ -1093,6 +1281,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.TakeScreenShot
   nameWithType: SeleniumDriver.TakeScreenShot
+- uid: TestingDriver.SeleniumDriver.Uncheck(System.String,System.Boolean,System.String)
+  name: Uncheck(String, Boolean, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Uncheck_System_String_System_Boolean_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.Uncheck(System.String,System.Boolean,System.String)
+  fullName: TestingDriver.SeleniumDriver.Uncheck(System.String, System.Boolean, System.String)
+  nameWithType: SeleniumDriver.Uncheck(String, Boolean, String)
+- uid: TestingDriver.SeleniumDriver.Uncheck*
+  name: Uncheck
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Uncheck_
+  commentId: Overload:TestingDriver.SeleniumDriver.Uncheck
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.Uncheck
+  nameWithType: SeleniumDriver.Uncheck
 - uid: TestingDriver.SeleniumDriver.VerifyAttribute(System.String,System.String,System.String,System.String)
   name: VerifyAttribute(String, String, String, String)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyAttribute_System_String_System_String_System_String_System_String_
@@ -1148,6 +1349,19 @@ references:
   isSpec: "True"
   fullName: TestingDriver.SeleniumDriver.VerifyElementText
   nameWithType: SeleniumDriver.VerifyElementText
+- uid: TestingDriver.SeleniumDriver.VerifyFieldValue(System.String,System.String,System.String)
+  name: VerifyFieldValue(String, String, String)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyFieldValue_System_String_System_String_System_String_
+  commentId: M:TestingDriver.SeleniumDriver.VerifyFieldValue(System.String,System.String,System.String)
+  fullName: TestingDriver.SeleniumDriver.VerifyFieldValue(System.String, System.String, System.String)
+  nameWithType: SeleniumDriver.VerifyFieldValue(String, String, String)
+- uid: TestingDriver.SeleniumDriver.VerifyFieldValue*
+  name: VerifyFieldValue
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_VerifyFieldValue_
+  commentId: Overload:TestingDriver.SeleniumDriver.VerifyFieldValue
+  isSpec: "True"
+  fullName: TestingDriver.SeleniumDriver.VerifyFieldValue
+  nameWithType: SeleniumDriver.VerifyFieldValue
 - uid: TestingDriver.SeleniumDriver.Wait(System.Int32)
   name: Wait(Int32)
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver_Wait_System_Int32_

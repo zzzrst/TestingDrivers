@@ -108,6 +108,11 @@ namespace TestingDriver
         string ErrorContainer { get; set; }
 
         /// <summary>
+        /// Gets or sets the local timeout to attempt to find and wait for elements.
+        /// </summary>
+        int LocalTimeout { get; set; }
+
+        /// <summary>
         /// Goes back a page.
         /// </summary>
         void Back();
@@ -130,9 +135,26 @@ namespace TestingDriver
         void ClickElement(string xPath, bool byJS = false, string jsCommand = "");
 
         /// <summary>
+        /// Performs the actions of clicking a check box. Uses Selenium binding by default.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the specified element.</param>
+        /// <param name="byJS"> Whether to use JS to perform the click / not. </param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        void Check(string xPath, bool byJS = false, string jsCommand = "");
+
+        /// <summary>
+        /// Performs the actions of unchecking the specified element. Uses Selenium binding by default.
+        /// </summary>
+        /// <param name="xPath">The xpath to find the specified element.</param>
+        /// <param name="byJS"> Whether to use JS to perform the click / not. </param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        void Uncheck(string xPath, bool byJS = false, string jsCommand = "");
+
+        /// <summary>
         /// Closes the current window. It will quit the browser if it is the last window opened.
         /// </summary>
-        void CloseBrowser();
+        /// <param name="all"> Whether to close all tabs in the browser. </param>
+        void CloseBrowser(bool all = true);
 
         /// <summary>
         /// Accepts the alert provided that there is an alert.
@@ -206,6 +228,14 @@ namespace TestingDriver
         List<string> GetAllLinksURL();
 
         /// <summary>
+        /// Tells the browser to launch a new tab. 
+        /// </summary>
+        /// <param name="url">URL for the browser to navigate to.</param>
+        /// <param name="instantiateNewDriver">Instantiates a new selenium driver.</param>
+        /// <returns> <code>true</code> if the navigation was successful. </returns>C:\Users\DuongCh\Projects\TestingDrivers\TestingDriver\src\ITestingDriver.cs
+        bool LaunchNewTab(string url = "", bool instantiateNewDriver = false);
+
+        /// <summary>
         /// Tells the browser to navigate to the provided url.
         /// </summary>
         /// <param name="url">URL for the browser to navigate to.</param>
@@ -232,6 +262,15 @@ namespace TestingDriver
         /// <param name="jsCommand">Any js command needed.</param>
         /// <returns><code>true</code> if it is the same.</returns>
         bool VerifyElementText(string expected, string xPath, string jsCommand = "");
+
+        /// <summary>
+        /// Returns whether or not the element's value attribute is the same as the expected value. Usually for form-like elements.
+        /// </summary>
+        /// <param name="expected">What the value is expected to be.</param>
+        /// <param name="xPath">The xpath of the element.</param>
+        /// <param name="jsCommand">Any js command needed.</param>
+        /// <returns><code>true</code> if it is the same.</returns>
+        bool VerifyFieldValue(string expected, string xPath, string jsCommand = "");
 
         /// <summary>
         /// Returns whether or not the element is selected or not.
@@ -305,7 +344,16 @@ namespace TestingDriver
         /// <summary>
         /// Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
         /// </summary>
-        void TakeScreenShot();
+        /// <param name="fileName">The fileName of the testing driver.</param>
+        void TakeScreenShot(string fileName);
+
+        /// <summary>
+        /// Takes a screenshot of the browser. Screenshot will have the datestamp as its name. Year Month Date Hour Minutes Seconds (AM/PM).
+        /// </summary>
+        /// <param name="fileName">The fileName of the testing driver.</param>
+        /// <param name="isMobile">Whether it is a mobile device.</param>
+        /// <returns><code>true</code> if screenshot was successfully taken. </returns>
+        bool TakeEntireScreenshot(string fileName, bool isMobile);
 
         /// <summary>
         /// Waits for an element state.
