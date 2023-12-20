@@ -15,11 +15,14 @@ namespace NUnitTestingDriver
         public void Setup()
         {
 
+#if DEBUG
             driver = new SeleniumDriver(
                 browser: "Chrome", 
                 timeOut: 30,
                 headless:false);
-
+#else
+            driver = new SeleniumDriver(browser: "remoteChrome", timeout: 30, remoteHost: "http://localhost:4444/wd/hub");
+#endif
             driver.NavigateToURL("http://the-internet.herokuapp.com/");
         }
 
