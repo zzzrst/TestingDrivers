@@ -72,6 +72,7 @@ namespace TestingDriver
         /// <param name="incogMode">Indicate whether to run the browser in incognito mode.</param>
         /// <param name="webDriver">Any Web driver to be passed in.</param>
         /// <param name="browserSize">The execution type which indicates how the test will be executed in.</param>
+        /// <param name="localTimeout">The timeout indicating how long to wait to find individual elements.</param>
         public SeleniumDriver(
             string browser = "chrome",
             int timeOut = 5,
@@ -85,7 +86,8 @@ namespace TestingDriver
             bool headless = true,
             bool incogMode = true,
             IWebDriver webDriver = null,
-            string browserSize = "max")
+            string browserSize = "max",
+            int localTimeout = 30)
         {
             this.browserType = this.GetBrowserType(browser);
             this.timeOutThreshold = TimeSpan.FromSeconds(timeOut);
@@ -97,6 +99,8 @@ namespace TestingDriver
             this.incogMode = incogMode;
             this.headless = headless;
             this.browserSize = browserSize;
+
+            this.LocalTimeout = localTimeout;
 
             if (string.IsNullOrEmpty(loadingSpinner))
             {
@@ -245,7 +249,7 @@ namespace TestingDriver
                 element.Click();
             }
 
-            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+            //this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <inheritdoc/>
@@ -266,7 +270,7 @@ namespace TestingDriver
                 element.Click();
             }
 
-            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+            //this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <inheritdoc/>
@@ -288,7 +292,7 @@ namespace TestingDriver
             {
                 element.Click();
             }
-            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+            //this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <inheritdoc/>
@@ -1105,6 +1109,9 @@ namespace TestingDriver
                 ChromeOptions chromeOptions;
                 ChromeDriverService service;
 
+                // create local var to determine whether to enable incog mode
+                string pathToNewFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "temporary_files");
+
                 Logger.Info("Browser type is: " + this.browserType);
 
                 switch (this.browserType)
@@ -1158,7 +1165,7 @@ namespace TestingDriver
                         chromeOptions.AddArgument("--log-level=3");
                         chromeOptions.AddArgument("--silent");
                         chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
-                        chromeOptions.AddUserProfilePreference("download.default_directory", @"C:\Temp");
+                        chromeOptions.AddUserProfilePreference("download.default_directory", pathToNewFolder);
                         chromeOptions.AddUserProfilePreference("disable-popup-blocking", true);
                         chromeOptions.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
                         chromeOptions.BinaryLocation = $"{chromiumFolderLocation}\\chrome.exe";
@@ -1204,7 +1211,7 @@ namespace TestingDriver
                         options.AddArgument("--log-level=3");
                         options.AddArgument("--silent");
                         options.AddUserProfilePreference("download.prompt_for_download", false);
-                        options.AddUserProfilePreference("download.default_directory", @"C:\Temp");
+                        options.AddUserProfilePreference("download.default_directory", pathToNewFolder);
                         options.AddUserProfilePreference("disable-popup-blocking", true);
                         options.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
                         string edgeFolderLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\edge";
@@ -1238,7 +1245,7 @@ namespace TestingDriver
                         }
 
                         fireFoxOptions.SetPreference("browser.download.folderList", 2);
-                        fireFoxOptions.SetPreference("browser.download.dir", @"C:\Temp");
+                        fireFoxOptions.SetPreference("browser.download.dir", pathToNewFolder);
                         fireFoxOptions.SetPreference("browser.download.manager.alertOnEXEOpen", false);
                         fireFoxOptions.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/csv, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
                         fireFoxOptions.SetPreference("browser.download.manager.showWhenStarting", false);

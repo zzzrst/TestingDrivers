@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Threading;
 using TestingDriver;
 namespace NUnitTestingDriver
@@ -12,11 +14,12 @@ namespace NUnitTestingDriver
         [SetUp]
         public void Setup()
         {
-#if DEBUG
-            driver = new SeleniumDriver(browser: "Chrome", timeOut: 5);
-#else
-            driver = new SeleniumDriver(browser:"remoteChrome", remoteHost:"http://localhost:4444/wd/hub");
-#endif
+
+            driver = new SeleniumDriver(
+                browser: "Chrome", 
+                timeOut: 30,
+                headless:false);
+
             driver.NavigateToURL("http://the-internet.herokuapp.com/");
         }
 
@@ -148,7 +151,8 @@ namespace NUnitTestingDriver
         {
             driver.ClickElement("//a[contains(text(),'Form Authentication')]");
             driver.RunAODA("title");
-            driver.GenerateAODAResults("./Log");
+            string pathEx = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Log"; 
+            driver.GenerateAODAResults(pathEx);
         }
 #endif
         [TearDown]

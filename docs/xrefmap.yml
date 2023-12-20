@@ -800,12 +800,12 @@ references:
   commentId: T:TestingDriver.SeleniumDriver
   fullName: TestingDriver.SeleniumDriver
   nameWithType: SeleniumDriver
-- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,OpenQA.Selenium.IWebDriver)
-  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String, IWebDriver)
-  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_System_String_OpenQA_Selenium_IWebDriver_
-  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,OpenQA.Selenium.IWebDriver)
-  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String, System.String, OpenQA.Selenium.IWebDriver)
-  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String, IWebDriver)
+- uid: TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.Boolean,OpenQA.Selenium.IWebDriver,System.String,System.Int32)
+  name: SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String, Boolean, Boolean, IWebDriver, String, Int32)
+  href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_System_String_System_String_System_String_System_Boolean_System_Boolean_OpenQA_Selenium_IWebDriver_System_String_System_Int32_
+  commentId: M:TestingDriver.SeleniumDriver.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.Boolean,OpenQA.Selenium.IWebDriver,System.String,System.Int32)
+  fullName: TestingDriver.SeleniumDriver.SeleniumDriver(System.String, System.Int32, System.String, System.String, System.String, System.Int32, System.String, System.String, System.String, System.Boolean, System.Boolean, OpenQA.Selenium.IWebDriver, System.String, System.Int32)
+  nameWithType: SeleniumDriver.SeleniumDriver(String, Int32, String, String, String, Int32, String, String, String, Boolean, Boolean, IWebDriver, String, Int32)
 - uid: TestingDriver.SeleniumDriver.#ctor*
   name: SeleniumDriver
   href: api/TestingDriver.SeleniumDriver.html#TestingDriver_SeleniumDriver__ctor_
