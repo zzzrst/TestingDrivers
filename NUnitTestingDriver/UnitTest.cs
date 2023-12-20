@@ -21,9 +21,9 @@ namespace NUnitTestingDriver
                 timeOut: 30,
                 headless:false);
 #else
-            driver = new SeleniumDriver(browser: "remoteChrome", timeOut: 30, remoteHost: "http://localhost:4444/wd/hub");
+            driver = new SeleniumDriver(browser: "remoteChrome", timeOut: 30, remoteHost: "https://localhost:4444/wd/hub");
 #endif
-            driver.NavigateToURL("http://the-internet.herokuapp.com/");
+            driver.NavigateToURL("https://the-internet.herokuapp.com/");
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace NUnitTestingDriver
             driver.PopulateElement("//input[@id='password']", "SuperSecretPassword!");
             driver.ClickElement("//button[@class='radius']");
 
-            Assert.That("http://the-internet.herokuapp.com/secure".Equals(driver.CurrentURL), "URL is incorrect");
+            Assert.That("https://the-internet.herokuapp.com/secure".Equals(driver.CurrentURL), "URL is incorrect");
         }
 
         [Test]
@@ -108,7 +108,7 @@ namespace NUnitTestingDriver
         public void TestVerifyAttribute()
         {
             driver.ClickElement("//a[contains(text(),'Broken Images')]");
-            Assert.That(driver.VerifyAttribute("src", "http://the-internet.herokuapp.com/img/avatar-blank.jpg", "//body//img[3]"), "The attribute src should equal http://the-internet.herokuapp.com/img/avatar-blank.jpg");
+            Assert.That(driver.VerifyAttribute("src", "https://the-internet.herokuapp.com/img/avatar-blank.jpg", "//body//img[3]"), "The attribute src should equal http://the-internet.herokuapp.com/img/avatar-blank.jpg");
             Assert.That(!driver.VerifyAttribute("src", "img/image.jpg", "//body//img[3]"), "The attribute src should not equal img/image.jpg");
         }
 
