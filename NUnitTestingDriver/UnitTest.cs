@@ -21,7 +21,7 @@ namespace NUnitTestingDriver
                 timeOut: 30,
                 headless:false);
 #else
-            driver = new SeleniumDriver(browser: "remoteChrome", timeout: 30, remoteHost: "http://localhost:4444/wd/hub");
+            driver = new SeleniumDriver(browser: "remoteChrome", timeOut: 30, remoteHost: "http://localhost:4444/wd/hub");
 #endif
             driver.NavigateToURL("http://the-internet.herokuapp.com/");
         }
