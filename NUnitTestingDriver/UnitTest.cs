@@ -43,7 +43,7 @@ namespace NUnitTestingDriver
 
             Console.WriteLine("Current url " + driver.CurrentURL);
 
-            Assert.That("http://the-internet.herokuapp.com/login".Equals(driver.CurrentURL), "URL is incorrect");
+            Assert.That("https://the-internet.herokuapp.com/login".Equals(driver.CurrentURL), "URL is incorrect");
 
             driver.PopulateElement("//input[@id='username']", "tomsmith");
             driver.PopulateElement("//input[@id='password']", "SuperSecretPassword!");
@@ -108,7 +108,7 @@ namespace NUnitTestingDriver
         public void TestVerifyAttribute()
         {
             driver.ClickElement("//a[contains(text(),'Broken Images')]");
-            Assert.That(driver.VerifyAttribute("src", "https://the-internet.herokuapp.com/img/avatar-blank.jpg", "//body//img[3]"), "The attribute src should equal http://the-internet.herokuapp.com/img/avatar-blank.jpg");
+            Assert.That(driver.VerifyAttribute("src", "https://the-internet.herokuapp.com/img/avatar-blank.jpg", "//body//img[3]"), "The attribute src should equal https://the-internet.herokuapp.com/img/avatar-blank.jpg");
             Assert.That(!driver.VerifyAttribute("src", "img/image.jpg", "//body//img[3]"), "The attribute src should not equal img/image.jpg");
         }
 
