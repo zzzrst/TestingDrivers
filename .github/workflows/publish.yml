@@ -43,12 +43,12 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET Core
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '6.0.x'
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
-      - name: Publish nuget
-        run: dotnet nuget push **/*.nupkg -k ${{secrets.NGPackagesToken}} -s https://api.nuget.org/v3/index.json || true
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+    - name: Publish nuget
+      run: dotnet nuget push **/*.nupkg -k ${{secrets.NGPackagesToken}} -s https://api.nuget.org/v3/index.json || true
