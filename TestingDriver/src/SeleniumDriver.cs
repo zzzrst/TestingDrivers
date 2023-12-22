@@ -6,16 +6,21 @@ namespace TestingDriver
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Diagnostics;
     using System.Drawing;
     using System.Drawing.Imaging;
+    using System.Drawing.Printing;
     using System.IO;
     using System.Linq;
     using System.Management;
     using System.Reflection;
+    using System.Runtime.CompilerServices;
     using AxeAccessibilityDriver;
+    using NPOI.SS.Formula.Functions;
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
+    using OpenQA.Selenium.DevTools.V112.Debugger;
     using OpenQA.Selenium.Edge;
     using OpenQA.Selenium.Firefox;
     using OpenQA.Selenium.IE;
@@ -23,6 +28,7 @@ namespace TestingDriver
     using OpenQA.Selenium.Remote;
     using OpenQA.Selenium.Support.Extensions;
     using OpenQA.Selenium.Support.UI;
+    using static System.Net.WebRequestMethods;
     using static TestingDriver.ITestingDriver;
 
     /// <summary>
@@ -45,14 +51,10 @@ namespace TestingDriver
         private string url;
 
         private string screenshotSaveLocation;
+
         private Browser browserType;
         private TimeSpan timeOutThreshold;
         private TimeSpan actualTimeOut;
-
-        private bool incogMode;
-        private bool headless;
-
-        private string browserSize;
 
         private string remoteHost;
 
@@ -68,11 +70,7 @@ namespace TestingDriver
         /// <param name="loadingSpinner">The xpath for any loading spinners.</param>
         /// <param name="errorContainer">The xpath for any error containers.</param>
         /// <param name="remoteHost">The address of the remote host.</param>
-        /// <param name="headless">Indicate whether to run the browser in headless mode.</param>
-        /// <param name="incogMode">Indicate whether to run the browser in incognito mode.</param>
         /// <param name="webDriver">Any Web driver to be passed in.</param>
-        /// <param name="browserSize">The execution type which indicates how the test will be executed in.</param>
-        /// <param name="localTimeout">The timeout indicating how long to wait to find individual elements.</param>
         public SeleniumDriver(
             string browser = "chrome",
             int timeOut = 5,
@@ -83,24 +81,16 @@ namespace TestingDriver
             string loadingSpinner = "",
             string errorContainer = "",
             string remoteHost = "",
-            bool headless = true,
-            bool incogMode = true,
-            IWebDriver webDriver = null,
-            string browserSize = "max",
-            int localTimeout = 30)
+            IWebDriver webDriver = null)
         {
+
+
             this.browserType = this.GetBrowserType(browser);
             this.timeOutThreshold = TimeSpan.FromSeconds(timeOut);
             this.environment = environment;
             this.url = url;
             this.screenshotSaveLocation = screenshotSaveLocation;
             this.actualTimeOut = TimeSpan.FromMinutes(actualTimeout);
-
-            this.incogMode = incogMode;
-            this.headless = headless;
-            this.browserSize = browserSize;
-
-            this.LocalTimeout = localTimeout;
 
             if (string.IsNullOrEmpty(loadingSpinner))
             {
@@ -248,11 +238,10 @@ namespace TestingDriver
             {
                 element.Click();
             }
-
-            //this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc
         /// <summary>
         /// Sets the check box's value to OFF.
         /// </summary>
@@ -269,8 +258,7 @@ namespace TestingDriver
             {
                 element.Click();
             }
-
-            //this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <inheritdoc/>
@@ -292,7 +280,7 @@ namespace TestingDriver
             {
                 element.Click();
             }
-            //this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+            this.wdWait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <inheritdoc/>
@@ -372,37 +360,48 @@ namespace TestingDriver
             // we want to determine what the size should be before maximizing.
             Console.WriteLine("Maximizing browser");
 
+            string exType = ConfigurationManager.AppSettings["ExecutionType"];
+            List<string> exTypesList = ConfigurationManager.AppSettings["ListTypeOfExecutions"].Split(",").ToList();
+
             // maximize the browser first, then do any changes
             this.WebDriver.Manage().Window.Maximize();
 
             // grab the maximized brwoser size
             Size windowSize = this.WebDriver.Manage().Window.Size;
 
-            // browser Width and browser Height
-            switch (this.browserSize)
+            if (exTypesList.Contains(exType))
             {
-                case "mobile":
-                    windowSize.Width = windowSize.Width / 3;
-                    break;
-                case "tablet":
-                    windowSize.Width = windowSize.Width / 2;
-                    break;
-                case "desktop":
-                    windowSize.Width = 1024;
-                    windowSize.Height = 768;
-                    break;
-                case "extended-desktop":
-                    break;
-                case "max":
-                    // maximize to the max size of the window, which should already be done
-                    break;
-                default:
-                    Logger.Warn("Not implemented error for size");
-                    break;
+                switch (exType)
+                {
+                    case "mobile":
+                        windowSize.Width = windowSize.Width / 3;
+                        break;
+                    case "tablet":
+                        windowSize.Width = windowSize.Width / 2;
+                        break;
+                    case "desktop":
+                        windowSize.Width = 1024;
+                        windowSize.Height = 768;
+                        break;
+                    case "extended-desktop":
+                    case "max":
+                        // maximize to the max size of the window, which should already be done
+                        break;
+                    default:
+                        Logger.Warn("Not implemented error for size");
+                        break;
+                }
+            }
+            else
+            {
+                Logger.Info("Exeuction type list does not contain size" + exType);
+                this.WebDriver.Manage().Window.Maximize();
             }
 
             Console.WriteLine($"Size after maximization: {windowSize.Width} {windowSize.Height}");
             this.WebDriver.Manage().Window.Size = windowSize;
+
+
         }
 
         /// <inheritdoc/>
@@ -447,9 +446,9 @@ namespace TestingDriver
             {
                 this.axeDriver.LogResults(folderLocation);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Logger.Error("Could not generate AODA results " + ex);
+                Logger.Error("Could not generate AODA results");
             }
         }
 
@@ -539,6 +538,7 @@ namespace TestingDriver
         public void RunAODA(string providedPageTitle)
         {
             // add if this.axedriver is null (especially for AAD authentication)
+            // added by Victor
             if (this.Action == null || this.axeDriver == null)
             {
                 // skipped validating Axe Driver since a non-action
@@ -667,6 +667,8 @@ namespace TestingDriver
             try
             {
                 Screenshot screenshot = this.WebDriver.TakeScreenshot();
+                //screenshot.SaveAsFile(screenshotSaveLocation + "\\" + fileName);
+                // save image in an 
                 screenshot.SaveAsFile(fileName); // convert to jpeg
             }
             catch
@@ -752,16 +754,25 @@ namespace TestingDriver
                     ((IJavaScriptExecutor)this.WebDriver).ExecuteScript($"window.scrollBy({(rectangle.Right - previous.Right) / pixelRatio}, {(rectangle.Bottom - previous.Bottom) / pixelRatio})");
                 }
 
+                //// Calculate the new source Rectangle
+                //var sourceRectangle = new Rectangle(
+                //    viewportWidth - rectangle.Width,
+                //    viewportHeight - rectangle.Height,
+                //    rectangle.Width,
+                //    rectangle.Height);
+
                 // Copy the Image
                 using (var graphics = Graphics.FromImage(stitchedImage))
                 {
+
+                    //graphics.DrawImage(ScreenshotToImage(screenshot.GetScreenshot()), rectangle, sourceRectangle, GraphicsUnit.Pixel);
                     screenshot.GetScreenshot().SaveAsFile(fileName); // save the screenshot at the specified file name
                     Image newImage = Image.FromFile(fileName); // get the same screeenshot as an image
 
                     int newImgWidthCut = 0;
                     int newImgHeightCut = 0;
 
-                    // calculate percentage to cut from the newImage
+                    // calcualte percentage to cut from the newImage
                     if (viewportHeight != rectangle.Height)
                     {
                         newImgHeightCut = newImage.Height - (rectangle.Height * (newImage.Height / viewportHeight));
@@ -770,7 +781,10 @@ namespace TestingDriver
                     {
                         newImgWidthCut = newImage.Width - (rectangle.Width * (newImage.Width / viewportWidth));
                     }
+                    // Console.WriteLine("Height Cut: " + newImgHeightCut);
+                    // Console.WriteLine("Width Cut: " + newImgWidthCut);
 
+                    //graphics.DrawImage(newImage, rectangle, sourceRectangle, GraphicsUnit.Pixel);
                     graphics.DrawImage(newImage, rectangle, newImgWidthCut, newImgHeightCut, newImage.Width, newImage.Height, GraphicsUnit.Pixel);
                     newImage.Dispose(); // delete the image
                 }
@@ -1061,6 +1075,8 @@ namespace TestingDriver
                     if (jsCommand != string.Empty)
                     {
                         webElement = (IWebElement)((IJavaScriptExecutor)this.WebDriver).ExecuteScript(jsCommand, webElements);
+                        // string attribute = webElement.GetAttribute("value");
+                        // Console.WriteLine("Got attribute" + attribute);
                     }
                     else
                     {
@@ -1110,7 +1126,8 @@ namespace TestingDriver
                 ChromeDriverService service;
 
                 // create local var to determine whether to enable incog mode
-                string pathToNewFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "temporary_files");
+                bool enableIncog = bool.Parse(ConfigurationManager.AppSettings["INCOGMODE"].ToString());
+                bool enableHeadless = bool.Parse(ConfigurationManager.AppSettings["HEADLESS_MODE"].ToString());
 
                 Logger.Info("Browser type is: " + this.browserType);
 
@@ -1125,7 +1142,7 @@ namespace TestingDriver
                         };
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (this.incogMode)
+                        if (enableIncog)
                         {
                             chromeOptions.AddArgument("--incognito");
                         }
@@ -1147,25 +1164,27 @@ namespace TestingDriver
                         };
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (this.incogMode)
+                        if (enableIncog)
                         {
                             chromeOptions.AddArgument("--incognito");
                         }
 
                         // enable headless mode
-                        if (this.headless)
+                        if (enableHeadless)
                         {
                             Logger.Info("Started a headless session");
                             chromeOptions.AddArgument("--headless=new");
                         }
 
+
+                        // chromeOptions.AddArgument("--window-size=1000,500");
                         chromeOptions.AddArgument("--start-maximized");
 
                         chromeOptions.AddArgument("no-sandbox");
                         chromeOptions.AddArgument("--log-level=3");
                         chromeOptions.AddArgument("--silent");
                         chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
-                        chromeOptions.AddUserProfilePreference("download.default_directory", pathToNewFolder);
+                        chromeOptions.AddUserProfilePreference("download.default_directory", @"C:\Temp");
                         chromeOptions.AddUserProfilePreference("disable-popup-blocking", true);
                         chromeOptions.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
                         chromeOptions.BinaryLocation = $"{chromiumFolderLocation}\\chrome.exe";
@@ -1187,6 +1206,9 @@ namespace TestingDriver
                         // check for maximization
                         this.Maximize(); // maximize the webdriver
 
+                        //Dimension dimension = new Dimension(500, 1000);
+                        //this.WebDriver.Manage().Window.Size = 500, 1000;
+
                         this.PID = service.ProcessId;
                         Logger.Info($"Chrome Driver service PID is: {this.PID}");
 
@@ -1199,11 +1221,12 @@ namespace TestingDriver
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                         };
 
+
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (this.incogMode)
+                        if (enableIncog)
                         {
                             // options.AddArgument("--incognito");
-                            // options.AddAdditionalEdgeOption("InPrivate", true);
+                            //options.AddAdditionalEdgeOption("InPrivate", true);
                             options.AddArgument("InPrivate");
                         }
 
@@ -1211,7 +1234,7 @@ namespace TestingDriver
                         options.AddArgument("--log-level=3");
                         options.AddArgument("--silent");
                         options.AddUserProfilePreference("download.prompt_for_download", false);
-                        options.AddUserProfilePreference("download.default_directory", pathToNewFolder);
+                        options.AddUserProfilePreference("download.default_directory", @"C:\Temp");
                         options.AddUserProfilePreference("disable-popup-blocking", true);
                         options.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
                         string edgeFolderLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\edge";
@@ -1239,13 +1262,13 @@ namespace TestingDriver
                         FirefoxOptions fireFoxOptions = new FirefoxOptions();
 
                         // check if in incog mode, if it is, then we launch incog mode
-                        if (this.incogMode)
+                        if (enableIncog)
                         {
                             fireFoxOptions.AddArgument("-private");
                         }
 
                         fireFoxOptions.SetPreference("browser.download.folderList", 2);
-                        fireFoxOptions.SetPreference("browser.download.dir", pathToNewFolder);
+                        fireFoxOptions.SetPreference("browser.download.dir", @"C:\Temp");
                         fireFoxOptions.SetPreference("browser.download.manager.alertOnEXEOpen", false);
                         fireFoxOptions.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword, application/csv, application/ris, text/csv, image/png, application/pdf, text/html, text/plain, application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
                         fireFoxOptions.SetPreference("browser.download.manager.showWhenStarting", false);
@@ -1264,7 +1287,7 @@ namespace TestingDriver
 
                         FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "geckodriver.exe");
 
-                        // FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(this.seleniumDriverLocation);
+                        //FirefoxDriverService fireFoxService = FirefoxDriverService.CreateDefaultService(this.seleniumDriverLocation);
                         fireFoxService.SuppressInitialDiagnosticInformation = true;
 
                         this.WebDriver = new FirefoxDriver(fireFoxService, fireFoxOptions, this.actualTimeOut);
@@ -1280,7 +1303,7 @@ namespace TestingDriver
                             IntroduceInstabilityByIgnoringProtectedModeSettings = true,
                             IgnoreZoomLevel = true,
                             EnsureCleanSession = true,
-                            EnableNativeEvents = true,
+                            EnableNativeEvents = bool.Parse(ConfigurationManager.AppSettings["IEEnableNativeEvents"].ToString()),
                             UnhandledPromptBehavior = UnhandledPromptBehavior.Accept,
                             RequireWindowFocus = true,
 
@@ -1352,9 +1375,14 @@ namespace TestingDriver
                 {
                     this.CurrentWindow = windowCount;
                     this.WebDriver.SwitchTo().Window(windows[windowCount - 1]);
+
+                    // ALM #24987 - Open Sims - SIT automation test on IE11 [Click Element on iFrame]
+
+                    // Maximize window so the behavior for IE is more consistent. Removed
+                    // this.WebDriver.Manage().Window.Maximize();
                 }
             }
-            else // future implementation for InIFrame
+            else
             {
                 // this.wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.FrameToBeAvailableAndSwitchToIt(By.XPath(this.IFrameXPath)));
             }
